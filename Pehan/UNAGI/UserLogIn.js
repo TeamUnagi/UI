@@ -1,30 +1,31 @@
 import React,{Component} from 'react';
-import {View,Text,Button,StyleSheet,TouchableOpacity, TextInput} from 'react-native';
-import {createStackNavigator} from 'react-native';
+import {View,Text,StyleSheet,TouchableOpacity, TextInput} from 'react-native';
 
-export default class farmerLogIn extends Component{
+
+class userLogIn extends Component{
     render(){
         return(
             <View style= {styles.container}>
-                <View style = {style.textfields}>
+                <View style = {styles.textfields}>
                 <View style={{marginTop:100}}>
                     <Text style={{fontSize:50,textAlign:"center",lineHeight:0}}>UNAGI</Text>
                 </View>
-                    <TextInput style={styles.input}>
-                        placholder="Email"
+                    <TextInput style={styles.input}
+                        placholder= {'Email'}
                         returnKeyType="next"
-                        onSubmitEditing = {()=> this.passwordInput.forcus()}
+                        onSubmitEditing = {()=> this.passwordInput.focus()}
                         keyboardType="email-address"
                         autoCapasity="none"
-                        autoCorrect={false}
+                        autoCorrect={false} >
+
                     </TextInput>
-                    <TextInput style={styles.input}>
+                    <TextInput style={styles.input}
                         placholder="Password"
                         returnKeyType="go"
                         secureTextEntry
-                        ref ={(input)=>this.passwordInput=input}
+                        ref ={(input)=>this.passwordInput=input}>
                     </TextInput>
-                    <TouchableOpacity style= {styles.buttoncontainer} onPress = {() => this.props.navigation.navigate('FarmerHome')}>
+                    <TouchableOpacity style= {styles.buttoncontainer} >
                         <Text style={styles.buttontext}>Login</Text>
                     </TouchableOpacity>
                 </View>
@@ -33,7 +34,7 @@ export default class farmerLogIn extends Component{
     } 
 }
 
-const style= StyleSheet.create({
+const styles= StyleSheet.create({
     container:{
       flex:1,
       backgroundColor:'#ffa477',
@@ -60,3 +61,5 @@ const style= StyleSheet.create({
       fontSize:20
     },    
 })
+
+export default userLogIn
