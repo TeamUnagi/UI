@@ -1,75 +1,85 @@
-import React,{Component} from 'react';
-import {View,
-        Text,
-        Button,
-        StyleSheet,
-        TouchableOpacity} from 'react-native';
+import React, { Component } from 'react';
+import{ View,Text, StyleSheet, ImageBackground, TextInput, TouchableOpacity, } from 'react-native';
+import vegBg from './images/vegBg.jpeg';
 
 
- class userPage extends Component{ 
-  render()
-  {
-    return(
-      <View style={styles.container}>
-        <View style={{marginTop:100}}>
-          <Text style={{fontSize:50,textAlign:"center",lineHeight:0}}>UNAGI</Text>
-        </View>
-        <View style={{marginTop:100}} >
-          <TouchableOpacity style={styles.buttoncontainer}  >
-            <Text style={styles.buttontext}>Exporter</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={{marginTop:20}}>
-          <TouchableOpacity style={styles.buttoncontainer} >
-            <Text style={styles.buttontext}>Farmer</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.registercontainer}>
-          <Text style={{color:'darkgray'}}>If you don't have a account </Text>
-          <Button
-            title="'Sign In'"
-            color="black"
-          
-          />
-        </View>
-      </View>
-    )
-  }
+
+
+class UserPage extends Component {
+  render() {  
+  return (
+    <ImageBackground source={vegBg} 
+                     style= {styles.bgContainer}>
+
+   
+    <View>
+     
+    {/* HEADER */}
+    <View style = {styles.container}>
+        <Text style = {styles.headText}> UNAGI </Text>     
+    </View>
+  
+        {/* SIGN IN BUTTON */}
+
+      <TouchableOpacity style={styles.button}> 
+          <Text style={styles.btnText}> Exporter </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button}> 
+          <Text style={styles.btnText}> Farmer </Text>
+      </TouchableOpacity>
+
+    {/*  TEXT TO LOGIN */}
+
+      <Text  style={styles.loginText}> Have an account? Login </Text>
+
+    </View>
+    </ImageBackground> 
+  )
+}
 }
 
-
-const styles= StyleSheet.create({
-  container:{
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center'
+  },
+  headText:{
+    paddingTop:100,
+    paddingBottom: 50,
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginTop: 10,
+    opacity: 0.5
+  },
+  bgContainer:{
     flex:1,
-    backgroundColor:'#ffa477',
+    height: null,
+    width: null,
     justifyContent: 'center',
-    alignItems:'stretch'
+    alignItems: 'center',
   },
-
-  buttoncontainer:{
-    height: 50,
-    borderRadius: 50,
-    backgroundColor:'coral',
-    paddingVertical:10,
-    justifyContent:'center'
+  loginText: {
+      color:'#fff',
+      textAlign:"center",
+      marginTop: 120,
+      fontSize: 16 
   },
-
-  buttontext:{
-    textAlign:'center',
-    color:'black',
-    fontSize:20
+  button:{
+      height:55,
+      borderRadius: 25,
+      backgroundColor: '#ffa477',
+      justifyContent: 'center',
+      width: 330,
+      marginLeft: 30,
+      marginTop: 40
   },
-
-  registercontainer:{
-    flex:1,
-    flexDirection:'row',
-    justifyContent:'center',
-    alignItems:'flex-end',
-    backgroundColor:'rgba(192, 192, 192, 1.0)',
-    borderWidth:1
+  btnText:{
+    color: '#000',
+    fontSize: 30,
+    fontWeight: 'bold',
+    textAlign: 'center'
   }
-
 })
 
-export default userPage; 
-
+export default UserPage ;

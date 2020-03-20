@@ -1,65 +1,113 @@
-import React,{Component} from 'react';
-import {View,Text,StyleSheet,TouchableOpacity, TextInput} from 'react-native';
+import React, { Component } from 'react';
+import{ View,Text, StyleSheet, ImageBackground, TextInput, TouchableOpacity, } from 'react-native';
+import vegBg from './images/vegBg.jpeg';
 
+class UserLogin extends Component {
+  render() {  
+  return (
+    <ImageBackground source={vegBg} 
+                     style= {styles.bgContainer}>
+    
+    <View>
+     
+    {/* HEADER */}
+    <View style = {styles.container}>
+        <Text style = {styles.headText}> UNAGI </Text>     
+    </View>
+   
+   
+   {/* All 2 inputs  */}
+   
+      <View>
+          <TextInput style= {styles.inputText} 
+          placeholder={'Email'}
+          placeholderTextColor={'#fff'} 
+          underlineColorAndroid={'#fff'} />
+      </View>
+      
+      <View>
+          <TextInput style= {styles.inputText}
+ 
+          placeholder={'Password'}
+          secureTextEntry = {true}
+          placeholderTextColor={'#fff'} 
+          underlineColorAndroid={'#fff'} />
+      </View>
+      
 
-class userLogIn extends Component{
-    render(){
-        return(
-            <View style= {styles.container}>
-                <View style = {styles.textfields}>
-                <View style={{marginTop:100}}>
-                    <Text style={{fontSize:50,textAlign:"center",lineHeight:0}}>UNAGI</Text>
-                </View>
-                    <TextInput style={styles.input}
-                        placholder= {'Email'}
-                        returnKeyType="next"
-                        onSubmitEditing = {()=> this.passwordInput.focus()}
-                        keyboardType="email-address"
-                        autoCapasity="none"
-                        autoCorrect={false} >
+      {/* SIGN IN BUTTON */}
 
-                    </TextInput>
-                    <TextInput style={styles.input}
-                        placholder="Password"
-                        returnKeyType="go"
-                        secureTextEntry
-                        ref ={(input)=>this.passwordInput=input}>
-                    </TextInput>
-                    <TouchableOpacity style= {styles.buttoncontainer} >
-                        <Text style={styles.buttontext}>Login</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-        )
-    } 
+      <TouchableOpacity style={styles.btnLogin}> 
+          <Text style={styles.btnText}> Login </Text>
+      </TouchableOpacity>
+
+    {/*  TEXT TO SIGN IN */}
+
+      <Text  style={styles.loginText}> Create account </Text>
+
+    </View>
+    </ImageBackground> 
+  )
+}
 }
 
-const styles= StyleSheet.create({
-    container:{
-      flex:1,
-      backgroundColor:'#ffa477',
-      justifyContent: 'center',
-      alignItems:'stretch'
-    },
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center'
+  },
+  headText:{
+    paddingTop:100,
+    paddingBottom: 50,
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginTop: 10,
+    opacity: 0.5
+    
+  },
 
-    input:{
-        borderWidth:0.5,
-        borderBottomColor:'black' 
-    },
-  
-    buttoncontainer:{
-      height: 50,
-      borderRadius: 50,
-      backgroundColor:'coral',
-      paddingVertical:10,
-      justifyContent:'center'
-    },
-  
-    buttontext:{
-      textAlign:'center',
-      color:'black',
-      fontSize:20
-    },    
+  bgContainer:{
+    flex:1,
+    height: null,
+    width: null,
+    justifyContent: 'center',
+    alignItems: 'center',
+    
+  },
+
+  loginText: {
+      color:'#fff',
+      textAlign:"center",
+      marginTop: 120,
+      fontSize: 16 
+      
+  },
+
+
+  inputText:{
+    marginBottom: 20,
+    height:45,
+    fontSize: 16, 
+    paddingLeft: 35,
+    color: '#fff',
+    marginHorizontal: 25
+  },
+  btnLogin:{
+      height:55,
+      borderRadius: 25,
+      backgroundColor: '#ffa477',
+      justifyContent: 'center',
+      width: 330,
+      marginLeft: 30,
+      marginTop: 40
+  },
+  btnText:{
+    color: '#000',
+    fontSize: 30,
+    fontWeight: 'bold',
+    textAlign: 'center'
+
+  },
 })
 
-export default userLogIn
+export default UserLogin ;
