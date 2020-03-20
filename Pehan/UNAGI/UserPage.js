@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import{ View,Text, StyleSheet, ImageBackground, TextInput, TouchableOpacity, } from 'react-native';
-import vegBg from './images/vegBg.jpeg';
+import vegBg from './images/vegBg.jpg';
 
 
 

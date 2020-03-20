@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import UserPage from './UserPage.js'
+import UserPage from './UserLogIn.js'
 
 
 
@@ -16,3 +16,5 @@ class uiApp extends Component {
     )
   }
 }
+
+export default uiApp ;

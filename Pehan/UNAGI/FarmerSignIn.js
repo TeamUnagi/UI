@@ -9,7 +9,7 @@ import{ View,
        
       } from 'react-native';
       
-import vegBg from './images/vegBg.jpeg';
+import vegBg from './images/vegBg.jpg';
 
 
 
