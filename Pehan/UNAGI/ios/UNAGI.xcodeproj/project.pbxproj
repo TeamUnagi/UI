@@ -16,6 +16,10 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* UNAGITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* UNAGITests.m */; };
+		69BD63597EC0CBE978DD811A /* libPods-UNAGI-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E3CF24CE22130582F45941 /* libPods-UNAGI-tvOSTests.a */; };
+		6EF3A809C2A21F9C317DE474 /* libPods-UNAGITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C8A2F37FF783CAE7956745 /* libPods-UNAGITests.a */; };
+		BAAD5AE3D3C406F1F79428B4 /* libPods-UNAGI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 246C2FA13B308791F70A8B91 /* libPods-UNAGI.a */; };
+		E6900968039881210F6EDB4A /* libPods-UNAGI-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A524F493ED354CF6240ED7 /* libPods-UNAGI-tvOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +51,20 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = UNAGI/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = UNAGI/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = UNAGI/main.m; sourceTree = "<group>"; };
+		13D8E63BDA10C13ED56A1BA9 /* Pods-UNAGI-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNAGI-tvOS.release.xcconfig"; path = "Target Support Files/Pods-UNAGI-tvOS/Pods-UNAGI-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		1BEFF96ABC2695EBFE524595 /* Pods-UNAGI-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNAGI-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-UNAGI-tvOSTests/Pods-UNAGI-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		246C2FA13B308791F70A8B91 /* libPods-UNAGI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UNAGI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E47B1E0B4A5D006451C7 /* UNAGI-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UNAGI-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* UNAGI-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UNAGI-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		30E3CF24CE22130582F45941 /* libPods-UNAGI-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UNAGI-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ADCA5E4B1302A1517B3497F /* Pods-UNAGI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNAGI.debug.xcconfig"; path = "Target Support Files/Pods-UNAGI/Pods-UNAGI.debug.xcconfig"; sourceTree = "<group>"; };
+		49A077C065CA007FDC7D918B /* Pods-UNAGI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNAGI.release.xcconfig"; path = "Target Support Files/Pods-UNAGI/Pods-UNAGI.release.xcconfig"; sourceTree = "<group>"; };
+		66A524F493ED354CF6240ED7 /* libPods-UNAGI-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UNAGI-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		752D45F20D42C1ABEB7C61F0 /* Pods-UNAGI-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNAGI-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-UNAGI-tvOS/Pods-UNAGI-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		AEDEEBD63FFB0CBA6EC0AEAE /* Pods-UNAGITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNAGITests.release.xcconfig"; path = "Target Support Files/Pods-UNAGITests/Pods-UNAGITests.release.xcconfig"; sourceTree = "<group>"; };
+		BE3EDBCDB0D9450FBA149943 /* Pods-UNAGITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNAGITests.debug.xcconfig"; path = "Target Support Files/Pods-UNAGITests/Pods-UNAGITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E16BDD2A3D88524835D38805 /* Pods-UNAGI-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNAGI-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-UNAGI-tvOSTests/Pods-UNAGI-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		E4C8A2F37FF783CAE7956745 /* libPods-UNAGITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UNAGITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -58,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF3A809C2A21F9C317DE474 /* libPods-UNAGITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAAD5AE3D3C406F1F79428B4 /* libPods-UNAGI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6900968039881210F6EDB4A /* libPods-UNAGI-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69BD63597EC0CBE978DD811A /* libPods-UNAGI-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +141,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
+				246C2FA13B308791F70A8B91 /* libPods-UNAGI.a */,
+				66A524F493ED354CF6240ED7 /* libPods-UNAGI-tvOS.a */,
+				30E3CF24CE22130582F45941 /* libPods-UNAGI-tvOSTests.a */,
+				E4C8A2F37FF783CAE7956745 /* libPods-UNAGITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,6 +164,7 @@
 				00E356EF1AD99517003FC87E /* UNAGITests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				9A4DB2B100833146533D13A8 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -157,6 +182,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9A4DB2B100833146533D13A8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3ADCA5E4B1302A1517B3497F /* Pods-UNAGI.debug.xcconfig */,
+				49A077C065CA007FDC7D918B /* Pods-UNAGI.release.xcconfig */,
+				752D45F20D42C1ABEB7C61F0 /* Pods-UNAGI-tvOS.debug.xcconfig */,
+				13D8E63BDA10C13ED56A1BA9 /* Pods-UNAGI-tvOS.release.xcconfig */,
+				1BEFF96ABC2695EBFE524595 /* Pods-UNAGI-tvOSTests.debug.xcconfig */,
+				E16BDD2A3D88524835D38805 /* Pods-UNAGI-tvOSTests.release.xcconfig */,
+				BE3EDBCDB0D9450FBA149943 /* Pods-UNAGITests.debug.xcconfig */,
+				AEDEEBD63FFB0CBA6EC0AEAE /* Pods-UNAGITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -164,6 +205,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "UNAGITests" */;
 			buildPhases = (
+				B8A1DC08D46C3A118C7002A6 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
@@ -182,6 +224,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "UNAGI" */;
 			buildPhases = (
+				B1957A5506B3AF5C1899F626 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -193,7 +236,7 @@
 			dependencies = (
 			);
 			name = UNAGI;
-			productName = "UNAGI";
+			productName = UNAGI;
 			productReference = 13B07F961A680F5B00A75B9A /* UNAGI.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -201,6 +244,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "UNAGI-tvOS" */;
 			buildPhases = (
+				EBE7A0122D86B3B393DE5890 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -220,6 +264,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "UNAGI-tvOSTests" */;
 			buildPhases = (
+				EF121A29DE83B540290344CA /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -342,6 +387,94 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
+		B1957A5506B3AF5C1899F626 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UNAGI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8A1DC08D46C3A118C7002A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UNAGITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBE7A0122D86B3B393DE5890 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UNAGI-tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF121A29DE83B540290344CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UNAGI-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -447,6 +580,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE3EDBCDB0D9450FBA149943 /* Pods-UNAGITests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -469,6 +603,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEDEEBD63FFB0CBA6EC0AEAE /* Pods-UNAGITests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -488,6 +623,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3ADCA5E4B1302A1517B3497F /* Pods-UNAGI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -507,6 +643,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49A077C065CA007FDC7D918B /* Pods-UNAGI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -525,6 +662,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 752D45F20D42C1ABEB7C61F0 /* Pods-UNAGI-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -552,6 +690,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13D8E63BDA10C13ED56A1BA9 /* Pods-UNAGI-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -579,6 +718,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BEFF96ABC2695EBFE524595 /* Pods-UNAGI-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -605,6 +745,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E16BDD2A3D88524835D38805 /* Pods-UNAGI-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;

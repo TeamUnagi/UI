@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
-import UserPage from './UserLogIn.js'
-
-
-
+import UserPage from './UserPage.js'
 
 class uiApp extends Component {
 
@@ -11,8 +8,6 @@ class uiApp extends Component {
     return (
 
        <UserPage />
-      
-
     )
   }
 }
