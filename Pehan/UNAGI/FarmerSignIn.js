@@ -6,10 +6,11 @@ import{ View,
         ImageBackground,
         TextInput,
         TouchableOpacity,
+        SafeAreaView,
        
       } from 'react-native';
       
-import vegBg from './images/vegBg.jpg';
+import vegBg from './images/background.jpg';
 
 
 
@@ -17,120 +18,122 @@ import vegBg from './images/vegBg.jpg';
 class FarmerSignIn extends Component {
 
   render() {
-  return (
-    <ImageBackground source={vegBg} 
-                     style= {styles.bgContainer}>
+    return (
+      <ImageBackground source={vegBg} style= {styles.bgContainer}>
+        <View>
+          <SafeAreaView>
 
-   
-    <View>
-     
-    {/* HEADER */}
-    <View style = {styles.container}>
-        <Text style = {styles.headText}> UNAGI </Text>     
-    </View>
-   
-   
-   {/* All 4 inputs  */}
-   
-      <View>
-          <TextInput style= {styles.inputText} 
-          placeholder={'Email'}
-          placeholderTextColor={'#fff'} 
-          underlineColorAndroid={'#fff'} />
-      </View>
-      <View>
-          <TextInput style= {styles.inputText} 
-          placeholder={'Full name'}
-          placeholderTextColor={'#fff'} 
-          underlineColorAndroid={'#fff'} />
-      </View>
-      <View>
-          <TextInput style= {styles.inputText}
- 
-          placeholder={'Password'}
-          secureTextEntry = {true}
-          placeholderTextColor={'#fff'} 
-          underlineColorAndroid={'#fff'} />
-      </View>
-      <View>
-          <TextInput style= {styles.inputText} 
-          placeholder={'Location'}
-          placeholderTextColor={'#fff'} 
-          underlineColorAndroid={'#fff'} />
-      </View>
-  
-      {/* SIGN IN BUTTON */}
+            {/* HEADER */}
+            <View style = {styles.container}>
+                <Text style = {styles.headText}> UNAGI </Text>     
+            </View>
 
-      <TouchableOpacity style={styles.btnSignIn}> 
-          <Text style={styles.btnText}> Sign in </Text>
-      </TouchableOpacity>
+            {/* All 4 inputs  */}
+            <View>
+                <TextInput style= {styles.inputText} 
+                placeholder={'Email'}
+                placeholderTextColor={'#E59866'}/>
+            </View>
 
-    {/*  TEXT TO LOGIN */}
+            <View>
+                <TextInput style= {styles.inputText} 
+                placeholder={'Full name'}
+                placeholderTextColor={'#E59866'}/>
+            </View>
 
-      <Text  style={styles.loginText}> Have an account? Login </Text>
+            <View>
+                <TextInput style= {styles.inputText}
+                placeholder={'Password'}
+                secureTextEntry = {true}
+                placeholderTextColor={'#E59866'}/>
+            </View>
 
-    </View>
-    </ImageBackground> 
-  )
-}
+            <View>
+                <TextInput style= {styles.inputText} 
+                placeholder={'Company'}
+                placeholderTextColor={'#E59866'} />
+            </View>
+        
+            {/* SIGN UP BUTTON */}
+
+            <TouchableOpacity style={styles.btnSignUp}> 
+                <Text style={styles.btnText}> Sign in </Text>
+            </TouchableOpacity>
+
+            {/*  TEXT TO LOGIN */}
+            <TouchableOpacity onPress = {() => {
+                const {navigation} = this.props;
+                navigation.navigate('UserLoginPage')
+              }}>
+              <Text  style={styles.loginText}> Have an account? Login </Text>
+            </TouchableOpacity>
+            
+          </SafeAreaView> 
+        </View>
+      </ImageBackground> 
+    )
+  }
 }
 
 const styles = StyleSheet.create({
+
   container: {
+    flex: 1,
     alignItems: 'center'
   },
-  headText:{
+
+  headText: {
     paddingTop:100,
     paddingBottom: 50,
-    color: '#fff',
+    color: '#E59866',
     fontSize: 30,
-    fontWeight: 'bold',
+    fontFamily: "Futura",
     marginTop: 10,
-    opacity: 0.5
-    
   },
 
-  bgContainer:{
+  bgContainer: {
     flex:1,
-    height: null,
     width: null,
+    height: null,
     justifyContent: 'center',
     alignItems: 'center',
-    
   },
-
-  loginText: {
-      color:'#fff',
-      textAlign:"center",
-      marginTop: 120,
-      fontSize: 16 
-      
-  },
-
 
   inputText:{
     marginBottom: 20,
     height:45,
-    fontSize: 16, 
-    paddingLeft: 35,
-    color: '#fff',
-    marginHorizontal: 25
+    borderBottomWidth: 1,
+    borderBottomColor: '#E59866',
+    fontSize: 18, 
+    color: '#E59866',
+    textAlignVertical: 'top',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    width: 300
   },
-  btnSignIn:{
-      height:55,
-      borderRadius: 25,
-      backgroundColor: '#ffa477',
-      justifyContent: 'center',
-      width: 330,
-      marginLeft: 30,
-      marginTop: 40
-  },
-  btnText:{
-    color: '#000',
-    fontSize: 30,
-    fontWeight: 'bold',
-    textAlign: 'center'
 
+  btnSignUp:{
+    height:50,
+    borderRadius: 25,
+    backgroundColor: '#000000',
+    justifyContent: 'center',
+    width: 330,
+    marginTop: 30
+  },
+
+  btnText:{
+    color: '#E59866',
+    fontSize: 30,
+    fontFamily: "Futura",
+    textAlign: 'center'
+  },
+
+  loginText: {
+    color:'#E59866',
+    textAlign:"center",
+    fontFamily: "Avenir",
+    marginBottom: 10,
+    fontSize: 16 
   },
 })
 

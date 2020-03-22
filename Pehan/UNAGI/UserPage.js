@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
-import{ View, Text, SafeAreaView, StyleSheet, ImageBackground, TextInput, TouchableOpacity, } from 'react-native';
+import{ View, Text, SafeAreaView, StyleSheet, ImageBackground, TouchableOpacity, } from 'react-native';
 import vegBg from './images/background.jpg';
 
 import ExporterSignIn from './ExportSignIn';
@@ -61,17 +61,15 @@ const App = () => {
     <NavigationContainer>
         <Stack.Navigator>
 
-          <Stack.Screen name="Home" component={UserPage} />
-          <Stack.Screen name="ExporterSignUpPage" component={ExporterSignIn} />
-          <Stack.Screen name="FarmerSignUpPage" component={FarmerSignIn} />
-          <Stack.Screen name="UserLoginPage" component={LoginPage} />
+          <Stack.Screen name="Home" component={UserPage} options={{ headerShown: false }}/>
+          <Stack.Screen name="ExporterSignUpPage" component={ExporterSignIn} options={{ headerShown: false }}/>
+          <Stack.Screen name="FarmerSignUpPage" component={FarmerSignIn} options={{ headerShown: false }}/>
+          <Stack.Screen name="UserLoginPage" component={LoginPage} options={{ headerShown: false }}/>
 
         </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-
 
 const styles = StyleSheet.create({
 
@@ -80,7 +78,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
 
-  headText:{
+  headText: {
     paddingTop:100,
     paddingBottom: 50,
     color: '#E59866',
@@ -89,14 +87,16 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
 
-  bgContainer:{
-    height: null,
+  bgContainer: {
+    flex:1,
     width: null,
+    height: null,
+    justifyContent: 'center',
     alignItems: 'center',
   },
 
-  button:{
-    height:55,
+  button: {
+    height:50,
     borderRadius: 25,
     backgroundColor: '#000000',
     justifyContent: 'center',
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     marginTop: 30
   },
 
-  btnText:{
+  btnText: {
     color: '#E59866',
     fontSize: 30,
     fontFamily: "Futura",
@@ -112,13 +112,14 @@ const styles = StyleSheet.create({
   },
 
   loginText: {
-      color:'#E59866',
-      textAlign:"center",
-      marginTop: 40,
-      fontFamily: "Avenir",
-      marginBottom: 10,
-      fontSize: 16 
-  }
+    color:'#E59866',
+    textAlign:"center",
+    marginTop: 40,
+    fontFamily: "Avenir",
+    marginBottom: 10,
+    fontSize: 16 
+  },
+
 })
 
 export default App;
