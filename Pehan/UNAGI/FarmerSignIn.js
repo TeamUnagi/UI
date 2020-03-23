@@ -50,7 +50,7 @@ class FarmerSignIn extends Component {
 
             <View>
                 <TextInput style= {styles.inputText} 
-                placeholder={'Company'}
+                placeholder={'Location'}
                 placeholderTextColor={'#E59866'} />
             </View>
         

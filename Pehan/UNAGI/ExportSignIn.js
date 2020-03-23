@@ -33,14 +33,14 @@ class ExporterSignIn extends Component {
               <TextInput style= {styles.inputText} 
                 placeholder={'Email'}
                 placeholderTextColor={'#E59866'} 
-                underlineColorAndroid={'#E59866'} />
+                 />
             </View>
 
             <View>
                 <TextInput style= {styles.inputText} 
                 placeholder={'Full name'}
                 placeholderTextColor={'#E59866'} 
-                underlineColorAndroid={'#E59866'} />
+                 />
             </View>
 
             <View>
@@ -48,14 +48,14 @@ class ExporterSignIn extends Component {
                 placeholder={'Password'}
                 secureTextEntry = {true}
                 placeholderTextColor={'#E59866'} 
-                underlineColorAndroid={'#E59866'} />
+                 />
             </View>
 
             <View>
                 <TextInput style= {styles.inputText} 
                 placeholder={'Company'}
                 placeholderTextColor={'#E59866'} 
-                underlineColorAndroid={'#E59866'} />
+                 />
             </View>
 
             {/* SIGN UP BUTTON */}
