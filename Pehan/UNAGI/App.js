@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 
 import UserPage from './UserPage.js'
+import contactPage from './contactPage.js';
 
-class uiApp extends Component {
+
+class App extends Component {
 
   render() {
     return (
 
-       <UserPage />
+       <contactPage />
     )
   }
 }
 
-export default uiApp ;
+export default App ;
