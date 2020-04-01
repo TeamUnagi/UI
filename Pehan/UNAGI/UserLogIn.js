@@ -1,8 +1,46 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 import{ View,Text, StyleSheet, ImageBackground, SafeAreaView, TextInput, TouchableOpacity, } from 'react-native';
 import vegBg from './images/background.jpg';
 
 class UserLogin extends Component {
+  constructor(props){
+    super(props)
+    this.state={
+        Username:'',
+        Password:'',
+        success:''
+    };
+  }
+  submit=() => {
+    if(Object.keys(this.state.Username).length==0){
+      alert("Please enter your Username")
+      this.setState({success:"notsuccess"})
+    }
+    if(Object.keys(this.state.Password).length==0){
+      alert("Please enter your Password")
+      this.setState({success:"notsuccess"})
+    }
+    if(Object.keys(this.state.success).length==0){
+      const URL="http://10.0.2.2:4000/userLogin"
+      const loginconfirm = async () => {
+        try {
+          return await axios.post(URL,this.state)
+          } catch (error) {
+            console.error(error)
+          }
+        }
+        const getloginconfirm = async () => {
+        const confirm = await loginconfirm()
+      
+         if (confirm.data.message=="success") {
+            alert("Successfully logged in")
+           }
+        else{alert("The username does not exist or password does not match the username")}
+         }
+        getloginconfirm();
+    }
+  }
   render() {  
     return (
       <ImageBackground source={vegBg} style= {styles.bgContainer}>
@@ -17,19 +55,23 @@ class UserLogin extends Component {
             {/* All 2 inputs  */}
             <View>
                 <TextInput style= {styles.inputText} 
-                placeholder={'Email'}
-                placeholderTextColor={'#E59866'} />
+                placeholder={'Username'}
+                placeholderTextColor={'#E59866'} 
+                onChangeText={text=>{this.setState({Username:text});this.setState({success:''})}}
+                />
             </View>
             
             <View>
                 <TextInput style= {styles.inputText}
                 placeholder={'Password'}
                 secureTextEntry = {true}
-                placeholderTextColor={'#E59866'} />
+                placeholderTextColor={'#E59866'}
+                onChangeText={text=>{this.setState({Password:text});this.setState({success:''})}}
+                 />
             </View>
       
             {/* SIGN IN BUTTON */}
-            <TouchableOpacity style={styles.btnLogin}> 
+            <TouchableOpacity style={styles.btnLogin} onPress={this.submit}> 
                 <Text style={styles.btnText}> Login </Text>
             </TouchableOpacity>
       
