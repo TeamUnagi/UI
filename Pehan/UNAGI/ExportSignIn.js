@@ -89,9 +89,7 @@ submit=() => {
               <TextInput style= {styles.inputText} 
                 placeholder={'Email'}
                 placeholderTextColor={'#E59866'} 
-                onChangeText={text=>{this.setState({Email:text});this.setState({success:''})}}
-              />
-                 />
+                onChangeText={text=>{this.setState({Email:text});this.setState({success:''})}}/>
             </View>
 
             <View>
@@ -100,8 +98,6 @@ submit=() => {
                 placeholderTextColor={'#E59866'} 
                 onChangeText={text=>{this.setState({Fullname:text});this.setState({success:''})}}
                 />
-                 />
-
             </View>
 
             <View>
@@ -119,7 +115,6 @@ submit=() => {
                 placeholderTextColor={'#E59866'}
                 onChangeText={text=>{this.setState({Username:text});this.setState({success:''})}}
                 />
-                 />
 
             </View>
 
