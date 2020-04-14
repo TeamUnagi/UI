@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-import ContractSendPage from './ContractSendPage.js';
+import ContractCreatePage from './ContractCreatePage.js';
 
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
     return (
 
        
-       <ContractSendPage />
+       <ContractCreatePage />
     )
   }
 }

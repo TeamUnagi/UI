@@ -73,7 +73,7 @@ class ContractSendPage extends Component{
             </View>
 
             <View>
-                <TextInput style= {{borderWidth:1 , borderColor:'black', textAlignVertical: 'top', alignItems: 'center', justifyContent: 'center'}} 
+                <TextInput style= {styles.comment}  
                 placeholder={'Comment:'}
                 placeholderTextColor={'black'} 
                 multiline={true}
@@ -83,7 +83,7 @@ class ContractSendPage extends Component{
 
             
 
-            {/* SIGN UP BUTTON */}
+            {/* Send contract BUTTON */}
             <TouchableOpacity style={styles.btnSignIn}> 
                 <Text style={styles.btnText}> Send contract </Text>
             </TouchableOpacity>
@@ -159,7 +159,14 @@ const styles = StyleSheet.create({
       fontFamily: "Futura",
       textAlign: 'center'
     },
-  
+    
+    comment:{
+      borderWidth:1 , 
+      borderColor:'black', 
+      textAlignVertical: 'top', 
+      alignItems: 'center', 
+      justifyContent: 'center'
+    }
     
   
   })
