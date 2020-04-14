@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import UserPage from './UserPage.js'
-import contactPage from './contactPage.js';
+
+import ContractSendPage from './ContractSendPage.js';
 
 
 class App extends Component {
@@ -9,7 +9,8 @@ class App extends Component {
   render() {
     return (
 
-       <contactPage />
+       
+       <ContractSendPage />
     )
   }
 }
