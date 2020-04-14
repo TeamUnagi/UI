@@ -15,7 +15,7 @@ class ContractCreatePage extends Component{
     return (
       <View>
       <View style = {styles.container}>
-                <Text style = {styles.headText}> Contract </Text>     
+                <Text style = {styles.headText}> User Name </Text>     
             </View>
       
 
@@ -29,56 +29,68 @@ class ContractCreatePage extends Component{
             {/* All 4 inputs  */}
             <View>
               <TextInput style= {styles.inputText} 
-                placeholder={'To:'}
+                placeholder={'User Name:'}
                 placeholderTextColor={'black'} 
                  />
             </View>
 
             <View>
                 <TextInput style= {styles.inputText} 
-                placeholder={'From:'}
+                placeholder={'Email:'}
                 placeholderTextColor={'black'} 
                  />
-            </View>
-
-            <View style={{marginBottom: 20, borderBottomWidth: 1,  borderBottomColor: 'black'}}>
-                <Picker
-                  style={{width:'100%'}}
-                  selectedValue={this.state.PickerValue}
-                  onValueChange={(itemValue,itemIndex) => this.setState({PickerValue 
-                  :itemValue})}
-                 >
-                 
-                   <Picker.Item label="Vegetable Chosen:" value="potato" />
-                   <Picker.Item label="Potato" value="potato" />
-                   <Picker.Item label="Beans" value="beans" />
-                   <Picker.Item label="Carrots" value="carrots" />
-                   <Picker.Item label="Cucumber" value="cucumber" />
-                   <Picker.Item label="Beetroot" value="beetroot" />
-                 </Picker>
             </View>
 
             <View>
                 <TextInput style= {styles.inputText} 
-                placeholder={'End Date:'}
+                placeholder={'Phone Number:'}
                 placeholderTextColor={'black'} 
                  />
             </View>
 
+            
+
             <View>
-              <TextInput style= {styles.inputText} 
-                placeholder={'Weight:'}
+                <TextInput style= {styles.inputText} 
+                placeholder={'Company Name:'}
                 placeholderTextColor={'black'} 
                  />
             </View>
 
-            <View>
-                <TextInput style= {styles.comment}  
-                placeholder={'Comment:'}
-                placeholderTextColor={'black'} 
-                multiline={true}
-                numberOfLines={5}
-                 />
+            
+
+            <View style= {styles.comment}  >
+                <Text style={styles.inputText2}> Previous Contract </Text>
+                <View>
+                    <TextInput style= {styles.inputText3} 
+                    placeholder={''}
+                    placeholderTextColor={'black'} 
+                    />
+                </View>
+                <View>
+                    <TextInput style= {styles.inputText3} 
+                    placeholder={''}
+                    placeholderTextColor={'black'} 
+                    />
+                </View>
+                <View>
+                    <TextInput style= {styles.inputText3} 
+                    placeholder={''}
+                    placeholderTextColor={'black'} 
+                    />
+                </View>
+                <View>
+                    <TextInput style= {styles.inputText3} 
+                    placeholder={''}
+                    placeholderTextColor={'black'} 
+                    />
+                </View>
+                <View>
+                    <TextInput style= {styles.inputText3} 
+                    placeholder={''}
+                    placeholderTextColor={'black'} 
+                    />
+                </View>
             </View>
 
             
@@ -122,7 +134,7 @@ const styles = StyleSheet.create({
       paddingBottom: 20,
       backgroundColor: '#d2691e',
       width: null,
-      height: 600,
+      height: 630,
       justifyContent: 'center',
       alignItems: 'center',
       borderRadius: 25,
@@ -141,7 +153,29 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       width: 300
     },
-  
+    
+    inputText2:{
+        marginBottom: 20,
+        fontSize: 15, 
+        color: 'black',
+        alignSelf: 'center',
+        justifyContent: 'center',
+        
+      },
+
+    inputText3:{
+        marginBottom: 10,
+        borderBottomWidth: 1,
+        borderBottomColor: 'black',
+        height:36,
+        fontSize: 14, 
+        color: 'black',
+        textAlignVertical: 'top',
+        alignSelf: 'flex-start',
+        justifyContent: 'flex-start',
+        width: 225
+     },
+
     btnSignIn:{
       
       alignSelf: 'flex-end',
@@ -150,7 +184,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#000000',
       justifyContent: 'center',
       width: 130,
-      marginTop: 100
+      marginTop: 30
     },
   
     btnText:{

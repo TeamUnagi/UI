@@ -49,12 +49,12 @@ class ContractSendPage extends Component{
                   :itemValue})}
                  >
                  
-                   <Picker.Item label="Vegetable Chosen:" value="potato" />
-                   <Picker.Item label="Potato" value="potato" />
-                   <Picker.Item label="Beans" value="beans" />
-                   <Picker.Item label="Carrots" value="carrots" />
-                   <Picker.Item label="Cucumber" value="cucumber" />
-                   <Picker.Item label="Beetroot" value="beetroot" />
+                   <Picker.Item label="Vegetable Chosen:" value="potato" color="black" />
+                   <Picker.Item label="Potato" value="potato" color="#696969" />
+                   <Picker.Item label="Beans" value="beans" color="#696969" />
+                   <Picker.Item label="Carrots" value="carrots" color="#696969" />
+                   <Picker.Item label="Cucumber" value="cucumber" color="#696969" />
+                   <Picker.Item label="Beetroot" value="beetroot" color="#696969" />
                  </Picker>
             </View>
 
