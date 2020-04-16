@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 
 import ContractSendPage from './ContractSendPage.js';
-
-
+import UserPage from './UserPage.js'
+import FarmerProfDisplay from './FarmerProfDisplay'
 
 class App extends Component {
 
@@ -11,7 +11,7 @@ class App extends Component {
     return (
 
        
-       <ContractSendPage />
+       <FarmerProfDisplay />
     )
   }
 }
