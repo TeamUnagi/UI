@@ -10,11 +10,11 @@ class FarmerProfDisplay extends Component {
         super(props)
         this.change();
         this.state={
-           Name:"LilHobs",
-           Email:"dhanushsivasamyg@gmail.com",
-           Number:"0768077731",
+           Name:"",
+           Email:"",
+           Number:"",
            FarmerId:0,
-           Description:"I am hardworking farmer with 12+ years of experience",
+           Description:"",
            exporterName:{}
         };
       }
