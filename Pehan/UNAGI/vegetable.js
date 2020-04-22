@@ -1,36 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { View , Text, StyleSheet, Image  } from 'react-native';
+import { View , Text, StyleSheet, TouchableOpacity  } from 'react-native';
 
+import VegetableChosen from './VegetableChosen'
 import pic from './potato.jpeg'
 
 class vegetable extends React.Component {
 
+    static propTypes = {
+        vegetableName: PropTypes.string.isRequired,
+        trendNumber: PropTypes.string.isRequired,
+        importValue: PropTypes.number.isRequired,
+        importPercentage: PropTypes.number.isRequired,
+    };  
+
+    submit(name) {
+        VegetableChosen.setName(name);
+    }
 
     render() {
         
         return (
         
-        <View style = {styles.Vegetable}>
+    <TouchableOpacity onPress={this.submit.bind(this, this.props.vegetableName)}>    
+        <View  style = {styles.Vegetable}>
            
            <Text style = {styles.vegInfo}>
-            <Image style={styles.image} source={pic}/>
-            Vegetable Name        
+            {this.props.vegetableName}       
             </Text>
 
            
             <View style={styles.infoVal}>
-                <Text style={styles.infoNumber1}>20</Text>
-                <Text style={styles.infoNumber2}>30</Text>
+                <Text style={styles.infoNumber1}>{this.props.importPercentage}</Text>
+                <Text style={styles.infoNumber2}>{this.props.importValue}</Text>
                
-                <Text style={styles.infoNumber3}>#1</Text>
+                <Text style={styles.infoNumber3}>{this.props.trendNumber}</Text>
 
             </View>
 
             <View style={styles.infoBox}>
 
-                <Text style={styles.info}>Production</Text>
+                <Text style={styles.info}>Percentage</Text>
                 <Text style={styles.info}>Imports</Text>
                
                 <Text style={styles.infoTrend}>Trending</Text>
@@ -39,6 +50,7 @@ class vegetable extends React.Component {
         
         
         </View>
+    </TouchableOpacity>    
         )
     }
 }
@@ -101,7 +113,7 @@ const styles = StyleSheet.create({
 
     infoTrend:{
         
-        marginVertical: -25,
+        marginVertical: -22,
         marginHorizontal:35,
         fontSize: 15,
         textAlign: 'center'
@@ -109,14 +121,14 @@ const styles = StyleSheet.create({
 
     infoNumber1:{
         position: 'relative',
-        left:38,
+        left:30,
         fontSize: 12,
         textAlign: 'center'
     },
 
     infoNumber2:{
         position: 'relative',
-        left:137,
+        left:120,
         fontSize: 12,
         textAlign: 'center'
     },
@@ -124,9 +136,9 @@ const styles = StyleSheet.create({
 
     infoNumber3:{
         position: 'relative',
-        top:-25,
-        left:240,
-        fontSize: 16,
+        top:-23,
+        left:210,
+        fontSize: 20,
         textAlign: 'center',
         fontFamily: 'bold'
     }

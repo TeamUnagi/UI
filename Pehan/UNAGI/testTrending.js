@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { Component }  from 'react';
+import PropTypes from 'prop-types';
+import axios from 'axios';
+import VegetableInfo from './VegetableInfo';
 
 import { View , Text, StyleSheet,  ScrollView, Dimensions , TouchableOpacity, Image  } from 'react-native';
 import SlidingPanel from 'react-native-sliding-up-down-panels';
@@ -10,20 +13,71 @@ import SwipeVegetable from './swipeVegetable';
 const { width, height } = Dimensions.get('window');
 
 
-class testTrending extends React.Component {
+class testTrending extends Component {
 
-    render(navigation) {
-        
+    constructor(props){
+        super(props)
+        this.state={
+           vegetableInfo:VegetableInfo.getName(),
+        };
+      }
+      componentDidMount(){    
+        const URL="http://10.0.2.2:4000/VegetableImports"
+        const trends = async () => {
+            try {
+               return await axios.get(URL)   
+              } catch (error) {
+                console.log(error)
+              }
+            }
+            const getVegetableData = async () => {
+                const confirm = await trends();
+                this.setState({vegetableInfo:confirm.data});
+                console.log(this.state.vegetableInfo.length)
+             }
+    
+             getVegetableData();
+    }
+/*constructor(props){
+  super(props)
+  this.state={
+     vegetableInfo:
+       [
+              {"Name":"Sentra", "Imports":4 , "Percentage" : 20},
+              {"Name":"Maxima", "Imports":4 , "Percentage" : 20},
+              {"Name":"Skyline", "Imports":2 , "Percentage" : 20},
+              {"Name":"Sentra", "Imports":4 , "Percentage" : 20},
+              {"Name":"Maxima", "Imports":4 , "Percentage" : 20},
+              {"Name":"Skyline", "Imports":2 , "Percentage" : 20}
+          ]
+      
+  
+  };
+} */
 
-        return (
-              
+    render() {
+        var topFiveVegetables=[];    
+        for (let i=0;i<5;i++){
+            topFiveVegetables.push(
+            <View key={i}> 
+               <Veg vegetableName={this.state.vegetableInfo[i].Vegetable} trendNumber={"#" + (i+1)}  importValue={this.state.vegetableInfo[i].Import} importPercentage = {this.state.vegetableInfo[i].Percentage}/>
+            </View>
+          )
+        }  
+
+        var restVegetables=[];    
+        for (let i=5;i<this.state.vegetableInfo.length;i++){
+            restVegetables.push(
+            <View key={i}> 
+               <SwipeVegetable vegetableName={this.state.vegetableInfo[i].Vegetable} trendNumber={"#" + (i+1)}  importValue={this.state.vegetableInfo[i].Import} importPercentage = {this.state.vegetableInfo[i].Percentage}/>
+            </View>
+          )
+        }  
+        return (  
             <View style={styles.container}>
                 <View style = {styles.header}>
 
-                <TouchableOpacity onPress = {() => {
-                    const {navigation} = this.props;
-                    navigation.openDrawer('SideBar')
-              }}>
+                <TouchableOpacity>
                         <Image
                             source={Ham}
                             style={{ position: 'relative' , width: 40, height: 40, top:10, }}
@@ -41,12 +95,11 @@ class testTrending extends React.Component {
 
                 <ScrollView>    
                 <View style = {styles.vegContainer}>    
-                
-                    <Veg/>
-                    <Veg/>
-                    <Veg/>
-                    <Veg/>
-                    <Veg/>
+
+                    <ScrollView>
+                        {topFiveVegetables}
+                    </ScrollView>
+                    
                       
             </View>
             </ScrollView>
@@ -62,12 +115,10 @@ class testTrending extends React.Component {
                 slidingPanelLayout = { () =>
                 <View style={styles.slidingPanelLayoutStyle}>
                      <View style = {styles.swipeVegContainer}>    
-                
-                        <SwipeVegetable/>
-                        <SwipeVegetable/>
-                        <SwipeVegetable/>
-                        <SwipeVegetable/>
-                        <SwipeVegetable/>
+                     <ScrollView>
+                     {restVegetables}
+                     </ScrollView>
+ 
                 
                 </View>
             </View>
@@ -80,6 +131,7 @@ class testTrending extends React.Component {
             
         )
     }
+    
 }
 const styles = StyleSheet.create({
     container: {

@@ -6,7 +6,12 @@ import { View , Text, StyleSheet, Image  } from 'react-native';
 import pic from './potato.jpeg'
 
 class swipeVegetable extends React.Component {
-
+    static propTypes = {
+        vegetableName: PropTypes.string.isRequired,
+        trendNumber: PropTypes.number.isRequired,
+        importValue: PropTypes.number.isRequired,
+        importPercentage: PropTypes.string.isRequired,
+    };  
 
     render() {
         
@@ -15,21 +20,20 @@ class swipeVegetable extends React.Component {
         <View style = {styles.Vegetable}>
            
            <Text style = {styles.vegInfo}>
-            <Image style={styles.image} source={pic}/>
-            Vegetable Name        
+            {this.props.vegetableName}       
             </Text>
 
            
             <View style={styles.infoVal}>
-            <Text style={styles.infoNumber1}>20</Text>
-                <Text style={styles.infoNumber2}>30</Text>
-                <Text style={styles.infoNumber3}>#1</Text>
+                <Text style={styles.infoNumber1}>{this.props.importPercentage}</Text>
+                <Text style={styles.infoNumber2}>{this.props.importValue}</Text>
+                <Text style={styles.infoNumber3}>{this.props.trendNumber}</Text>
 
             </View>
 
             <View style={styles.infoBox}>
 
-                <Text style={styles.info}>Production</Text>
+                <Text style={styles.info}>Percentage</Text>
                 <Text style={styles.info}>Imports</Text>
                 <Text style={styles.infoTrend}>Trending</Text>
 
@@ -55,7 +59,6 @@ const styles = StyleSheet.create({
         shadowOpacity:0.5,
         backgroundColor: 'orange',
         borderRadius: 10,
-        width: 400,
         height:100,
         padding:10,
         margin:15,
@@ -71,7 +74,7 @@ const styles = StyleSheet.create({
     },
 
     image:{
-        width:40,
+        width:30,
         height:40,
         borderRadius:20
     },
@@ -81,13 +84,6 @@ const styles = StyleSheet.create({
     paddingLeft: 20
     },
 
-infoTrend:{
-        
-        marginVertical: -25,
-        marginHorizontal:35,
-        fontSize: 15,
-        textAlign: 'center'
-    },
 
 
     infoVal:{
@@ -107,7 +103,7 @@ infoTrend:{
 
     infoTrend:{
         
-        marginVertical: -25,
+        marginVertical: -22,
         marginHorizontal:35,
         fontSize: 15,
         textAlign: 'center'
@@ -115,14 +111,14 @@ infoTrend:{
 
     infoNumber1:{
         position: 'relative',
-        left:38,
+        left:30,
         fontSize: 12,
         textAlign: 'center'
     },
 
     infoNumber2:{
         position: 'relative',
-        left:137,
+        left:120,
         fontSize: 12,
         textAlign: 'center'
     },
@@ -130,14 +126,12 @@ infoTrend:{
 
     infoNumber3:{
         position: 'relative',
-        top:-25,
-        left:240,
-        fontSize: 16,
+        top:-23,
+        left:210,
+        fontSize: 20,
         textAlign: 'center',
         fontFamily: 'bold'
     }
-
-    
 
    
 })
