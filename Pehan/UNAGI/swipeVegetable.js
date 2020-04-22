@@ -127,9 +127,8 @@ const styles = StyleSheet.create({
     infoNumber3:{
         position: 'relative',
         top:-23,
-        left:210,
+        left:205,
         fontSize: 20,
-        textAlign: 'center',
         fontFamily: 'bold'
     }
 

@@ -23,9 +23,9 @@ class vegetable extends React.Component {
         
         return (
         
-    <TouchableOpacity onPress={this.submit.bind(this, this.props.vegetableName)}>    
+     
         <View  style = {styles.Vegetable}>
-           
+        <TouchableOpacity onPress={this.submit.bind(this, this.props.vegetableName)}>      
            <Text style = {styles.vegInfo}>
             {this.props.vegetableName}       
             </Text>
@@ -48,9 +48,9 @@ class vegetable extends React.Component {
 
             </View>
         
-        
+            </TouchableOpacity>
         </View>
-    </TouchableOpacity>    
+        
         )
     }
 }

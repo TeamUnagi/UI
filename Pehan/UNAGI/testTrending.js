@@ -75,22 +75,7 @@ class testTrending extends Component {
         }  
         return (  
             <View style={styles.container}>
-                <View style = {styles.header}>
-
-                <TouchableOpacity>
-                        <Image
-                            source={Ham}
-                            style={{ position: 'relative' , width: 40, height: 40, top:10, }}
-                        />
-
-
-        </TouchableOpacity>
-
-
-                    <Text style = {styles.heading}>Trending</Text>
-
-                    
-                </View>
+            
                 
 
                 <ScrollView>    
