@@ -24,8 +24,8 @@ class Map extends Component {
     this.mapMarkers = {
       markers: [{
         location: "Kandy",
-        latitude: 7.1,
-        longitude: 80.1
+        latitude: 7.2906,
+        longitude: 80.6337
       },
       {
         location: "Colombo",
@@ -35,13 +35,12 @@ class Map extends Component {
     },
     this.state = {
       show: false,
-      Location:"Kandy",
+      Location:"",
       farmers: []
     }
   }
   changeFarmer(name){
-    console.log(name)
-    this.setState({Location:name})
+    this.state.Location=name
     const URL="http://10.0.2.2:4000/MapTable"
         const table = async () => {
             try {
