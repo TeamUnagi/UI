@@ -21,10 +21,12 @@ class Map extends Component {
     super()
     this.mapMarkers = {
       markers: [{
+        location: "kandy",
         latitude: 7.1,
         longitude: 80.1
       },
       {
+        location: "Katugastota",
         latitude: 7.3,
         longitude: 80.64  
       }]
@@ -71,7 +73,8 @@ class Map extends Component {
               key={index}
               coordinate={marker} 
 
-              onPress={() => {
+              onPress = {() => {
+                console.log(marker.location)
                 this.setState({show: true})
               }}>
             
