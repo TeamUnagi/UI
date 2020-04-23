@@ -6,7 +6,7 @@ import{ View, Text, StyleSheet, TextInput, Picker, TouchableOpacity, SafeAreaVie
 class ContractCreatePage extends Component{
   constructor(){
     super();
-    this.state={
+    this.mapMarkers={
       PickerValue:''  
     } 
     
