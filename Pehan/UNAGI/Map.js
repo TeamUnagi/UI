@@ -2,27 +2,24 @@ import React, { Component } from 'react';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
-
-import ContractPage from './ContractCreatePage';
-
+import axios from 'axios';
+import ContractPage from './FarmerProfDisplay';
+import VegetableChosen from './VegetableChosen';
 import { 
   View,
   StyleSheet,
   Modal,
   FlatList,
-  TouchableHighlight,
-  Text,
-  ImageBackground,
-  TextInput,
-  TouchableOpacity,
-  SafeAreaView
+  Text
 } from 'react-native';  
-   
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import FarmerChosen from './FarmerChosen'
 
 class Map extends Component {
 
   constructor() {
     super()
+    this.changeFarmer();
     this.mapMarkers = {
       markers: [{
         title: 'Lil Suresh',
@@ -41,25 +38,28 @@ class Map extends Component {
         },  
       }]
     },
-
     this.state = {
-      show: false
-    },
-
-    this.farmerData = {
-      farmers: [
-        {name: 'Lil Suresh', key: '1'},
-        {name: 'Big Suresh', key: '2'},
-        {name: 'Not Suresh', key: '3'},
-        {name: 'Yo Suresh', key: '4'},
-        {name: 'Woot Suresh', key: '5'},
-        {name: 'Root Suresh', key: '6'},
-        {name: 'Soot Suresh', key: '7'},
-        {name: 'Hoot Suresh', key: '8'},
-        {name: 'Coot Suresh', key: '9'},
-        {name: 'Noot Suresh', key: '10'},
-      ]
+      show: false,
+      Location:"Kandy",
+      farmers: []
     }
+  }
+  changeFarmer(){
+    const URL="http://10.0.2.2:4000/MapTable"
+        const table = async () => {
+            try {
+              var loc={Location:"Kandy"}
+               return await axios.post(URL,loc)   
+              } catch (error) {
+                console.log(error)
+              }
+            }
+            const setTable = async () => {
+                const confirm = await table();
+                this.setState({farmers:confirm.data});
+                console.log(this.state.farmers)
+             }
+             setTable();
   }
 
   render(){
@@ -102,11 +102,17 @@ class Map extends Component {
             <View style = {styles.popup}>
               <FlatList
 
-                data = {this.farmerData.farmers}
-                renderItem = {({ item }) => (
-                  <Text style = {styles.item}>{item.name}</Text>
+                data = {this.state.farmers}
+                renderItem = {({ item}) => (
+                  <TouchableOpacity style = {styles.item} onPress={()=>
+                    {
+                      FarmerChosen.setId(item.id);
+                      FarmerChosen.setName(item.name);
+                     //Once clicked here go to FarmerProfDisplay 
+                    }
+                  }><Text>{item.Name}</Text></TouchableOpacity>
                 )}
-
+                keyExtractor={(item, index) => index.toString()}
               />
             </View>
           </View>

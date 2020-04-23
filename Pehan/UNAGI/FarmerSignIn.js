@@ -11,7 +11,7 @@ import{ View,
       } from 'react-native';
       
 import vegBg from './images/background.jpg';
-
+import FarmerChoosingLoc from './FarmerChoosingLoc';
 class FarmerSignIn extends Component {
   constructor(props){
     super(props)
@@ -59,6 +59,8 @@ submit=() => {
     
       if (confirm.data.message=="success") {
         alert("Successfully added")
+        FarmerChoosingLoc.setLoc(this.state.Location)
+        FarmerChoosingLoc.setName(this.state.Username)
        }
     else if(confirm.data.message=="user"){
       alert("This Username is already in used")

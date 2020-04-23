@@ -1,24 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { View , Text, StyleSheet, Image  } from 'react-native';
+import { View , Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-import pic from './potato.jpeg'
+import VegetableChosen from './VegetableChosen'
 
 class swipeVegetable extends React.Component {
     static propTypes = {
         vegetableName: PropTypes.string.isRequired,
-        trendNumber: PropTypes.number.isRequired,
+        trendNumber: PropTypes.string.isRequired,
         importValue: PropTypes.number.isRequired,
-        importPercentage: PropTypes.string.isRequired,
+        importPercentage: PropTypes.number.isRequired,
     };  
+    submit(name) {
+        VegetableChosen.setName(name);
+        console.log(VegetableChosen.getName());
+        //Should go to Map.js
+    }
 
     render() {
         
         return (
         
-        <View style = {styles.Vegetable}>
-           
+     
+        <View  style = {styles.Vegetable}>
+        <TouchableOpacity onPress={this.submit.bind(this, this.props.vegetableName)}>      
            <Text style = {styles.vegInfo}>
             {this.props.vegetableName}       
             </Text>
@@ -27,6 +33,7 @@ class swipeVegetable extends React.Component {
             <View style={styles.infoVal}>
                 <Text style={styles.infoNumber1}>{this.props.importPercentage}</Text>
                 <Text style={styles.infoNumber2}>{this.props.importValue}</Text>
+               
                 <Text style={styles.infoNumber3}>{this.props.trendNumber}</Text>
 
             </View>
@@ -35,11 +42,12 @@ class swipeVegetable extends React.Component {
 
                 <Text style={styles.info}>Percentage</Text>
                 <Text style={styles.info}>Imports</Text>
+               
                 <Text style={styles.infoTrend}>Trending</Text>
 
             </View>
         
-        
+            </TouchableOpacity>
         </View>
         )
     }

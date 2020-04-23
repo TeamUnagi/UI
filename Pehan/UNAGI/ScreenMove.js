@@ -7,6 +7,7 @@ import TestTrending from './testTrending';
 function HomeScreen() {
   return (
     <TestTrending/>
+    //So here TestTrending is getting displayed
   );
 }
 

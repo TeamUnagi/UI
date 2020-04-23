@@ -1,5 +1,4 @@
 import React, { Component }  from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 import VegetableInfo from './VegetableInfo';
 
@@ -7,7 +6,6 @@ import { View , Text, StyleSheet,  ScrollView, Dimensions , TouchableOpacity, Im
 import SlidingPanel from 'react-native-sliding-up-down-panels';
 
 import Veg from './vegetable';
-import Ham from './ham.jpeg'
 import SwipeVegetable from './swipeVegetable';
 
 const { width, height } = Dimensions.get('window');
@@ -38,24 +36,7 @@ class testTrending extends Component {
     
              getVegetableData();
     }
-/*constructor(props){
-  super(props)
-  this.state={
-     vegetableInfo:
-       [
-              {"Name":"Sentra", "Imports":4 , "Percentage" : 20},
-              {"Name":"Maxima", "Imports":4 , "Percentage" : 20},
-              {"Name":"Skyline", "Imports":2 , "Percentage" : 20},
-              {"Name":"Sentra", "Imports":4 , "Percentage" : 20},
-              {"Name":"Maxima", "Imports":4 , "Percentage" : 20},
-              {"Name":"Skyline", "Imports":2 , "Percentage" : 20}
-          ]
-      
-  
-  };
-} */
-
-    render() {
+        render() {
         var topFiveVegetables=[];    
         for (let i=0;i<5;i++){
             topFiveVegetables.push(

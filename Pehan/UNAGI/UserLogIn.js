@@ -35,6 +35,11 @@ class UserLogin extends Component {
       
          if (confirm.data.message=="success") {
             alert("Successfully logged in")
+            UserInfo.setName(confirm.data.name);
+            UserInfo.setId(confirm.data.id);
+            if(confirm.data.category=="Exporter"){
+              //Should go to ScreenMove.js
+            }else{}
            }
         else{alert("The username does not exist or password does not match the username")}
          }
