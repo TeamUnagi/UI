@@ -12,9 +12,6 @@ import{ View,
       
 import vegBg from './images/background.jpg';
 
-
-
-
 class ExporterSignIn extends Component {
   constructor(props){
     super(props)

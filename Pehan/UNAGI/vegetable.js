@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { View , Text, StyleSheet, TouchableOpacity  } from 'react-native';
 
 import VegetableChosen from './VegetableChosen'
-import pic from './potato.jpeg'
+
 
 class vegetable extends React.Component {
 
@@ -17,6 +17,7 @@ class vegetable extends React.Component {
 
     submit(name) {
         VegetableChosen.setName(name);
+        //Should go to Map.js
     }
 
     render() {

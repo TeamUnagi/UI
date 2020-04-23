@@ -40,8 +40,12 @@ class UserLogin extends Component {
             UserInfo.setName(confirm.data.name);
             UserInfo.setId(confirm.data.id);
             if(confirm.data.category=="Exporter"){
+<<<<<<< HEAD
               const {navigation} = this.props;
               navigation.navigate('ScreenMovePage')
+=======
+              //Should go to ScreenMove.js
+>>>>>>> 3e897aa581c61cd46859c274b879f6f78f4beb59
             }else{}
            }
         else{alert("The username does not exist or password does not match the username")}

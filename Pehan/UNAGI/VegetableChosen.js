@@ -1,15 +1,11 @@
-
-import Vegetable from './vegetable';
-
 var VegetableChosen = (() => {
-    
+    var Name=""
     var getName = function() {
       return Name;    
     };
   
     var setName = function(name) {
       Name = name;    
-      console.log(Name) 
     };
 
     return {

@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
-
-import ContractSendPage from './ContractSendPage.js';
-import UserPage from './UserPage.js'
-import FarmerProfDisplay from './FarmerProfDisplay'
-import TestTrending from './testTrending'
-import Maps from './Map'
+import Map from './Map'
+import ScreenMove from './ScreenMove'
 class App extends Component {
 
   render() {
     return (
+<<<<<<< HEAD
        <UserPage/>
+=======
+       <Map/>
+>>>>>>> 3e897aa581c61cd46859c274b879f6f78f4beb59
     )
   }
 }
