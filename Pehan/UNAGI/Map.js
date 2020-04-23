@@ -4,18 +4,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
 import ContractPage from './ContractCreatePage';
+import FarmerProfilePage from './FarmerProfDisplay';
 
 import { 
   View,
   StyleSheet,
   Modal,
   FlatList,
-  TouchableHighlight,
   Text,
-  ImageBackground,
-  TextInput,
-  TouchableOpacity,
-  SafeAreaView
 } from 'react-native';  
    
 
@@ -25,20 +21,12 @@ class Map extends Component {
     super()
     this.mapMarkers = {
       markers: [{
-        title: 'Lil Suresh',
-        description: "Wooot",
-        coordinates: {
-          latitude: 7.1,
-          longitude: 80.1
-        },
+        latitude: 7.1,
+        longitude: 80.1
       },
       {
-        title: 'Montag',
-        description: "Rooot",
-        coordinates: {
-          latitude: 7.3,
-          longitude: 80.64
-        },  
+        latitude: 7.3,
+        longitude: 80.64  
       }]
     },
 
@@ -80,9 +68,8 @@ class Map extends Component {
         >
           {this.mapMarkers.markers.map((marker, index) => ( 
             <MapView.Marker
-              key={index} 
-              coordinate={marker.coordinates} 
-              title={marker.title}
+              key={index}
+              coordinate={marker} 
 
               onPress={() => {
                 this.setState({show: true})
@@ -104,7 +91,16 @@ class Map extends Component {
 
                 data = {this.farmerData.farmers}
                 renderItem = {({ item }) => (
-                  <Text style = {styles.item}>{item.name}</Text>
+                  <Text style = {styles.item} onPress={() => {
+                    
+                    // Hide the modal
+                    this.setState({show: false})
+                    // Go to the clicked farmer's profile display page
+                    const {navigation} = this.props;
+                    navigation.navigate('FarmerProfilePage')
+                  }}>
+                    {item.name}
+                  </Text>
                 )}
 
               />
@@ -124,6 +120,7 @@ const Appster = () => {
         <Stack.Navigator>
 
           <Stack.Screen name="MapPage" component={Map} options={{ headerShown: false }}/>
+          <Stack.Screen name="FarmerProfilePage" component={FarmerProfilePage} options={{ headerShown: false }}/>
           <Stack.Screen name="ContractPage" component={ContractPage} options={{ headerShown: false }}/>
 
         </Stack.Navigator>
@@ -169,9 +166,9 @@ const styles = StyleSheet.create({
     textAlignVertical: "center",
     paddingLeft: 5,
     width: '100%',
+    marginBottom: 3,
     fontSize: 18,
-    fontFamily: "Avenir",
-    height: 50,
+    height: 40,
   },
 
 }); 
