@@ -3,7 +3,7 @@ import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import ContractPage from './ContractCreatePage';
+import ContractPage from './ContractSendPage';
 import FarmerProfilePage from './FarmerProfDisplay';
 
 import { 
