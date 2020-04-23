@@ -10,4 +10,4 @@ import Test from './testTrending'
 import ScreenMove from './ScreenMove'
 import Map from './Map'
 
-AppRegistry.registerComponent(appName, () => Map);
+AppRegistry.registerComponent(appName, () => App);

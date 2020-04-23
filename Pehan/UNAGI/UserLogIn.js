@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import{ View,Text, StyleSheet, ImageBackground, SafeAreaView, TextInput, TouchableOpacity, } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import vegBg from './images/background.jpg';
+import UserInfo from './UserInfo';
 
 class UserLogin extends Component {
   constructor(props){
@@ -35,13 +37,19 @@ class UserLogin extends Component {
       
          if (confirm.data.message=="success") {
             alert("Successfully logged in")
+            UserInfo.setName(confirm.data.name);
+            UserInfo.setId(confirm.data.id);
+            if(confirm.data.category=="Exporter"){
+              const {navigation} = this.props;
+              navigation.navigate('ScreenMovePage')
+            }else{}
            }
         else{alert("The username does not exist or password does not match the username")}
          }
         getloginconfirm();
     }
   }
-  render() {  
+  render(navigation) {  
     return (
       <ImageBackground source={vegBg} style= {styles.bgContainer}>
         <SafeAreaView>
@@ -90,6 +98,25 @@ class UserLogin extends Component {
     )
   }
 }
+
+/*const Stack = createStackNavigator();
+
+const App = () => {
+  return (
+    <NavigationContainer>
+        <Stack.Navigator>
+
+          <Stack.Screen name="Home" component={UserPage} options={{ headerShown: false }}/>
+          <Stack.Screen name="ExporterSignUpPage" component={ExporterSignIn} options={{ headerShown: false }}/>
+          <Stack.Screen name="FarmerSignUpPage" component={FarmerSignIn} options={{ headerShown: false }}/>
+          <Stack.Screen name="UserLoginPage" component={LoginPage} options={{ headerShown: false }}/>
+          <Stack.Screen name="TrendingPage" component={TestTrending} options={{ headerShown: false }}/>
+
+
+        </Stack.Navigator>
+    </NavigationContainer>
+  );
+} */
 
 const styles = StyleSheet.create({
 
