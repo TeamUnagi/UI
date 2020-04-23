@@ -2,26 +2,17 @@ import React, { Component } from 'react';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
-<<<<<<< HEAD
 import axios from 'axios';
 import ContractPage from './FarmerProfDisplay';
 import VegetableChosen from './VegetableChosen';
-=======
-
 import ContractPage from './ContractSendPage';
 import FarmerProfilePage from './FarmerProfDisplay';
 
->>>>>>> 340944b37b817321da0ea8b4625088d71931163f
 import { 
   View,
   StyleSheet,
   Modal,
   FlatList,
-<<<<<<< HEAD
-  Text
-=======
-  Text,
->>>>>>> 340944b37b817321da0ea8b4625088d71931163f
 } from 'react-native';  
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import FarmerChosen from './FarmerChosen'
@@ -107,7 +98,6 @@ class Map extends Component {
             <View style = {styles.popup}>
               <FlatList
 
-<<<<<<< HEAD
                 data = {this.state.farmers}
                 renderItem = {({ item}) => (
                   <TouchableOpacity style = {styles.item} onPress={()=>
@@ -117,22 +107,7 @@ class Map extends Component {
                      //Once clicked here go to FarmerProfDisplay 
                     }
                   }><Text>{item.Name}</Text></TouchableOpacity>
-=======
-                data = {this.farmerData.farmers}
-                renderItem = {({ item }) => (
-                  <Text style = {styles.item} onPress={() => {
-                    
-                    // Hide the modal
-                    this.setState({show: false})
-                    // Go to the clicked farmer's profile display page
-                    const {navigation} = this.props;
-                    navigation.navigate('FarmerProfilePage')
-                  }}>
-                    {item.name}
-                  </Text>
->>>>>>> 340944b37b817321da0ea8b4625088d71931163f
                 )}
-                keyExtractor={(item, index) => index.toString()}
               />
             </View>
           </View>
