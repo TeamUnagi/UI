@@ -12,6 +12,7 @@ import {
   View,
   StyleSheet,
   Modal,
+  Text,
   FlatList,
 } from 'react-native';  
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -42,20 +43,20 @@ class Map extends Component {
   }
   changeFarmer(){
     const URL="http://10.0.2.2:4000/MapTable"
-        const table = async () => {
-            try {
-              var loc={Location:"Kandy"}
-               return await axios.post(URL,loc)   
-              } catch (error) {
-                console.log(error)
-              }
-            }
-            const setTable = async () => {
-                const confirm = await table();
-                this.setState({farmers:confirm.data});
-                console.log(this.state.farmers)
-             }
-             setTable();
+      const table = async () => {
+        try {
+          var loc={Location:"Kandy"}
+            return await axios.post(URL,loc)   
+          } catch (error) {
+            console.log(error)
+          }
+      }
+      const setTable = async () => {
+        const confirm = await table();
+        this.setState({farmers:confirm.data});
+        console.log(this.state.farmers)
+      }
+      setTable();
   }
 
   render(){
@@ -167,7 +168,7 @@ const styles = StyleSheet.create({
   },
 
   item: {
-    backgroundColor: '#CB7D7D',
+    borderBottomColor: '#707070',
     textAlignVertical: "center",
     paddingLeft: 5,
     width: '100%',
