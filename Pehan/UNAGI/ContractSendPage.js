@@ -1,16 +1,46 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import{ View, Text, StyleSheet, TextInput, Picker, TouchableOpacity, SafeAreaView } from 'react-native';
-
+import FarmerChosen from './FarmerChosen'
+import UserInfo from './UserInfo'
+import VegetableChosen from './VegetableChosen'
 
 
 class ContractSendPage extends Component{
   constructor(){
     super();
     this.state={
-      PickerValue:''  
-    } 
-    
-  };
+      To:FarmerChosen.getName(),
+      From:UserInfo.getName(),
+      VegetableChosen:VegetableChosen.getName(),
+      EndDate:"",
+      Weight:0,
+      Comment:"",
+      ExId:UserInfo.getId(),
+      FarmerId:FarmerChosen.getId(),
+      success:''
+    };
+  } 
+  change(){
+    const URL="http://10.0.2.2:4000/ContractPage"
+    const contract = async () => {
+        try {
+           return await axios.post(URL,this.state)   
+          } catch (error) {
+            console.log(error)
+          }
+        }
+        const sendContract = async () => {
+            const confirm = await contract();
+            if(confirm.data=='success')
+            {
+              alert("Successfully sent contract")
+              const {navigation} = this.props;
+              navigation.navigate('ScreenMove')
+            }
+         }
+         sendContract();
+  }
   render() {  
     return (
       <View>
@@ -28,40 +58,22 @@ class ContractSendPage extends Component{
           
             {/* All 4 inputs  */}
             <View>
-              <TextInput style= {styles.inputText} 
-                placeholder={'To:'}
-                placeholderTextColor={'black'} 
-                 />
+            <Text style= {styles.inputText}>To : {this.state.To}</Text>
+            </View>
+            <View>
+                <Text style= {styles.inputText}>From : {this.state.From}</Text>
             </View>
 
             <View>
-                <TextInput style= {styles.inputText} 
-                placeholder={'From:'}
-                placeholderTextColor={'black'} 
-                 />
+                <Text style= {styles.inputText}>VegetableChosen: {this.state.VegetableChosen}</Text>
             </View>
-
-            <View style={{marginBottom: 20, borderBottomWidth: 1,  borderBottomColor: 'black'}}>
-                <Picker
-                  style={{width:'100%'}}
-                  selectedValue={this.state.PickerValue}
-                  onValueChange={(itemValue,itemIndex) => this.setState({PickerValue 
-                  :itemValue})}
-                 >
-                 
-                   <Picker.Item label="Vegetable Chosen:" value="potato" color="black" />
-                   <Picker.Item label="Potato" value="potato" color="#696969" />
-                   <Picker.Item label="Beans" value="beans" color="#696969" />
-                   <Picker.Item label="Carrots" value="carrots" color="#696969" />
-                   <Picker.Item label="Cucumber" value="cucumber" color="#696969" />
-                   <Picker.Item label="Beetroot" value="beetroot" color="#696969" />
-                 </Picker>
-            </View>
+          
 
             <View>
                 <TextInput style= {styles.inputText} 
                 placeholder={'End Date:'}
                 placeholderTextColor={'black'} 
+                onChangeText={text=>{this.setState({EndDate:text});}}
                  />
             </View>
 
@@ -69,6 +81,7 @@ class ContractSendPage extends Component{
               <TextInput style= {styles.inputText} 
                 placeholder={'Weight:'}
                 placeholderTextColor={'black'} 
+                onChangeText={text=>{this.setState({Weight:text});}}
                  />
             </View>
 
@@ -78,17 +91,16 @@ class ContractSendPage extends Component{
                 placeholderTextColor={'black'} 
                 multiline={true}
                 numberOfLines={5}
+                onChangeText={text=>{this.setState({Comment:text});}}
                  />
             </View>
 
             
 
             {/* Send contract BUTTON */}
-            <TouchableOpacity style={styles.btnSignIn}> 
+            <TouchableOpacity style={styles.btnSignIn} onPress={()=>{this.change()}}> 
                 <Text style={styles.btnText}> Send contract </Text>
             </TouchableOpacity>
-
-            
 
           </SafeAreaView>
         </View>
@@ -165,7 +177,8 @@ const styles = StyleSheet.create({
       borderColor:'black', 
       textAlignVertical: 'top', 
       alignItems: 'center', 
-      justifyContent: 'center'
+      justifyContent: 'center',
+      width:300
     }
     
   

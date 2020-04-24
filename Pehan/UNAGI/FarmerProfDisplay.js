@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import{ View,Text, StyleSheet, ImageBackground, SafeAreaView, TextInput, TouchableOpacity, } from 'react-native';
 import vegBg from './images/background.jpg';
-import UserProfile from './ExporterInfo';
 import FarmerChosen from './FarmerChosen';
 import { ScrollView, FlatList } from 'react-native-gesture-handler';
 class FarmerProfDisplay extends Component {
@@ -75,7 +74,8 @@ class FarmerProfDisplay extends Component {
                             </ScrollView>
                         </View>
                     </View>
-                    <TouchableOpacity style={styles.btnSignIn}> 
+                    <TouchableOpacity style={styles.btnSignIn} onPress = {()=>{const {navigation} = this.props;
+                navigation.navigate('CreateContractPage')}}> 
                       <Text style={styles.btnText}> Create contract </Text>
                     </TouchableOpacity>
                 </SafeAreaView>
