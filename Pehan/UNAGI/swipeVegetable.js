@@ -15,13 +15,11 @@ class swipeVegetable extends React.Component {
     };  
     submit(name) {
         VegetableChosen.setName(name);
-<<<<<<< HEAD
+
         console.log(VegetableChosen.getName());
         const { navigate } = this.props.navigation;
         navigate('MapPage') 
-=======
-        //Should go to Map.js
->>>>>>> e49efeeda12896381267b99fa12128aa830a80c3
+
     }
 
     render() {

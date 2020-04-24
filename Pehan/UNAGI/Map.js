@@ -39,18 +39,8 @@ class Map extends Component {
     this.locationData = require('./Locations.json');
     this.state = {
       show: false,
-<<<<<<< HEAD
-      Location:"Colombo",
-      farmers: []
-    }
-  }
-  changeFarmer(name){
-    console.log(name)
-    this.state.Location = name;
 
-      Location:"",
-=======
->>>>>>> e49efeeda12896381267b99fa12128aa830a80c3
+      Location:"Colombo",
       farmers: []
     }
   }
@@ -86,12 +76,10 @@ class Map extends Component {
              setTable();
   }
 
-<<<<<<< HEAD
-  render(navigation){
 
-=======
+
   render(){
->>>>>>> e49efeeda12896381267b99fa12128aa830a80c3
+
     var mapMarkers = {};
     for(var i = 0; i < this.locationData.length; i++) {
       var location = this.locationData[i].location;
