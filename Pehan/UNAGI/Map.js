@@ -38,10 +38,11 @@ class Map extends Component {
     this.locationData = require('./Locations.json');
     this.state = {
       show: false,
-      farmers: []
+      farmers: [],
+      Locations:[{Location:'kandy'}]
     }
   }
-  componentWillMount(){
+  UNSAFE_componentWillMount(){
     const URL="http://10.0.2.2:4000/sendFarmerLocations"
     const Vegetable = async () => {
         try {
@@ -52,7 +53,7 @@ class Map extends Component {
         }
         const getVegetable = async () => {
             const confirm = await Vegetable();
-          console.log(confirm.data)
+            this.setState({Locations:confirm.data})
          }
          getVegetable();
   }
@@ -74,16 +75,16 @@ class Map extends Component {
   }
 
   render(){
-    var mapMarkers = {};
+    var mapMarkers = [];
+    for(var j=0;j<this.state.Locations.length;j++){
     for(var i = 0; i < this.locationData.length; i++) {
       var location = this.locationData[i].location;
-
       // UserselectedLocation will be the location the user selectes in the previos page
-      if (userSelectedLocation = location) {
+      if (this.state.Locations[j].Location == location) {
         mapMarkers.push(this.locationData[i])
       }
     }
-
+  }
     return(  
       <View style={styles.container}>
   
@@ -113,7 +114,7 @@ class Map extends Component {
           }}/>
           ))} */}
 
-          {this.locationData.map((marker, index) => (
+          {mapMarkers.map((marker, index) => (
 
             <MapView.Marker
             key={index}
@@ -137,10 +138,8 @@ class Map extends Component {
                 data = {this.state.farmers}
                 renderItem = {({item}) => (
                   <Text onPress = {() => {
-
                     FarmerChosen.setId(item.ID);
                     FarmerChosen.setName(item.Name);
-
                     const {navigation} = this.props;
                     navigation.navigate('FarmerProfilePage')
 

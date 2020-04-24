@@ -39,6 +39,14 @@ class FarmerProfDisplay extends Component {
         getloginconfirm();}
       render(){
         var contracts=[];
+        if(this.state.exporterName=='No')
+        {
+          contracts.push(
+            <Text style={styles.pContract}>No previous contracts</Text>
+          )
+        }
+        else{
+          contracts.push( <Text style={styles.pContract}>Previous Contracts </Text>)
         for (let i=0;i<this.state.exporterName.length;i++){
           contracts.push(
             <View key={i}>
@@ -49,7 +57,7 @@ class FarmerProfDisplay extends Component {
             </View>
             </View>
           )
-        }
+        }}
           return(
             <ImageBackground source={vegBg} style= {styles.bgContainer}>
                 <SafeAreaView>
@@ -62,7 +70,6 @@ class FarmerProfDisplay extends Component {
                             <Text style={styles.details}> {this.state.Email} </Text>
                             <Text style={styles.details}> {this.state.Number} </Text>
                             <Text style={styles.detailsD}> {this.state.Description} </Text>
-                            <Text style={styles.pContract}>Previous Contracts </Text>
                             <ScrollView>
                               {contracts} 
                             </ScrollView>
@@ -167,7 +174,7 @@ const styles = StyleSheet.create({
         color: '#141414',
         alignSelf: 'center',
         justifyContent: 'center',
-        width:170
+        width:200
     },
     btnSignIn:{
       
