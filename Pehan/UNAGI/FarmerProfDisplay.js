@@ -6,6 +6,7 @@ import UserProfile from './ExporterInfo';
 import FarmerChosen from './FarmerChosen';
 import { ScrollView, FlatList } from 'react-native-gesture-handler';
 class FarmerProfDisplay extends Component {
+<<<<<<< HEAD
   constructor(props){
       super(props)
       this.change();
@@ -27,6 +28,83 @@ class FarmerProfDisplay extends Component {
         } catch (error) {
           console.error(error)
         }
+=======
+    constructor(props){
+        super(props)
+        this.change();
+        this.state={
+           Name:"",
+           Email:"",
+           Number:"",
+           FarmerId:0,
+           Description:"",
+           exporterName:{}
+        };
+      }
+      change(){
+      const URL="http://10.0.2.2:4000/FarmerProfDisplay"
+        const farmerId={farmerId:FarmerChosen.getId()}
+        const getFarmerInfo = async () => {
+        try {
+          return await axios.post(URL,farmerId)
+          } catch (error) {
+            console.error(error)
+          }
+        }
+        const getloginconfirm = async () => {
+        const confirm = await getFarmerInfo()
+        this.setState({Name:confirm.data.row1[0].Fullname})
+        this.setState({Email:confirm.data.row1[0].Email})
+        this.setState({Number:confirm.data.row1[0].Number})
+        this.setState({Description:confirm.data.row1[0].Description})
+        this.setState({exporterName:confirm.data.row2})
+         }
+        getloginconfirm();}
+      render(){
+        var contracts=[];
+        if(this.state.exporterName=='No')
+        {
+          contracts.push(
+            <Text style={styles.pContract}>No previous contracts</Text>
+          )
+        }
+        else{
+          contracts.push( <Text style={styles.pContract}>Previous Contracts </Text>)
+        for (let i=0;i<this.state.exporterName.length;i++){
+          contracts.push(
+            <View key={i}>
+            <View style={styles.itemContainer}>
+              <Text style={styles.itemText}>Name of the exporter: {this.state.exporterName[i].Name}</Text>
+              <Text style={styles.itemText2}>Vegetable: {this.state.exporterName[i].Vegetable}</Text>
+              <Text style={styles.itemText2}>Weight in kgs: {this.state.exporterName[i].Weight}</Text>
+            </View>
+            </View>
+          )
+        }}
+          return(
+            <ImageBackground source={vegBg} style= {styles.bgContainer}>
+                <SafeAreaView>
+                    <View styles={styles.mainContainer}>
+                        <View style = {styles.nameContainer}>
+                            <Text style = {styles.headName} >{this.state.Name} </Text>     
+                        </View>
+                        <View style={styles.container}>
+                            <Text style={styles.details}> {this.state.Name} </Text>
+                            <Text style={styles.details}> {this.state.Email} </Text>
+                            <Text style={styles.details}> {this.state.Number} </Text>
+                            <Text style={styles.detailsD}> {this.state.Description} </Text>
+                            <ScrollView>
+                              {contracts} 
+                            </ScrollView>
+                        </View>
+                    </View>
+                    <TouchableOpacity style={styles.btnSignIn}> 
+                      <Text style={styles.btnText}> Create contract </Text>
+                    </TouchableOpacity>
+                </SafeAreaView>
+            </ImageBackground>
+          )
+>>>>>>> 0a1c81da47843c8d277d364f8826a48b8922ccdd
       }
       const getloginconfirm = async () => {
       const confirm = await getFarmerInfo()
@@ -157,6 +235,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       width:200
   },
+<<<<<<< HEAD
   itemText2:{
     marginVertical:5,
     height:18,
@@ -173,6 +252,24 @@ const styles = StyleSheet.create({
       borderBottomColor: '#141414',
       color: '#141414',
       alignSelf: 'center',
+=======
+    pContract:{
+        height:25,
+        fontSize:20, 
+        borderBottomWidth: 1,
+        borderBottomColor: '#141414',
+        color: '#141414',
+        alignSelf: 'center',
+        justifyContent: 'center',
+        width:200
+    },
+    btnSignIn:{
+      
+      alignSelf: 'flex-end',
+      height:45,
+      borderRadius: 25,
+      backgroundColor: '#000000',
+>>>>>>> 0a1c81da47843c8d277d364f8826a48b8922ccdd
       justifyContent: 'center',
       width:200
   },

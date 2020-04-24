@@ -18,14 +18,10 @@ class swipeVegetable extends React.Component {
         console.log(VegetableChosen.getName());
         const { navigate } = this.props.navigation;
         navigate('MapPage') 
-
     }
 
     render() {
-        
         return (
-        
-     
         <View  style = {styles.Vegetable}>
         <TouchableOpacity onPress={this.submit.bind(this, this.props.vegetableName)}>      
            <Text style = {styles.vegInfo}>
