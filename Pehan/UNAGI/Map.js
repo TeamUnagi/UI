@@ -4,10 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import axios from 'axios';
 import VegetableChosen from './VegetableChosen'
-
-import VegetableChosen from './VegetableChosen'
 import ContractPage from './ContractSendPage';
-import FarmerProfilePage from './FarmerProfDisplay';
+import FarmerProfDisplay from './FarmerProfDisplay';
 
 import { 
   View,
@@ -24,33 +22,17 @@ class Map extends Component {
 
   constructor() {
     super()
-    this.mapMarkers = {
-      markers: [{
-        location: "Kandy",
-        latitude: 7.2906,
-        longitude: 80.6337
-      },
-      {
-        location: "Colombo",
-        latitude: 6.93194,
-        longitude: 79.846778  
-      }]
-    },
     this.locationData = require('./Locations.json');
     this.state = {
       show: false,
-<<<<<<< HEAD
       farmers: [],
       Locations:[{Location:'kandy'}]
-=======
 
-      Location:"Colombo",
-      farmers: []
->>>>>>> 6c787a040ac0d63d38a88b428f58fa1fef23db17
     }
   }
   UNSAFE_componentWillMount(){
     const URL="http://10.0.2.2:4000/sendFarmerLocations"
+    console.log(VegetableChosen.getName())
     const Vegetable = async () => {
         try {
            return await axios.post(URL,{Vegetable:VegetableChosen.getName()})   
@@ -84,13 +66,9 @@ class Map extends Component {
 
 
   render(){
-<<<<<<< HEAD
     var mapMarkers = [];
     for(var j=0;j<this.state.Locations.length;j++){
-=======
 
-    var mapMarkers = {};
->>>>>>> 6c787a040ac0d63d38a88b428f58fa1fef23db17
     for(var i = 0; i < this.locationData.length; i++) {
       var location = this.locationData[i].location;
       // UserselectedLocation will be the location the user selectes in the previos page
@@ -168,7 +146,7 @@ class Map extends Component {
   }
 }
 
-/*const Stack = createStackNavigator();
+const Stack = createStackNavigator();
 
 const Appster = () => {
   return (
@@ -176,13 +154,13 @@ const Appster = () => {
         <Stack.Navigator>
 
           <Stack.Screen name="MapPage" component={Map} options={{ headerShown: false }}/>
-          <Stack.Screen name="FarmerProfilePage" component={FarmerProfilePage} options={{ headerShown: false }}/>
+          <Stack.Screen name="FarmerProfDisplay" component={FarmerProfDisplay} options={{ headerShown: false }}/>
           <Stack.Screen name="ContractPage" component={ContractPage} options={{ headerShown: false }}/>
 
         </Stack.Navigator>
     </NavigationContainer>
   );
-}*/
+}
 
 const styles = StyleSheet.create({
 
