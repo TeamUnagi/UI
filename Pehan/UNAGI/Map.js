@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
 import axios from 'axios';
 import VegetableChosen from './VegetableChosen'
-import ContractPage from './ContractSendPage';
-import FarmerProfDisplay from './FarmerProfDisplay';
-
 import { 
   View,
   StyleSheet,
@@ -32,7 +27,6 @@ class Map extends Component {
   }
   UNSAFE_componentWillMount(){
     const URL="http://10.0.2.2:4000/sendFarmerLocations"
-    console.log(VegetableChosen.getName())
     const Vegetable = async () => {
         try {
            return await axios.post(URL,{Vegetable:VegetableChosen.getName()})   
@@ -133,6 +127,7 @@ class Map extends Component {
                     FarmerChosen.setId(item.ID);
                     FarmerChosen.setName(item.Name);
                     const {navigation} = this.props;
+                    this.setState({show: false})
                     navigation.navigate('FarmerProfilePage')
 
                   }}>{item.Name}</Text>
@@ -146,21 +141,19 @@ class Map extends Component {
   }
 }
 
-const Stack = createStackNavigator();
+/*const Stack = createStackNavigator();
 
 const Appster = () => {
   return (
     <NavigationContainer>
         <Stack.Navigator>
 
-          <Stack.Screen name="MapPage" component={Map} options={{ headerShown: false }}/>
-          <Stack.Screen name="FarmerProfDisplay" component={FarmerProfDisplay} options={{ headerShown: false }}/>
-          <Stack.Screen name="ContractPage" component={ContractPage} options={{ headerShown: false }}/>
+          <Stack.Screen name="FarmerProfilePage" component={FarmerProfilePage} options={{ headerShown: false }}/>
 
         </Stack.Navigator>
     </NavigationContainer>
   );
-}
+} */
 
 const styles = StyleSheet.create({
 
@@ -207,4 +200,4 @@ const styles = StyleSheet.create({
 
 }); 
 
-export default Map ;
+export default Map;

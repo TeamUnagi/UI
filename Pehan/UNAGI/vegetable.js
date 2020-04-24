@@ -23,7 +23,6 @@ class vegetable extends Component {
     submit(name) {
         VegetableChosen.setName(name);
         console.log(VegetableChosen.getName());
-        console.log("came here")
         const { navigate } = this.props.navigation;
         navigate('MapPage')    
     

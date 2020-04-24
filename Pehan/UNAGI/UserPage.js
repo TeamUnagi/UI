@@ -13,6 +13,7 @@ import SecondScreen from './SecondScreen';
 import ExporterSignIn from './ExportSignIn';
 import FarmerSignIn from './FarmerSignIn';
 import LoginPage from './UserLogIn';
+import FarmerProfilePage from './FarmerProfDisplay'
 import Map from './Map';
 
 
@@ -103,6 +104,8 @@ const App = () => {
           <Stack.Screen name="UserLoginPage" component={LoginPage} options={{ headerShown: false }}/>
           <Stack.Screen name="MapPage" component={Map} options={{ headerShown: false }}/>
           <Stack.Screen name="ScreenMove" component={ScreenMove} options={{ headerShown: false }}/>
+          <Stack.Screen name="FarmerProfilePage" component={FarmerProfilePage} options={{ headerShown: false }}/>
+
 
 
 
