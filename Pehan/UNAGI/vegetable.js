@@ -81,15 +81,6 @@ const styles = StyleSheet.create({
         height:100,
         padding:10,
         margin:15,
-        
-        
-
-        //shadowColor: '#000',
-        //shadowOffset: { width: 0, height: 2 },
-        //shadowOpacity: 0.8,
-        //shadowRadius: 10,
-        
-        
     },
 
     image:{
