@@ -3,6 +3,7 @@ import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import axios from 'axios';
+import VegetableChosen from './VegetableChosen'
 
 import VegetableChosen from './VegetableChosen'
 import ContractPage from './ContractSendPage';
@@ -38,8 +39,14 @@ class Map extends Component {
     this.locationData = require('./Locations.json');
     this.state = {
       show: false,
+<<<<<<< HEAD
       farmers: [],
       Locations:[{Location:'kandy'}]
+=======
+
+      Location:"Colombo",
+      farmers: []
+>>>>>>> 6c787a040ac0d63d38a88b428f58fa1fef23db17
     }
   }
   UNSAFE_componentWillMount(){
@@ -74,9 +81,16 @@ class Map extends Component {
              setTable();
   }
 
+
+
   render(){
+<<<<<<< HEAD
     var mapMarkers = [];
     for(var j=0;j<this.state.Locations.length;j++){
+=======
+
+    var mapMarkers = {};
+>>>>>>> 6c787a040ac0d63d38a88b428f58fa1fef23db17
     for(var i = 0; i < this.locationData.length; i++) {
       var location = this.locationData[i].location;
       // UserselectedLocation will be the location the user selectes in the previos page
@@ -154,7 +168,7 @@ class Map extends Component {
   }
 }
 
-const Stack = createStackNavigator();
+/*const Stack = createStackNavigator();
 
 const Appster = () => {
   return (
@@ -168,7 +182,7 @@ const Appster = () => {
         </Stack.Navigator>
     </NavigationContainer>
   );
-}
+}*/
 
 const styles = StyleSheet.create({
 
@@ -215,4 +229,4 @@ const styles = StyleSheet.create({
 
 }); 
 
-export default Appster ;
+export default Map ;

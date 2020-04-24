@@ -1,33 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { View , Text, StyleSheet, TouchableOpacity  } from 'react-native';
 
 import VegetableChosen from './VegetableChosen'
+import { NavigationContainer } from '@react-navigation/native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 
-class vegetable extends React.Component {
+
+class vegetable extends Component {
 
     static propTypes = {
         vegetableName: PropTypes.string.isRequired,
         trendNumber: PropTypes.string.isRequired,
         importValue: PropTypes.number.isRequired,
         importPercentage: PropTypes.number.isRequired,
+        navigation: PropTypes.string.isRequired,
+
     };  
 
     submit(name) {
         VegetableChosen.setName(name);
-        //Should go to Map.js
+        const { navigate } = this.props.navigation;
+        navigate('MapPage')    
+    
+
     }
 
-    render() {
+    render(navigation) {
         
         return (
         
      
         <View  style = {styles.Vegetable}>
-        <TouchableOpacity onPress={this.submit.bind(this, this.props.vegetableName)}>      
-           <Text style = {styles.vegInfo}>
+            <TouchableOpacity onPress={this.submit.bind(this, this.props.vegetableName)}> 
+          <Text style = {styles.vegInfo}>
             {this.props.vegetableName}       
             </Text>
 

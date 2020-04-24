@@ -11,7 +11,8 @@ var UserInfo = (() => {
     var getId = function() {
         return Id;    
       };
-    
+
+
       var setId = function(id) {
         Id=id   
       };
@@ -19,8 +20,9 @@ var UserInfo = (() => {
       getName: getName,
       setName: setName,
       getId:getId,
-      getName:getName
+      setId:setId
     }
   
   })();
   export default UserInfo;
+

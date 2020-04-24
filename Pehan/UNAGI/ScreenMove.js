@@ -1,8 +1,11 @@
+
 import * as React from 'react';
 import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import TestTrending from './testTrending';
+
+
 
 function HomeScreen() {
   return (
@@ -21,7 +24,7 @@ function SettingsScreen() {
 
 const Tab = createMaterialTopTabNavigator();
 
-export default function App() {
+function MainTabNavigator() {
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -41,3 +44,7 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+
+
+

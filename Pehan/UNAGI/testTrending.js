@@ -18,7 +18,13 @@ class testTrending extends Component {
         this.state={
            vegetableInfo:VegetableInfo.getName(),
         };
+        //const {navigation} = this.props;
       }
+
+      
+
+
+
       componentDidMount(){    
         const URL="http://10.0.2.2:4000/VegetableImports"
         const trends = async () => {
@@ -36,12 +42,12 @@ class testTrending extends Component {
     
              getVegetableData();
     }
-        render() {
+        render(navigation) {
         var topFiveVegetables=[];    
         for (let i=0;i<5;i++){
             topFiveVegetables.push(
             <View key={i}> 
-               <Veg vegetableName={this.state.vegetableInfo[i].Vegetable} trendNumber={"#" + (i+1)}  importValue={this.state.vegetableInfo[i].Import} importPercentage = {this.state.vegetableInfo[i].Percentage}/>
+               <Veg vegetableName={this.state.vegetableInfo[i].Vegetable} trendNumber={"#" + (i+1)}  importValue={this.state.vegetableInfo[i].Import} importPercentage = {this.state.vegetableInfo[i].Percentage} navigation = {this.props.navigation}/>
             </View>
           )
         }  
@@ -50,7 +56,7 @@ class testTrending extends Component {
         for (let i=5;i<this.state.vegetableInfo.length;i++){
             restVegetables.push(
             <View key={i}> 
-               <SwipeVegetable vegetableName={this.state.vegetableInfo[i].Vegetable} trendNumber={"#" + (i+1)}  importValue={this.state.vegetableInfo[i].Import} importPercentage = {this.state.vegetableInfo[i].Percentage}/>
+               <SwipeVegetable vegetableName={this.state.vegetableInfo[i].Vegetable} trendNumber={"#" + (i+1)}  importValue={this.state.vegetableInfo[i].Import} importPercentage = {this.state.vegetableInfo[i].Percentage} navigation = {this.props.navigation}/>
             </View>
           )
         }  
@@ -99,6 +105,8 @@ class testTrending extends Component {
     }
     
 }
+
+
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',

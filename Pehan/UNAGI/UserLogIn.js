@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import{ View,Text, StyleSheet, ImageBackground, SafeAreaView, TextInput, TouchableOpacity, } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import vegBg from './images/background.jpg';
+import UserInfo from './UserInfo';
+import TestTrending from './testTrending';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+
 
 class UserLogin extends Component {
   constructor(props){
@@ -36,9 +42,12 @@ class UserLogin extends Component {
          if (confirm.data.message=="success") {
             alert("Successfully logged in")
             UserInfo.setName(confirm.data.name);
-            UserInfo.setId(confirm.data.id);
+            UserInfo.setId(confirm.data.id);  
             if(confirm.data.category=="Exporter"){
+              const {navigation} = this.props;
+              navigation.navigate('ScreenMove')
               //Should go to ScreenMove.js
+
             }else{}
            }
         else{alert("The username does not exist or password does not match the username")}
@@ -46,7 +55,7 @@ class UserLogin extends Component {
         getloginconfirm();
     }
   }
-  render() {  
+  render(navigation) {  
     return (
       <ImageBackground source={vegBg} style= {styles.bgContainer}>
         <SafeAreaView>
@@ -95,6 +104,7 @@ class UserLogin extends Component {
     )
   }
 }
+
 
 const styles = StyleSheet.create({
 
