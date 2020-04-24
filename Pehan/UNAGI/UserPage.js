@@ -9,7 +9,7 @@ import vegBg from './images/background.jpg';
 import TestTrending from './testTrending';
 import SecondScreen from './SecondScreen';
 
-
+import FarmerProfilePage from './FarmerProfDisplay'
 import ExporterSignIn from './ExportSignIn';
 import FarmerSignIn from './FarmerSignIn';
 import LoginPage from './UserLogIn';
@@ -103,6 +103,7 @@ const App = () => {
           <Stack.Screen name="UserLoginPage" component={LoginPage} options={{ headerShown: false }}/>
           <Stack.Screen name="MapPage" component={Map} options={{ headerShown: false }}/>
           <Stack.Screen name="ScreenMove" component={ScreenMove} options={{ headerShown: false }}/>
+          <Stack.Screen name="FarmerProfilePage" component={FarmerProfilePage} options={{ headerShown: false }}/>
 
 
 

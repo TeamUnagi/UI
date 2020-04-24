@@ -5,7 +5,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import axios from 'axios';
 import VegetableChosen from './VegetableChosen'
 
-import VegetableChosen from './VegetableChosen'
 import ContractPage from './ContractSendPage';
 import FarmerProfilePage from './FarmerProfDisplay';
 
@@ -24,27 +23,15 @@ class Map extends Component {
 
   constructor() {
     super()
-    this.mapMarkers = {
-      markers: [{
-        location: "Kandy",
-        latitude: 7.2906,
-        longitude: 80.6337
-      },
-      {
-        location: "Colombo",
-        latitude: 6.93194,
-        longitude: 79.846778  
-      }]
-    },
     this.locationData = require('./Locations.json');
     this.state = {
       show: false,
+      farmers: [],
+      Locations:[{Location:'kandy'}]
 
-      Location:"Colombo",
-      farmers: []
     }
   }
-  componentWillMount(){
+  UNSAFE_componentWillMount(){
     const URL="http://10.0.2.2:4000/sendFarmerLocations"
     const Vegetable = async () => {
         try {
@@ -55,7 +42,7 @@ class Map extends Component {
         }
         const getVegetable = async () => {
             const confirm = await Vegetable();
-          console.log(confirm.data)
+            this.setState({Locations:confirm.data})
          }
          getVegetable();
   }
@@ -79,17 +66,17 @@ class Map extends Component {
 
 
   render(){
+    var mapMarkers = [];
+    for(var j=0;j<this.state.Locations.length;j++){
 
-    var mapMarkers = {};
     for(var i = 0; i < this.locationData.length; i++) {
       var location = this.locationData[i].location;
-
       // UserselectedLocation will be the location the user selectes in the previos page
-      if (userSelectedLocation = location) {
+      if (this.state.Locations[j].Location == location) {
         mapMarkers.push(this.locationData[i])
       }
     }
-
+  }
     return(  
       <View style={styles.container}>
   
@@ -119,7 +106,7 @@ class Map extends Component {
           }}/>
           ))} */}
 
-          {this.locationData.map((marker, index) => (
+          {mapMarkers.map((marker, index) => (
 
             <MapView.Marker
             key={index}
@@ -143,11 +130,10 @@ class Map extends Component {
                 data = {this.state.farmers}
                 renderItem = {({item}) => (
                   <Text onPress = {() => {
-
                     FarmerChosen.setId(item.ID);
                     FarmerChosen.setName(item.Name);
-
                     const {navigation} = this.props;
+                    this.setState({show: false})
                     navigation.navigate('FarmerProfilePage')
 
                   }}>{item.Name}</Text>
@@ -168,14 +154,12 @@ const Appster = () => {
     <NavigationContainer>
         <Stack.Navigator>
 
-          <Stack.Screen name="MapPage" component={Map} options={{ headerShown: false }}/>
           <Stack.Screen name="FarmerProfilePage" component={FarmerProfilePage} options={{ headerShown: false }}/>
-          <Stack.Screen name="ContractPage" component={ContractPage} options={{ headerShown: false }}/>
 
         </Stack.Navigator>
     </NavigationContainer>
   );
-}*/
+} */
 
 const styles = StyleSheet.create({
 
@@ -222,4 +206,4 @@ const styles = StyleSheet.create({
 
 }); 
 
-export default Map ;
+export default Map;

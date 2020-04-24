@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import Map from './Map'
 import ScreenMove from './ScreenMove'
 import UserPage from './UserPage'
+import Map from './Map'
 class App extends Component {
 
   render() {
