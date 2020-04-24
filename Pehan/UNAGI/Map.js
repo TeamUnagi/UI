@@ -21,6 +21,7 @@ class Map extends Component {
 
   constructor() {
     super()
+    this.getLocations();
     this.mapMarkers = {
       markers: [{
         location: "Kandy",
@@ -35,17 +36,29 @@ class Map extends Component {
     },
     this.state = {
       show: false,
-      Location:"",
       farmers: []
     }
   }
+  getLocations(){
+    const URL="http://10.0.2.2:4000/sendFarmerLocations"
+    const Vegetable = async () => {
+        try {
+           return await axios.post(URL,{Vegetable:VegetableChosen.getName()})   
+          } catch (error) {
+            console.log(error)
+          }
+        }
+        const getVegetable = async () => {
+            const confirm = await Vegetable();
+          console.log(confirm.data)
+         }
+         getVegetable();
+  }
   changeFarmer(name){
-    this.state.Location=name
     const URL="http://10.0.2.2:4000/MapTable"
         const table = async () => {
             try {
-              var loc={Location:this.state.Location}
-               return await axios.post(URL,loc)   
+               return await axios.post(URL,{Location:name})   
               } catch (error) {
                 console.log(error)
               }
@@ -53,7 +66,6 @@ class Map extends Component {
             const setTable = async () => {
                 const confirm = await table();
                 this.setState({farmers:confirm.data});
-                console.log(this.state.farmers)
                 this.setState({show: true})
              }
              setTable();
