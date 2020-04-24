@@ -1,5 +1,5 @@
 var VegetableChosen = (() => {
-    var Name="Mushrooms"
+    var Name="BellPeppers"
     var getName = function() {
       return Name;    
     };

@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import axios from 'axios';
 
-
+import VegetableChosen from './VegetableChosen'
 import ContractPage from './ContractSendPage';
 import FarmerProfilePage from './FarmerProfDisplay';
 
@@ -15,7 +15,6 @@ import {
   Text,
   FlatList,
 } from 'react-native';  
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import FarmerChosen from './FarmerChosen'
 
 // Get the locations file
@@ -24,8 +23,6 @@ class Map extends Component {
 
   constructor() {
     super()
-<<<<<<< HEAD
-    this.getLocations();
     this.mapMarkers = {
       markers: [{
         location: "Kandy",
@@ -38,18 +35,13 @@ class Map extends Component {
         longitude: 79.846778  
       }]
     },
-=======
-
     this.locationData = require('./Locations.json');
-
->>>>>>> 5cc2e05b731bc905ad551ca583a825017ca879fe
     this.state = {
       show: false,
       farmers: []
     }
   }
-<<<<<<< HEAD
-  getLocations(){
+  componentWillMount(){
     const URL="http://10.0.2.2:4000/sendFarmerLocations"
     const Vegetable = async () => {
         try {
@@ -79,30 +71,9 @@ class Map extends Component {
                 this.setState({show: true})
              }
              setTable();
-=======
-  changeFarmer(name) {
-    this.state.Location=name
-    const URL="http://10.0.2.2:4000/MapTable"
-    const table = async () => {
-      try {
-        var loc={Location:this.state.Location}
-          return await axios.post(URL,loc)   
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    const setTable = async () => {
-      const confirm = await table();
-      this.setState({farmers:confirm.data});
-      console.log(this.state.farmers)
-      this.setState({show: true})
-    }
-    setTable();
->>>>>>> 5cc2e05b731bc905ad551ca583a825017ca879fe
   }
 
   render(){
-
     var mapMarkers = {};
     for(var i = 0; i < this.locationData.length; i++) {
       var location = this.locationData[i].location;
@@ -149,9 +120,7 @@ class Map extends Component {
             coordinate={marker}
 
             onPress = {() => {
-              console.log(marker.location)
               this.changeFarmer(marker.location);
-              this.setState({show: true})
             }}/>
           ))}
         </MapView>
