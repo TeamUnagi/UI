@@ -1,0 +1,122 @@
+[
+    {
+        "location": "Ampara",
+        "latitude": 7.29754,
+        "longitude": 81.68202
+    },
+    {
+        "location": "Anuradhapura",
+        "latitude": 8.31223,
+        "longitude": 80.41306
+    },
+    {
+        "location": "Badulla",
+        "latitude": 6.9895,
+        "longitude": 81.0557
+    },
+    {
+        "location": "Batticaloa",
+        "latitude": 7.7102,
+        "longitude": 81.6924
+    },
+    {
+        "location": "Colombo",
+        "latitude": 6.93194,
+        "longitude": 79.84778
+    },
+    {
+        "location": "Galle",
+        "latitude": 6.053519,
+        "longitude": 80.220978
+    },
+    {
+        "location": "Gampaha",
+        "latitude": 7.0897,
+        "longitude": 79.9925
+    },
+    {
+        "location": "Hambantota",
+        "latitude": 6.124593,
+        "longitude": 81.101074
+    },
+    {
+        "location": "Jaffna",
+        "latitude": 9.66845,
+        "longitude": 80.00742
+    },
+    {
+        "location": "Kalutara",
+        "latitude": 6.5831,
+        "longitude": 79.9593
+    },
+    {
+        "location": "Kandy",
+        "latitude": 7.2955,
+        "longitude": 80.6356
+    },
+    {
+        "location": "Kegalle",
+        "latitude": 7.249999,
+        "longitude": 80.3499986
+    },
+    {
+        "location": "Kilinochchi",
+        "latitude": 9.3961,
+        "longitude": 80.3982
+    },
+    {
+        "location": "Kurunegala",
+        "latitude": 7.4863,
+        "longitude": 80.3623
+    },
+    {  
+        "location": "Mannar",
+        "latitude": 8.9666628,
+        "longitude": 79.8833298
+    },
+    {
+        "Matale": "Matale",    
+        "latitude": 7.4666648,
+        "longitude": 80.6166642
+    },
+    {
+        "location": "Matara",  
+        "latitude": 5.94851,
+        "longitude": 80.53528
+    },
+    {
+        "location": "Monaragala",
+        "latitude": 6.8714,
+        "longitude": 81.3487
+    },
+    {
+        "location": "Nuwara Eliya",
+        "latitude": 6.97078,
+        "longitude": 80.78286
+    },
+    {
+        "location": "Polonnaruwa",
+        "latitude": 7.93965,
+        "longitude": 81.00274
+    },
+    {
+        "location": "Puttalam",
+        "latitude": 8.0362,
+        "longitude": 79.8283
+    },
+    {  
+        "location": "Ratnapura",
+        "latitude": 6.68278,
+        "longitude": 80.39917
+    },
+    {    
+        "location": "Trincomalee",
+        "latitude": 8.5711,
+        "longitude": 81.2335
+    },
+    {  
+        "location": "Vavuniya",
+        "latitude": 8.7514,
+        "longitude": 80.4971
+    }
+]
