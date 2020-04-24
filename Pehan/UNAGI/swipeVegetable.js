@@ -11,11 +11,13 @@ class swipeVegetable extends React.Component {
         trendNumber: PropTypes.string.isRequired,
         importValue: PropTypes.number.isRequired,
         importPercentage: PropTypes.number.isRequired,
+        navigation: PropTypes.string.isRequired,
     };  
     submit(name) {
         VegetableChosen.setName(name);
         console.log(VegetableChosen.getName());
-        //Should go to Map.js
+        const { navigate } = this.props.navigation;
+        navigate('MapPage') 
     }
 
     render() {

@@ -7,10 +7,16 @@ import{ View, Text, SafeAreaView, StyleSheet, ImageBackground, TouchableOpacity,
 import vegBg from './images/background.jpg';
 
 import TestTrending from './testTrending';
+import SecondScreen from './SecondScreen';
+
+
 import ExporterSignIn from './ExportSignIn';
 import FarmerSignIn from './FarmerSignIn';
 import LoginPage from './UserLogIn';
-import ScreenMove from './ScreenMove'
+import Map from './Map';
+
+
+//import ScreenMove from './ScreenMove'
 
 class UserPage extends Component {
   render(navigation) {  
@@ -57,23 +63,36 @@ class UserPage extends Component {
   }
 }
 
-/*function HomeScreen() {
-  return (
-    <TestTrending/>
-  );
-}
 
-function SettingsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
-  );
-} */
+
+
+const Tab = createMaterialTopTabNavigator();
 
 const Stack = createStackNavigator();
 
-const App = () => {
+
+
+function ScreenMove() {
+  return (
+    <Tab.Navigator
+        tabBarOptions={{ 
+          activeBackgroundColor:'black',
+          activeTintColor: 'orange',
+          inactiveTintColor: 'grey',
+          activeBackgroundColor:'orange',
+          style: { backgroundColor: 'black', padding:15},
+                    
+        }
+        
+        }>
+        <Tab.Screen name="Trends" component={TestTrending} />
+        <Tab.Screen name="Settings" component={SecondScreen} />
+
+      </Tab.Navigator>
+  );
+}
+
+const App = () => { 
   return (
     <NavigationContainer>
         <Stack.Navigator>
@@ -82,7 +101,9 @@ const App = () => {
           <Stack.Screen name="ExporterSignUpPage" component={ExporterSignIn} options={{ headerShown: false }}/>
           <Stack.Screen name="FarmerSignUpPage" component={FarmerSignIn} options={{ headerShown: false }}/>
           <Stack.Screen name="UserLoginPage" component={LoginPage} options={{ headerShown: false }}/>
-          <Stack.Screen name="ScreenMovePage" component={ScreenMove} options={{ headerShown: false }}/>
+          <Stack.Screen name="MapPage" component={Map} options={{ headerShown: false }}/>
+          <Stack.Screen name="ScreenMove" component={ScreenMove} options={{ headerShown: false }}/>
+
 
 
         </Stack.Navigator>

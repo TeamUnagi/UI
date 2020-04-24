@@ -35,13 +35,13 @@ class Map extends Component {
     },
     this.state = {
       show: false,
-      Location:"Kandy",
+      Location:"Colombo",
       farmers: []
     }
   }
   changeFarmer(name){
     console.log(name)
-    this.setState({Location:name})
+    this.state.Location = name;
     const URL="http://10.0.2.2:4000/MapTable"
         const table = async () => {
             try {
@@ -60,7 +60,7 @@ class Map extends Component {
              setTable();
   }
 
-  render(){
+  render(navigation){
 
     return(  
       <View style={styles.container}>
@@ -122,7 +122,7 @@ class Map extends Component {
   }
 }
 
-const Stack = createStackNavigator();
+/*const Stack = createStackNavigator();
 
 const Appster = () => {
   return (
@@ -136,7 +136,7 @@ const Appster = () => {
         </Stack.Navigator>
     </NavigationContainer>
   );
-}
+}*/
 
 const styles = StyleSheet.create({
 
@@ -183,4 +183,4 @@ const styles = StyleSheet.create({
 
 }); 
 
-export default Appster ;
+export default Map ;

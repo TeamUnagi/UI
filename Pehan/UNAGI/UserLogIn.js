@@ -4,6 +4,10 @@ import{ View,Text, StyleSheet, ImageBackground, SafeAreaView, TextInput, Touchab
 import { NavigationContainer } from '@react-navigation/native';
 import vegBg from './images/background.jpg';
 import UserInfo from './UserInfo';
+import TestTrending from './testTrending';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+
 
 class UserLogin extends Component {
   constructor(props){
@@ -38,14 +42,12 @@ class UserLogin extends Component {
          if (confirm.data.message=="success") {
             alert("Successfully logged in")
             UserInfo.setName(confirm.data.name);
-            UserInfo.setId(confirm.data.id);
+            UserInfo.setId(confirm.data.id);  
             if(confirm.data.category=="Exporter"){
-<<<<<<< HEAD
               const {navigation} = this.props;
-              navigation.navigate('ScreenMovePage')
-=======
+              navigation.navigate('ScreenMove')
               //Should go to ScreenMove.js
->>>>>>> 3e897aa581c61cd46859c274b879f6f78f4beb59
+
             }else{}
            }
         else{alert("The username does not exist or password does not match the username")}
@@ -103,24 +105,6 @@ class UserLogin extends Component {
   }
 }
 
-/*const Stack = createStackNavigator();
-
-const App = () => {
-  return (
-    <NavigationContainer>
-        <Stack.Navigator>
-
-          <Stack.Screen name="Home" component={UserPage} options={{ headerShown: false }}/>
-          <Stack.Screen name="ExporterSignUpPage" component={ExporterSignIn} options={{ headerShown: false }}/>
-          <Stack.Screen name="FarmerSignUpPage" component={FarmerSignIn} options={{ headerShown: false }}/>
-          <Stack.Screen name="UserLoginPage" component={LoginPage} options={{ headerShown: false }}/>
-          <Stack.Screen name="TrendingPage" component={TestTrending} options={{ headerShown: false }}/>
-
-
-        </Stack.Navigator>
-    </NavigationContainer>
-  );
-} */
 
 const styles = StyleSheet.create({
 

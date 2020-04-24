@@ -24,7 +24,7 @@ function SettingsScreen() {
 
 const Tab = createMaterialTopTabNavigator();
 
-export default function App() {
+function MainTabNavigator() {
   return (
     <NavigationContainer>
       <Tab.Navigator
