@@ -3,7 +3,8 @@ import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import axios from 'axios';
-import VegetableChosen from './VegetableChosen';
+
+
 import ContractPage from './ContractSendPage';
 import FarmerProfilePage from './FarmerProfDisplay';
 
@@ -11,30 +12,24 @@ import {
   View,
   StyleSheet,
   Modal,
+  Text,
   FlatList,
-  Text
 } from 'react-native';  
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import FarmerChosen from './FarmerChosen'
+
+// Get the locations file
 
 class Map extends Component {
 
   constructor() {
     super()
-    this.mapMarkers = {
-      markers: [{
-        location: "Kandy",
-        latitude: 7.1,
-        longitude: 80.1
-      },
-      {
-        location: "Colombo",
-        latitude: 6.93194,
-        longitude: 79.846778  
-      }]
-    },
+
+    this.locationData = require('./Locations.json');
+
     this.state = {
       show: false,
+<<<<<<< HEAD
       Location:"Colombo",
       farmers: []
     }
@@ -42,29 +37,47 @@ class Map extends Component {
   changeFarmer(name){
     console.log(name)
     this.state.Location = name;
+=======
+      Location:"",
+      farmers: []
+    }
+  }
+  changeFarmer(name) {
+    this.state.Location=name
+>>>>>>> 5cc2e05b731bc905ad551ca583a825017ca879fe
     const URL="http://10.0.2.2:4000/MapTable"
-        const table = async () => {
-            try {
-              var loc={Location:this.state.Location}
-               return await axios.post(URL,loc)   
-              } catch (error) {
-                console.log(error)
-              }
-            }
-            const setTable = async () => {
-                const confirm = await table();
-                this.setState({farmers:confirm.data});
-                console.log(this.state.farmers)
-                this.setState({show: true})
-             }
-             setTable();
+    const table = async () => {
+      try {
+        var loc={Location:this.state.Location}
+          return await axios.post(URL,loc)   
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    const setTable = async () => {
+      const confirm = await table();
+      this.setState({farmers:confirm.data});
+      console.log(this.state.farmers)
+      this.setState({show: true})
+    }
+    setTable();
   }
 
   render(navigation){
 
+    var mapMarkers = {};
+    for(var i = 0; i < this.locationData.length; i++) {
+      var location = this.locationData[i].location;
+
+      // UserselectedLocation will be the location the user selectes in the previos page
+      if (userSelectedLocation = location) {
+        mapMarkers.push(this.locationData[i])
+      }
+    }
+
     return(  
       <View style={styles.container}>
-
+  
         <MapView
           provider = {PROVIDER_GOOGLE} // remove if not using Google Maps
           style = {styles.map}
@@ -76,18 +89,33 @@ class Map extends Component {
             longitudeDelta: 3.2,
           }}
         >
-          {this.mapMarkers.markers.map((marker, index) => ( 
+
+          {/* Uncomment this whole thing */}
+          {/* {mapMarkers.map((marker, index) => (
+
+          <MapView.Marker
+          key={index}
+          coordinate={marker}
+
+          onPress = {() => {
+            console.log(marker.location)
+            this.changeFarmer(marker.location);
+            this.setState({show: true})
+          }}/>
+          ))} */}
+
+          {this.locationData.map((marker, index) => (
+
             <MapView.Marker
-              key={index}
-              coordinate={marker} 
+            key={index}
+            coordinate={marker}
 
-              onPress = {() => {
-                this.changeFarmer(marker.location);
-              }}>
-            
-            </MapView.Marker>
+            onPress = {() => {
+              console.log(marker.location)
+              this.changeFarmer(marker.location);
+              this.setState({show: true})
+            }}/>
           ))}
-
         </MapView>
 
         {/* Create the header */}
@@ -101,17 +129,15 @@ class Map extends Component {
 
                 data = {this.state.farmers}
                 renderItem = {({item}) => (
-                  <TouchableOpacity style = {styles.item} onPress={()=>
-                    {
-                      FarmerChosen.setId(item.ID);
-                      FarmerChosen.setName(item.Name);
-                     //Once clicked here go to FarmerProfDisplay 
-                    }
-                  }>
-                    <Text>
-                      {item.Name}
-                      </Text>
-                      </TouchableOpacity>
+                  <Text onPress = {() => {
+
+                    FarmerChosen.setId(item.ID);
+                    FarmerChosen.setName(item.Name);
+
+                    const {navigation} = this.props;
+                    navigation.navigate('FarmerProfilePage')
+
+                  }}>{item.Name}</Text>
                 )}
               />
             </View>
@@ -172,7 +198,7 @@ const styles = StyleSheet.create({
   },
 
   item: {
-    backgroundColor: '#CB7D7D',
+    borderBottomColor: '#707070',
     textAlignVertical: "center",
     paddingLeft: 5,
     width: '100%',
