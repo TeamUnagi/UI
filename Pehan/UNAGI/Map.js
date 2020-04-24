@@ -3,6 +3,7 @@ import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import axios from 'axios';
+import VegetableChosen from './VegetableChosen'
 
 
 import ContractPage from './ContractSendPage';
@@ -29,7 +30,6 @@ class Map extends Component {
 
     this.state = {
       show: false,
-<<<<<<< HEAD
       Location:"Colombo",
       farmers: []
     }
@@ -37,14 +37,13 @@ class Map extends Component {
   changeFarmer(name){
     console.log(name)
     this.state.Location = name;
-=======
+
       Location:"",
       farmers: []
     }
   }
   changeFarmer(name) {
     this.state.Location=name
->>>>>>> 5cc2e05b731bc905ad551ca583a825017ca879fe
     const URL="http://10.0.2.2:4000/MapTable"
     const table = async () => {
       try {
