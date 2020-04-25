@@ -2,13 +2,8 @@ import React, { Component } from 'react';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import axios from 'axios';
 import VegetableChosen from './VegetableChosen'
-<<<<<<< HEAD
 
-import ContractPage from './ContractSendPage';
-import FarmerProfilePage from './FarmerProfDisplay';
 
-=======
->>>>>>> 0a1c81da47843c8d277d364f8826a48b8922ccdd
 import { 
   View,
   StyleSheet,

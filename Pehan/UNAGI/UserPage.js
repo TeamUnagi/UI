@@ -9,12 +9,13 @@ import vegBg from './images/background.jpg';
 import TestTrending from './testTrending';
 import SecondScreen from './SecondScreen';
 
+import ContractSendPage from './ContractSendPage'
 import FarmerProfilePage from './FarmerProfDisplay'
 import ExporterSignIn from './ExportSignIn';
 import FarmerSignIn from './FarmerSignIn';
 import LoginPage from './UserLogIn';
-import FarmerProfilePage from './FarmerProfDisplay'
 import Map from './Map';
+
 
 
 //import ScreenMove from './ScreenMove'
@@ -105,12 +106,7 @@ const App = () => {
           <Stack.Screen name="MapPage" component={Map} options={{ headerShown: false }}/>
           <Stack.Screen name="ScreenMove" component={ScreenMove} options={{ headerShown: false }}/>
           <Stack.Screen name="FarmerProfilePage" component={FarmerProfilePage} options={{ headerShown: false }}/>
-<<<<<<< HEAD
-=======
-
->>>>>>> 0a1c81da47843c8d277d364f8826a48b8922ccdd
-
-
+          <Stack.Screen name="CreateContractPage" component={ContractSendPage} options={{ headerShown: false }}/>
 
         </Stack.Navigator>
     </NavigationContainer>
