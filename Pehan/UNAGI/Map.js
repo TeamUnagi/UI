@@ -58,9 +58,6 @@ class Map extends Component {
              }
              setTable();
   }
-
-
-
   render(){
     var mapMarkers = [];
     for(var j=0;j<this.state.Locations.length;j++){
@@ -128,6 +125,7 @@ class Map extends Component {
                   <Text onPress = {() => {
                     FarmerChosen.setId(item.ID);
                     FarmerChosen.setName(item.Name);
+
                     const {navigation} = this.props;
                     this.setState({show: false})
                     navigation.navigate('FarmerProfilePage')
