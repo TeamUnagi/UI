@@ -4,8 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import ContractsPage from './ContractsPage'
 import ConditionPg from './ConditionPg'
-import NotificationsPage from './NotificationsPage'
-
+import Notifications1 from './Notifications1'
 
 function ContractsScreen() {
   return (
@@ -21,7 +20,7 @@ function ConditionsScreen() {
 
 function NotificationsScreen() {
   return (
-    <NotificationsPage/>
+    <Notifications1/>
   );
 }
 

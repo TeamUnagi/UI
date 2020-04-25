@@ -1,6 +1,6 @@
 var UserInfo = (() => {
     var Name="";
-    var Id="";
+    var Id="186";
     var getName = function() {
       return Name;    
     };
