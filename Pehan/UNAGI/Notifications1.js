@@ -6,6 +6,7 @@ import { View,
          ScrollView } from 'react-native';
 import UserInfo from './UserInfo';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import Notification from './Notification';
 import NotificationId from './NotificationId'
 
 class Notifications1 extends Component {
@@ -31,12 +32,7 @@ class Notifications1 extends Component {
              }
              setTable();
       }
-      set(i)
-      {
-          console.log(i)
-          console.log(this.state.notifications)
-          //NotificationId.setId(this.state.notifications[i].Id)
-      }
+    
     render() {
         var returnV=[];
         if(this.state.notifications.Id==0)
@@ -49,34 +45,15 @@ class Notifications1 extends Component {
         for(var i=0;i<this.state.notifications.length;i++)
         {
             returnV.push(
-                <View>
-                <View style={styles.container}>
-                    <TouchableOpacity style = {styles.Item} onPress={()=>{this.set(this.state.notifications[returnV.length-1].Id)}}>
-                        <Text style = {styles.nameInfo}>New Contract From {this.state.notifications[i].Name}</Text>
-                        <View style={styles.infoVal}>
-                            <Text style={styles.info}>Tap to view!</Text>
-                        </View>
-                    </TouchableOpacity>
+                <View key={i}>
+                    <Notification FinalName={this.state.notifications[i].Name} NotificNumber = {i} />
                 </View>
-            </View> 
             )
         }}
         return (
             <View style={styles.container}>
                 <ScrollView> 
                     <View style = {styles.listContainer}> 
-                        {this.state.notifications.map((value, index)=>{/*
-                            <View key={index}>
-                            <View style={styles.container}>
-                                <TouchableOpacity style = {styles.Item} onPress={()=>{this.set(i)}}>
-                                    <Text style = {styles.nameInfo}>New Contract From {this.state.notifications[index].Name}</Text>
-                                    <View style={styles.infoVal}>
-                                        <Text style={styles.info}>Tap to view!</Text>
-                                    </View>
-                                </TouchableOpacity>
-                            </View>
-                        </View> 
-                        */})}
                         {returnV}
                     </View>
                 </ScrollView>
