@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import UserPage from './UserPage'
+import FarmerHome from './FarmerHome'
 
 class App extends Component {
 
   render() {
     return (
-       <UserPage/>
+       <FarmerHome/>
     )
   }
 }
