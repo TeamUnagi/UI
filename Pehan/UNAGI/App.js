@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FarmerHome from './FarmerHome'
+import FarmerHome from './ViewNotificationPage'
 
 class App extends Component {
 
