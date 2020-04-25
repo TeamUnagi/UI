@@ -24,10 +24,6 @@ class VegDescription extends Component {
                 <Text style = {styles.vegInfo}>
                         - The (vegetabel) needs more watering and grown in lower temperature
                 </Text>
-            
-
-
- 
            </View>
 
         </View>

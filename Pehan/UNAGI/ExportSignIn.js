@@ -21,6 +21,7 @@ class ExporterSignIn extends Component {
         Email:'',
         Password:'',
         Company:'',
+        Number:'',
         success:''
     };
   }
@@ -43,6 +44,10 @@ submit=() => {
   }
   if(Object.keys(this.state.Password).length==0){
     alert("Please enter your Password")
+    this.setState({success:"notsuccess"})
+  }
+  if(Object.keys(this.state.Number).length==0){
+    alert("Please enter your Number")
     this.setState({success:"notsuccess"})
   }
   if(Object.keys(this.state.success).length==0){
@@ -103,6 +108,14 @@ submit=() => {
                 secureTextEntry = {true}
                 placeholderTextColor={'#E59866'} 
                 onChangeText={text=>{this.setState({Password:text});this.setState({success:''})}}
+                 />
+            </View>
+            <View>
+                <TextInput style= {styles.inputText}
+                placeholder={'Contact Number'}
+                secureTextEntry = {true}
+                placeholderTextColor={'#E59866'} 
+                onChangeText={text=>{this.setState({Number:text});this.setState({success:''})}}
                  />
             </View>
             
