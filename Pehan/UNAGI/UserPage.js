@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import{ View, Text, SafeAreaView, StyleSheet, ImageBackground, TouchableOpacity, } from 'react-native';
 import vegBg from './images/background.jpg';
-
+import ViewNotificationPage from './ViewNotificationPage';
 import TestTrending from './testTrending';
 import TestTrending2 from './testTrending2'
 
@@ -22,7 +22,6 @@ import Notifications1 from './Notifications1'
 
 
 //import ScreenMove from './ScreenMove'
-
 class UserPage extends Component {
   render(navigation) {  
     return (
@@ -104,8 +103,6 @@ function TrendingTabs() {
         }>
         <Tab.Screen name="Trends" component={TestTrending} />
         <Tab.Screen name="Trends 2" component={TestTrending2}/>
-        <Tab.Screen name="Settings" component={SecondScreen} />
-
       </Tab.Navigator>
   );
 }
@@ -152,10 +149,12 @@ const App = () => {
           <Stack.Screen name="FarmerSignUpPage" component={FarmerSignIn} options={{ headerShown: false }}/>
           <Stack.Screen name="UserLoginPage" component={LoginPage} options={{ headerShown: false }}/>
           <Stack.Screen name="MapPage" component={Map} options={{ headerShown: false }}/>
+          <Stack.Screen name="ViewNotificationPage" component={ViewNotificationPage} options={{ headerShown: false }}/>
           <Stack.Screen name="ScreenMove" component={TrendingTabs} options={{ headerShown: false }}/>
           <Stack.Screen name="FarmerHomePage" component={FarmerTabs} options={{ headerShown: false }}/>
           <Stack.Screen name="FarmerProfilePage" component={FarmerProfilePage} options={{ headerShown: false }}/>
           <Stack.Screen name="CreateContractPage" component={ContractSendPage} options={{ headerShown: false }}/>
+
 
         </Stack.Navigator>
     </NavigationContainer>

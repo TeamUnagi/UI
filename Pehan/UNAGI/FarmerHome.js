@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import ContractsPage from './ContractsPage'
+import ContractsPage from './Contracts1'
 import ConditionPg from './ConditionPg'
 import Notifications1 from './Notifications1'
 

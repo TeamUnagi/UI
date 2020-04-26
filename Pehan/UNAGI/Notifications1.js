@@ -6,8 +6,6 @@ import { View,
          ScrollView } from 'react-native';
 import UserInfo from './UserInfo';
 import Notification from './Notification';
-import NotificationId from './NotificationId'
-
 
 class Notifications1 extends Component {
     constructor(props){
