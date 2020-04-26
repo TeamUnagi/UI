@@ -5,31 +5,118 @@ import { View,
         StyleSheet,
         ScrollView  } from 'react-native';
 import Condition from './Condition';
-
+import UserInfo from './UserInfo';
+import axios from 'axios';
 class ConditionPg extends Component {
- 
+    constructor(props){
+        super(props)
+        this.change();
+        this.state={
+           vegetables:[{Vegetable:"Carrot"}]
+        };
+      }
+      change(){
+        const URL="http://10.0.2.2:4000/conditionFront"
+        const table = async () => {
+            try {
+               return await axios.post(URL,{FarmerId:UserInfo.getId()})   
+              } catch (error) {
+                console.log(error)
+              }
+            }
+            const setVegetables = async () => {
+                const confirm = await table();
+                this.setState({vegetables:confirm.data});
+             }
+             setVegetables();
+      }
+    
+    render() {
+        var returnedVegetables=[];
+        
+        for(var i=0;i<this.state.vegetables.length;i++)
+        {
+            returnedVegetables.push(
+                <View key={i}>
+                    <Condition VegName={this.state.vegetables[i].Vegetable} CondNumber = {i} />
+                </View>
+            )
+        }
+        return (
 
-  render() {
-    return (
-        <View style={styles.container}>
-            <ScrollView>    
-            <View style = {styles.listContainer}> 
-                <Condition/>
-                <Condition/>
-                <Condition/>
-                <Condition/>
-                <Condition/>
-                <Condition/>
-                <Condition/>
+            
+            <View style={styles.container}>
+                <ScrollView> 
+                    <View style = {styles.listContainer}> 
+                        {returnedVegetables}
+                    </View>
+                </ScrollView>
             </View>
-            </ScrollView>               
-        </View>
-    )
-  }
+            
+           /* <View>
+                <View style={styles.container}>
+                    <View style = {styles.Item}>
+                        <Text style = {styles.nameInfo}>Vegetable Name</Text>
+                        <View style={styles.infoVal}>
+                            <Text style={styles.info}>Tap to read the conditon about</Text>
+                        </View>
+                        <View style={styles.infoVal}>
+                            <Text style={styles.Ninfo}>vegetable name</Text>
+                        </View>
+                    </View>
+                </View>
+            </View> */
+        )
+    }
 }
 
 
 const styles = StyleSheet.create({
+
+container: {
+        backgroundColor: 'white',
+        flex: 1,
+        
+},
+infoVal:{
+    
+    flexDirection: 'row',
+    paddingTop:1,
+    paddingLeft: 20
+},
+
+nameInfo: {
+    position: 'relative',
+    bottom:10,
+    color: 'black',
+    fontSize: 16,
+    paddingLeft: 20,
+    paddingTop:7
+    
+},
+
+Ninfo:{
+    position: 'relative',
+    left:0,
+    fontSize: 14,
+    textAlign: 'left',
+    flexWrap: 'wrap',
+},
+
+Item:{
+    shadowOpacity:0.5,
+    backgroundColor: '#d2691e',
+    borderRadius: 15,
+    height:100,
+    padding:20,
+    marginTop:30,
+    marginHorizontal:40
+},
+
+})
+
+
+/*const styles = StyleSheet.create({
 
 container: {
     backgroundColor: 'white',
@@ -42,6 +129,6 @@ listContainer:{
 }
    
 
-})
+}) */
 
 export default ConditionPg;

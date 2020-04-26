@@ -47,7 +47,10 @@ class UserLogin extends Component {
               const {navigation} = this.props;
               navigation.navigate('ScreenMove')
               //Should go to ScreenMove.js
-            }else{}
+            }else{
+              const {navigation} = this.props;
+              navigation.navigate('FarmerHomePage')
+            }
            }
         else{alert("The username does not exist or password does not match the username")}
          }

@@ -5,8 +5,14 @@ import { View,
          StyleSheet ,
          ScrollView } from 'react-native';
 import UserInfo from './UserInfo';
+<<<<<<< HEAD
 
 import Notification from './Notification';
+=======
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import Notification from './Notification';
+import NotificationId from './NotificationId'
+>>>>>>> f9b0fcb580fceb15df9c6b44df5866f5c6acad9b
 
 class Notifications1 extends Component {
     constructor(props){
@@ -47,7 +53,11 @@ class Notifications1 extends Component {
         {
             returnV.push(
                 <View key={i}>
+<<<<<<< HEAD
                     <Notification FinalName={this.state.notifications[i].Name} NotificNumber = {i} Id={this.state.notifications[i].Id} />
+=======
+                    <Notification FinalName={this.state.notifications[i].Name} NotificNumber = {i} />
+>>>>>>> f9b0fcb580fceb15df9c6b44df5866f5c6acad9b
                 </View>
             )
         }}

@@ -3,20 +3,41 @@ import React, { Component } from 'react';
 import { View,
          Text, 
          StyleSheet  } from 'react-native';
+         import PropTypes from 'prop-types';
+
 
 
 class Condition extends Component {
+
+    static propTypes = {
+        VegName: PropTypes.string.isRequired,
+        CondNumber: PropTypes.number.isRequired,
+        
+
+    };  
+
+    /*submit(name) {
+        VegetableChosen.setName(name);
+        console.log(VegetableChosen.getName());
+        const { navigate } = this.props.navigation;
+        navigate('MapPage')    
+    
+
+    } */
+
+
+
     render() {
         return (
             <View>
                 <View style={styles.container}>
                     <View style = {styles.Item}>
-                        <Text style = {styles.nameInfo}>Vegetable Name</Text>
+                        <Text style = {styles.nameInfo}>{this.props.VegName}</Text>
                         <View style={styles.infoVal}>
                             <Text style={styles.info}>Tap to read the conditon about</Text>
                         </View>
                         <View style={styles.infoVal}>
-                            <Text style={styles.Ninfo}>vegetable name</Text>
+                            <Text style={styles.Ninfo}>{this.props.VegName}</Text>
                         </View>
                     </View>
                 </View>

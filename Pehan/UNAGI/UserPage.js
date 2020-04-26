@@ -16,6 +16,9 @@ import ExporterSignIn from './ExportSignIn';
 import FarmerSignIn from './FarmerSignIn';
 import LoginPage from './UserLogIn';
 import Map from './Map';
+import ContractsPage from './ContractsPage'
+import ConditionPg from './ConditionPg'
+import Notifications1 from './Notifications1'
 
 
 
@@ -75,15 +78,27 @@ const Stack = createStackNavigator();
 
 
 
-function ScreenMove() {
+function TrendingTabs() {
   return (
     <Tab.Navigator
         tabBarOptions={{ 
           activeBackgroundColor:'black',
-          activeTintColor: 'orange',
-          inactiveTintColor: 'grey',
-          activeBackgroundColor:'orange',
-          style: { backgroundColor: 'black', padding:15},
+          activeTintColor: '#E59866',
+          inactiveTintColor: '#E59866',
+          activeBackgroundColor:'#E59866',
+
+          labelStyle: {
+            fontSize: 18,
+            
+            
+          },
+          
+          style: { backgroundColor: 'black',borderBottomLeftRadius: 15,
+          borderBottomRightRadius: 15, paddingTop:25, paddingBottom:1,  },
+
+          indicatorStyle: {
+            backgroundColor: '#E59866', width:40, marginBottom:10, marginHorizontal:87
+        }
                     
         }
         
@@ -92,6 +107,38 @@ function ScreenMove() {
         <Tab.Screen name="Trends 2" component={TestTrending2}/>
         <Tab.Screen name="Settings" component={SecondScreen} />
 
+      </Tab.Navigator>
+  );
+}
+
+function FarmerTabs() {
+  return (
+      <Tab.Navigator tabBarOptions={{ 
+          
+          activeBackgroundColor:'black',
+          activeTintColor: '#E59866',
+          inactiveTintColor: '#E59866',
+          activeBackgroundColor:'#E59866',
+
+          labelStyle: {
+            fontSize: 14,
+            
+            
+          },
+          
+          style: { backgroundColor: 'black',borderBottomLeftRadius: 15,
+          borderBottomRightRadius: 15, paddingTop:25, paddingBottom:1,  },
+
+          indicatorStyle: {
+            backgroundColor: '#E59866', width:30, marginBottom:10, marginHorizontal:50
+        }
+                    
+        }
+        
+        }>
+        <Tab.Screen name="Contracts" component={ContractsPage} />
+        <Tab.Screen name="Conditions" component={ConditionPg} />
+        <Tab.Screen name="Notifications" component={Notifications1} />
       </Tab.Navigator>
   );
 }
@@ -106,7 +153,8 @@ const App = () => {
           <Stack.Screen name="FarmerSignUpPage" component={FarmerSignIn} options={{ headerShown: false }}/>
           <Stack.Screen name="UserLoginPage" component={LoginPage} options={{ headerShown: false }}/>
           <Stack.Screen name="MapPage" component={Map} options={{ headerShown: false }}/>
-          <Stack.Screen name="ScreenMove" component={ScreenMove} options={{ headerShown: false }}/>
+          <Stack.Screen name="ScreenMove" component={TrendingTabs} options={{ headerShown: false }}/>
+          <Stack.Screen name="FarmerHomePage" component={FarmerTabs} options={{ headerShown: false }}/>
           <Stack.Screen name="FarmerProfilePage" component={FarmerProfilePage} options={{ headerShown: false }}/>
           <Stack.Screen name="CreateContractPage" component={ContractSendPage} options={{ headerShown: false }}/>
 

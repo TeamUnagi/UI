@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { View , Text, StyleSheet, TouchableOpacity } from 'react-native';
 
+<<<<<<< HEAD
 import NotificationId from './NotificationId';
 
 class Notification extends React.Component {
@@ -16,6 +17,26 @@ class Notification extends React.Component {
         <View  style={styles.container}>
         <TouchableOpacity style = {styles.Item} onPress={()=>{NotificationId.setId(this.props.Id)}}>
                         <Text style = {styles.nameInfo}> New Contract From {this.props.FinalName}</Text>
+=======
+class Notification extends React.Component {
+    static propTypes = {
+        FinalName: PropTypes.string.isRequired,
+        NotificNumber: PropTypes.number.isRequired,
+    };  
+    set(i)
+      {
+          console.log(i)
+          //console.log(this.state.notifications)
+          //NotificationId.setId(this.state.notifications[i].Id)
+      }
+
+    render() {
+        return (
+            
+        <View  style={styles.container}>
+        <TouchableOpacity style = {styles.Item} onPress={()=>{this.set(this.props.NotificNumber)}}>
+                        <Text style = {styles.nameInfo}>{this.props.NotificNumber + 1}  New Contract From {this.props.FinalName}</Text>
+>>>>>>> f9b0fcb580fceb15df9c6b44df5866f5c6acad9b
                         <View style={styles.infoVal}>
                             <Text style={styles.info}>Tap to view!</Text>
                         </View>
@@ -71,4 +92,8 @@ listContainer:{
    
 })
 
+<<<<<<< HEAD
 export default Notification;
+=======
+export default Notification;
+>>>>>>> f9b0fcb580fceb15df9c6b44df5866f5c6acad9b
