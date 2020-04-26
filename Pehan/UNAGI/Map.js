@@ -113,6 +113,7 @@ class Map extends Component {
 
         {/* Create the header */}
         <View style = {styles.header}>
+            <Text style = {styles.headName}>Choose Farmer</Text>
         </View>
 
         <Modal transparent = {true} visible = {this.state.show}>
@@ -197,6 +198,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     height: 40,
   },
+  headName:{
+    paddingTop:40,
+    marginLeft:130,
+    color: '#E59866',
+    fontSize: 25,
+    fontFamily: "Futura",
+    marginTop: 10
+}
 
 }); 
 

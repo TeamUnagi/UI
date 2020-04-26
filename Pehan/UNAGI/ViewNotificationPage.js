@@ -30,10 +30,8 @@ class ViewNotificationPage extends Component {
             }
             const setContractInfo = async () => {
                 const confirm = await info();
-<<<<<<< HEAD
                console.log(confirm.data)
-=======
->>>>>>> df1b7fe476997374729bb267708b0943ec39152d
+
                 this.setState({contractInfo:confirm.data});
              }
              setContractInfo();

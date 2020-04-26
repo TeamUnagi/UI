@@ -17,11 +17,11 @@ import Map from './Map';
 import ContractsPage from './Contracts1'
 import ConditionPg from './ConditionPg'
 import Notifications1 from './Notifications1'
-<<<<<<< HEAD
+
 import ViewNotificationPage from './ViewNotificationPage';
 import ViewContractPage from './ViewContractPage';
-=======
->>>>>>> df1b7fe476997374729bb267708b0943ec39152d
+import ViewConditionPage from './ViewConditionPage';
+
 
 
 
@@ -90,7 +90,7 @@ function TrendingTabs() {
           activeBackgroundColor:'#E59866',
 
           labelStyle: {
-            fontSize: 18,
+            fontSize: 23,
             
             
           },
@@ -99,14 +99,14 @@ function TrendingTabs() {
           borderBottomRightRadius: 15, paddingTop:25, paddingBottom:1,  },
 
           indicatorStyle: {
-            backgroundColor: '#E59866', width:40, marginBottom:10, marginHorizontal:87
+            backgroundColor: '#E59866', width:30, marginBottom:10, marginHorizontal:92
         }
                     
         }
         
         }>
-        <Tab.Screen name="Trends" component={TestTrending} />
-        <Tab.Screen name="Trends 2" component={TestTrending2}/>      
+        <Tab.Screen name="2021" component={TestTrending} />
+        <Tab.Screen name="2020" component={TestTrending2}/>      
         </Tab.Navigator>
   );
 }
@@ -121,7 +121,7 @@ function FarmerTabs() {
           activeBackgroundColor:'#E59866',
 
           labelStyle: {
-            fontSize: 14,
+            fontSize: 16,
             
             
           },
@@ -130,7 +130,7 @@ function FarmerTabs() {
           borderBottomRightRadius: 15, paddingTop:25, paddingBottom:1,  },
 
           indicatorStyle: {
-            backgroundColor: '#E59866', width:30, marginBottom:10, marginHorizontal:50
+            backgroundColor: '#E59866', width:30, marginBottom:10, marginHorizontal:55
         }
                     
         }
@@ -155,6 +155,7 @@ const App = () => {
           <Stack.Screen name="MapPage" component={Map} options={{ headerShown: false }}/>
           <Stack.Screen name="ViewNotificationPage" component={ViewNotificationPage} options={{ headerShown: false }}/>
           <Stack.Screen name="ViewContractPage" component={ViewContractPage} options={{ headerShown: false }}/>
+          <Stack.Screen name="ViewConditionPage" component={ViewConditionPage} options={{ headerShown: false }}/>
 
           <Stack.Screen name="ScreenMove" component={TrendingTabs} options={{ headerShown: false }}/>
           <Stack.Screen name="FarmerHomePage" component={FarmerTabs} options={{ headerShown: false }}/>
