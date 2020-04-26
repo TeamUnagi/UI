@@ -4,8 +4,6 @@ import{ View,Text, StyleSheet, ImageBackground, SafeAreaView, TextInput, Touchab
 import { NavigationContainer } from '@react-navigation/native';
 import vegBg from './images/background.jpg';
 import UserInfo from './UserInfo';
-import TestTrending from './testTrending';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 
 
@@ -164,7 +162,7 @@ const styles = StyleSheet.create({
   signUpText: {
     color:'#E59866',
     textAlign:"center",
-    marginTop: 40,
+    marginTop: 20,
     fontFamily: "Avenir",
     marginBottom: 10,
     fontSize: 16 

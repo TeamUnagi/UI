@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
   loginText: {
     color:'#E59866',
     textAlign:"center",
-    marginTop: 40,
+    marginTop: 20,
     fontFamily: "Avenir",
     marginBottom: 10,
     fontSize: 16 
