@@ -15,10 +15,9 @@ import ExporterSignIn from './ExportSignIn';
 import FarmerSignIn from './FarmerSignIn';
 import LoginPage from './UserLogIn';
 import Map from './Map';
-import ContractsPage from './ContractsPage'
+import ContractsPage from './Contracts1'
 import ConditionPg from './ConditionPg'
 import Notifications1 from './Notifications1'
-import ViewNotificationPage from './ViewNotificationPage';
 
 
 

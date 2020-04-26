@@ -18,6 +18,8 @@ class Contracts1 extends Component {
       }
       change(){
         const URL="http://10.0.2.2:4000/sendExporterContracts"
+        console.log("came here")
+        console.log(UserInfo.getId())
         const table = async () => {
             try {
                return await axios.post(URL,{FarmerId:UserInfo.getId()})   
@@ -27,7 +29,6 @@ class Contracts1 extends Component {
             }
             const setTable = async () => {
                 const confirm = await table();
-                console.log("came here")
                 console.log(confirm.data)
                 this.setState({contracts:confirm.data});
              }

@@ -13,7 +13,6 @@ class ContractsPage extends React.Component {
     set(i)
       {
           ContractId.setId(this.props.Id)
-          console.log(ContractId.getId())
       }
 
     render() {
