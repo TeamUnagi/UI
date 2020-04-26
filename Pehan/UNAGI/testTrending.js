@@ -18,7 +18,6 @@ class testTrending extends Component {
         this.state={
            vegetableInfo:VegetableInfo.getName(),
         };
-        //const {navigation} = this.props;
       }
 
       
@@ -42,7 +41,7 @@ class testTrending extends Component {
     
              getVegetableData();
     }
-        render(navigation) {
+        render(navigation) {  
         var topFiveVegetables=[];    
         for (let i=0;i<5;i++){
             topFiveVegetables.push(

@@ -62,19 +62,6 @@ class ConditionPg extends Component {
                 </ScrollView>
             </View>
             
-           /* <View>
-                <View style={styles.container}>
-                    <View style = {styles.Item}>
-                        <Text style = {styles.nameInfo}>Vegetable Name</Text>
-                        <View style={styles.infoVal}>
-                            <Text style={styles.info}>Tap to read the conditon about</Text>
-                        </View>
-                        <View style={styles.infoVal}>
-                            <Text style={styles.Ninfo}>vegetable name</Text>
-                        </View>
-                    </View>
-                </View>
-            </View> */
         )
     }
 }

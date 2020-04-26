@@ -9,6 +9,7 @@ import VegetableChosen from './VegetableChosen'
 class ContractSendPage extends Component{
   constructor(){
     super();
+    this.change();
     this.state={
       To:FarmerChosen.getName(),
       From:UserInfo.getName(),

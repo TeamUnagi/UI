@@ -18,6 +18,7 @@ import Map from './Map';
 import ContractsPage from './ContractsPage'
 import ConditionPg from './ConditionPg'
 import Notifications1 from './Notifications1'
+import ViewNotificationPage from './ViewNotificationPage';
 
 
 
@@ -103,6 +104,10 @@ function TrendingTabs() {
         }>
         <Tab.Screen name="Trends" component={TestTrending} />
         <Tab.Screen name="Trends 2" component={TestTrending2}/>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d4716d4452c085b41bcba627507d80e46cc8f95
       </Tab.Navigator>
   );
 }

@@ -8,19 +8,23 @@ class Notification extends React.Component {
     static propTypes = {
         FinalName: PropTypes.string.isRequired,
         NotificNumber: PropTypes.number.isRequired,
-        Id:PropTypes.number.isRequired
+        Id:PropTypes.number.isRequired,
+        Navigation:PropTypes.string.isRequired,
     };  
     set(i)
       {
-          NotificationId.setId(this.props.Id)
+          NotificationId.setId(i)
           console.log(NotificationId.getId())
+          const { navigate } = this.props.Navigation;
+          console.log('came')
+          navigate('ViewNotificationPage') 
       }
 
     render() {
         return (
             
         <View  style={styles.container}>
-        <TouchableOpacity style = {styles.Item} onPress={()=>{this.set()}}>
+        <TouchableOpacity style = {styles.Item} onPress={this.set.bind(this,this.props.Id)}>
                         <Text style = {styles.nameInfo}>New Contract From {this.props.FinalName}</Text>
                         <View style={styles.infoVal}>
                             <Text style={styles.info}>Tap to view!</Text>
