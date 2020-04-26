@@ -7,7 +7,6 @@ import{ View, Text, SafeAreaView, StyleSheet, ImageBackground, TouchableOpacity,
 import vegBg from './images/background.jpg';
 
 import TestTrending from './testTrending';
-import SecondScreen from './SecondScreen';
 import TestTrending2 from './testTrending2'
 
 import ContractSendPage from './ContractSendPage'

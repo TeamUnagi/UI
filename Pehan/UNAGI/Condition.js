@@ -4,42 +4,29 @@ import { View,
          Text, 
          StyleSheet  } from 'react-native';
          import PropTypes from 'prop-types';
-
-
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import VegetableChosen from './VegetableChosen';
 
 class Condition extends Component {
 
     static propTypes = {
         VegName: PropTypes.string.isRequired,
         CondNumber: PropTypes.number.isRequired,
-        
-
     };  
-
-    /*submit(name) {
-        VegetableChosen.setName(name);
-        console.log(VegetableChosen.getName());
-        const { navigate } = this.props.navigation;
-        navigate('MapPage')    
-    
-
-    } */
-
-
-
+    submit() {
+        VegetableChosen.setName(this.props.VegName);
+        console.log(VegetableChosen.getName());   
+    }
     render() {
         return (
             <View>
                 <View style={styles.container}>
-                    <View style = {styles.Item}>
+                    <TouchableOpacity style = {styles.Item} onPress={()=>{this.submit()}}>
                         <Text style = {styles.nameInfo}>{this.props.VegName}</Text>
                         <View style={styles.infoVal}>
-                            <Text style={styles.info}>Tap to read the conditon about</Text>
+                            <Text style={styles.info}>Tap to read the conditon for current month</Text>
                         </View>
-                        <View style={styles.infoVal}>
-                            <Text style={styles.Ninfo}>{this.props.VegName}</Text>
-                        </View>
-                    </View>
+                    </TouchableOpacity>
                 </View>
             </View> 
         )
