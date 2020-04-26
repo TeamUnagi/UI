@@ -58,7 +58,6 @@ class FarmerProfDisplay extends Component {
           )
         }}
           return(
-            <ImageBackground source={vegBg} style= {styles.bgContainer}>
                 <SafeAreaView>
                     <View styles={styles.mainContainer}>
                         <View style = {styles.nameContainer}>
@@ -79,7 +78,6 @@ class FarmerProfDisplay extends Component {
                       <Text style={styles.btnText}> Create contract </Text>
                     </TouchableOpacity>
                 </SafeAreaView>
-            </ImageBackground>
           )
       }
 }
@@ -96,7 +94,7 @@ const styles = StyleSheet.create({
         height: 140,
         alignItems: 'center',
         justifyContent: 'center',
-        marginVertical:-75,
+        marginVertical:-55,
         backgroundColor: '#141414',
         borderRadius:60,
       },

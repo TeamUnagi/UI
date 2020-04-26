@@ -7,7 +7,7 @@ import{ View, Text, SafeAreaView, StyleSheet, ImageBackground, TouchableOpacity,
 import vegBg from './images/background.jpg';
 
 import TestTrending from './testTrending';
-import SecondScreen from './SecondScreen';
+import TestTrending2 from './testTrending2'
 
 import ContractSendPage from './ContractSendPage'
 import FarmerProfilePage from './FarmerProfDisplay'
@@ -103,6 +103,7 @@ function TrendingTabs() {
         
         }>
         <Tab.Screen name="Trends" component={TestTrending} />
+        <Tab.Screen name="Trends 2" component={TestTrending2}/>
         <Tab.Screen name="Settings" component={SecondScreen} />
 
       </Tab.Navigator>

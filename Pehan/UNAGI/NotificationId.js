@@ -5,8 +5,7 @@ var NotificationId = (() => {
     };
   
     var setId = function(id) {
-      Id = id; 
-      console.log(Id)   
+      Id = id;   
     };
 
     return {
