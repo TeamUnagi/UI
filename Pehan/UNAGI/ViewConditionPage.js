@@ -5,47 +5,66 @@ import{
     SafeAreaView, 
     Text 
 } from 'react-native';
-
+import VegetableChosen from './VegetableChosen'
+import UserInfo from './UserInfo';
+import FarmerChosen from './FarmerChosen';
+import axios from 'axios';
 class ViewConditionPage extends Component {
 
     constructor() {
         super()
-        this.vegetable = "Potatoes"
-        this.date = "05/2020";
-        this.temp = 20;
-        this.phLevel = 0;
-        this.humidity = 0;
-        this.water = "More";
-        this.waterReq = 5;
-        this.waterMessage = "";
-    }
-
-    render() {  
-
-        if (this.water == "More") {
-            this.waterMessage = "Add a lot more water than usual because temperature is really high."
-        } else if (this.water == "Water") {
-            this.waterMessage = "Add a bit more water be temperature is slightly higher."
-        } else {
-            this.waterMessage = "Add the usual amount of water."
+        this.change();
+        this.state={
+            vegetable:VegetableChosen.getName(),
+            date :"05/2020",
+            temp : 20,
+            phLevel : 0,
+            humidity : 0,
+            water : "More",
+            waterReq : 5,
+            waterMessage :  ""
         }
-
+    }
+    change(){
+        const URL="http://10.0.2.2:4000/conditionBack"
+        const table = async () => {
+            try {
+               return await axios.post(URL,{FarmerId:UserInfo.getId(),Vegetable:VegetableChosen.getName()})   
+              } catch (error) {
+                console.log(error)
+              }
+            }
+            const setTable = async () => {
+                const confirm = await table();
+                console.log(confirm.data)
+                this.setState({date:confirm.data.Date,temp:confirm.data.Temp,phLevel:confirm.data.phLevel,water:confirm.data.water,waterReq:confirm.data.WaterReq,humidity:confirm.data.Humidity})
+                if (this.state.water == "More") {
+                    this.setState({waterMessage:"Add a lot more water than usual because temperature is really high."})
+                } else if (this.state.water == "Water") {
+                    this.setState({waterMessage:"Add a bit more water be temperature is slightly higher"})
+                } else {
+                    this.setState({waterMessage:"Add the usual amount of water."})
+                }
+             }
+             setTable();
+      }
+    render() {  
         return (
             <View>
                 <SafeAreaView>
 
                     <View style = {styles.header}>
-                        <Text style = {styles.headText}>{this.vegetable}</Text>     
+                        <Text style = {styles.headText}>{this.state.vegetable}</Text>     
                     </View>
 
                     <View style = {styles.bgContainer}>
 
-                        <Text style = {styles.dateText}>{this.date}</Text>
-                        <Text style = {styles.exporterText}>- Water Requirements / week: {this.waterReq} in</Text>
-                        <Text style = {styles.waterText}>{this.waterMessage}</Text>
-                        <Text style = {styles.exporterText}>- Temperature: {this.temp}°C</Text>
-                        <Text style = {styles.exporterText}>- PH Level: {this.phLevel}</Text>
-                        <Text style = {styles.exporterText}>- Humidity: {this.humidity}</Text>
+                        <Text style = {styles.dateText}>{this.state.date}</Text>
+                        <Text style = {styles.exporterText}>- Water Requirements / week: {this.state.waterReq} inch</Text>
+                        <Text style = {styles.waterText}>{this.state.waterMessage}</Text>
+                        <Text style = {styles.exporterText}>- Temperature: {this.state.temp}°C</Text>
+                        <Text style = {styles.exporterText}>- PH Level: {this.state.phLevel}</Text>
+                        <Text style = {styles.exporterText}>- Humidity: {this.state.humidity}</Text>
 
                     </View>
 
