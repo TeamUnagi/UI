@@ -5,16 +5,14 @@ import { View,
          StyleSheet ,
          ScrollView } from 'react-native';
 import UserInfo from './UserInfo';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import Notification from './Notification';
-import NotificationId from './NotificationId'
 
 class Notifications1 extends Component {
     constructor(props){
         super(props)
         this.change();
         this.state={
-           notifications:[{Name:"dhanush",Id:0,Key:1}]
+           notifications:[]
         };
       }
       change(){
@@ -33,20 +31,22 @@ class Notifications1 extends Component {
              setTable();
       }
     
-    render() {
+    render(navigation) {
         var returnV=[];
         if(this.state.notifications.Id==0)
         {
+            returnV.push(
             <View style={{flex: 1, alignItems: 'center',justifyContent: 'center',marginVertical:300,marginRight:20}}>
                 <Text style = {styles.nameInfo}>No new notifications</Text>
             </View>
+            )
         }
         else{
         for(var i=0;i<this.state.notifications.length;i++)
         {
             returnV.push(
                 <View key={i}>
-                    <Notification FinalName={this.state.notifications[i].Name} NotificNumber = {i} />
+                    <Notification FinalName={this.state.notifications[i].Name} NotificNumber = {i} Id={this.state.notifications[i].Id } Navigation = {this.props.navigation} />
                 </View>
             )
         }}

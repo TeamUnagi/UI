@@ -6,27 +6,56 @@ import{
     Text,
     TouchableOpacity
 } from 'react-native';
+import axios from 'axios';
+import NotificationId from './NotificationId'
 
 class ViewNotificationPage extends Component {
+    constructor(props){
+        super(props);
+        this.change();
+        this.state={
+            contractInfo:[{Vegetable:"Carrot",Weight:400,Comment:"good",EndDate:"02/02/2020",Number:"9477706314",Name:"Yeshan Santhush"}]
+            };
+      }
+
+    change(){
+        const URL="http://10.0.2.2:4000/notificationBack"
+        const info = async () => {
+            try {
+               console.log('booooooooooooooooooooommmmmmmmm') 
+               console.log(NotificationId.getId()) 
+               return await axios.post(URL,{Contractid:NotificationId.getId()})   
+              } catch (error) {
+                console.log(error)
+              }
+            }
+            const setContractInfo = async () => {
+                const confirm = await info();
+                console.log('boommm')
+               console.log(confirm.data)
+                this.setState({contractInfo:confirm.data});
+                console.log(this.state.contractInfo[0].Vegetable)
+             }
+             setContractInfo();
+      }
     render() {  
         return (
             <View>
                 <SafeAreaView>
 
                     <View style = {styles.header}>
-                        <Text style = {styles.headText}> Lil Suresh's Contract </Text>     
+                        <Text style = {styles.headText}> {this.state.contractInfo[0].Name} </Text>     
                     </View>
 
                     <View style = {styles.bgContainer}>
 
-                        <Text style = {styles.exporterText}>Exporter:           Lil Suresh</Text>
-                        <Text style = {styles.exporterText}>Vegetable:        Tomatoes</Text>
-                        <Text style = {styles.exporterText}>End Date:          05/05/2020</Text>
-                        <Text style = {styles.exporterText}>Weight:              30,000 KGs</Text>
-                        <Text style = {styles.exporterText}>Tel:                     (94) 76 324 1882</Text>
+                        <Text style = {styles.exporterText}>Vegetable:{this.state.contractInfo[0].Vegetable}</Text>
+                        <Text style = {styles.exporterText}>End Date:{this.state.contractInfo[0].EndDate}</Text>
+                        <Text style = {styles.exporterText}>Weight:{this.state.contractInfo[0].Weight}KG</Text>
+                        <Text style = {styles.exporterText}>Tel:{this.state.contractInfo[0].Number}</Text>
 
                         <View style = {styles.commentBackground}>
-                            <Text style = {styles.commentText}>Ay man, need some veggies real quick.</Text>
+                            <Text style = {styles.commentText}>{this.state.contractInfo[0].Comment}</Text>
                         </View>
 
                         <View style = {{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>

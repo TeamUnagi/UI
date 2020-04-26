@@ -18,17 +18,15 @@ class testTrending extends Component {
         this.state={
            vegetableInfo:VegetableInfo.getName(),
         };
+        //const {navigation} = this.props;
       }
 
       
-
-
-
       componentDidMount(){    
-        const URL="http://10.0.2.2:4000/VegetableImports"
+        const URL="http://10.0.2.2:4000/VegetableImports2"
         const trends = async () => {
             try {
-               return await axios.get(URL)   
+               return await axios.post(URL)   
               } catch (error) {
                 console.log(error)
               }
@@ -41,7 +39,7 @@ class testTrending extends Component {
     
              getVegetableData();
     }
-        render(navigation) {  
+        render(navigation) {
         var topFiveVegetables=[];    
         for (let i=0;i<5;i++){
             topFiveVegetables.push(

@@ -26,6 +26,7 @@ class ConditionPg extends Component {
             }
             const setVegetables = async () => {
                 const confirm = await table();
+                console.log(confirm.data)
                 this.setState({vegetables:confirm.data});
              }
              setVegetables();
@@ -33,7 +34,15 @@ class ConditionPg extends Component {
     
     render() {
         var returnedVegetables=[];
-        
+        if(this.state.vegetables.Vegetable=='No')
+        {
+            returnedVegetables.push(
+            <View style={{flex: 1, alignItems: 'center',justifyContent: 'center',marginVertical:300,marginRight:20}}>
+                <Text style = {styles.nameInfo}>No Vegetables to Display</Text>
+            </View>
+            )
+        }
+        else{
         for(var i=0;i<this.state.vegetables.length;i++)
         {
             returnedVegetables.push(
@@ -41,7 +50,7 @@ class ConditionPg extends Component {
                     <Condition VegName={this.state.vegetables[i].Vegetable} CondNumber = {i} />
                 </View>
             )
-        }
+        }}
         return (
 
             
@@ -53,19 +62,6 @@ class ConditionPg extends Component {
                 </ScrollView>
             </View>
             
-           /* <View>
-                <View style={styles.container}>
-                    <View style = {styles.Item}>
-                        <Text style = {styles.nameInfo}>Vegetable Name</Text>
-                        <View style={styles.infoVal}>
-                            <Text style={styles.info}>Tap to read the conditon about</Text>
-                        </View>
-                        <View style={styles.infoVal}>
-                            <Text style={styles.Ninfo}>vegetable name</Text>
-                        </View>
-                    </View>
-                </View>
-            </View> */
         )
     }
 }

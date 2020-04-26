@@ -1,4 +1,4 @@
-var NotificationId = (() => {
+var ContractId = (() => {
     var Id=""
     var getId = function() {
       return Id;    
@@ -14,4 +14,4 @@ var NotificationId = (() => {
     }
   
   })();
-  export default NotificationId;
+  export default ContractId;

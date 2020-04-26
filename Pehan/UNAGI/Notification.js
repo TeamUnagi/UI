@@ -2,25 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { View , Text, StyleSheet, TouchableOpacity } from 'react-native';
+import NotificationId from './NotificationId';
 
 class Notification extends React.Component {
     static propTypes = {
         FinalName: PropTypes.string.isRequired,
         NotificNumber: PropTypes.number.isRequired,
+        Id:PropTypes.number.isRequired,
+        Navigation:PropTypes.string.isRequired,
     };  
     set(i)
       {
-          console.log(i)
-          //console.log(this.state.notifications)
-          //NotificationId.setId(this.state.notifications[i].Id)
+          NotificationId.setId(i)
+          console.log(NotificationId.getId())
+          const { navigate } = this.props.Navigation;
+          console.log('came')
+          navigate('ViewNotificationPage') 
       }
 
     render() {
         return (
             
         <View  style={styles.container}>
-        <TouchableOpacity style = {styles.Item} onPress={()=>{this.set(this.props.NotificNumber)}}>
-                        <Text style = {styles.nameInfo}>{this.props.NotificNumber + 1}  New Contract From {this.props.FinalName}</Text>
+        <TouchableOpacity style = {styles.Item} onPress={this.set.bind(this,this.props.Id)}>
+                        <Text style = {styles.nameInfo}>New Contract From {this.props.FinalName}</Text>
                         <View style={styles.infoVal}>
                             <Text style={styles.info}>Tap to view!</Text>
                         </View>
