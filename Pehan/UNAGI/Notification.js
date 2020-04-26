@@ -16,7 +16,6 @@ class Notification extends React.Component {
           NotificationId.setId(i)
           console.log(NotificationId.getId())
           const { navigate } = this.props.Navigation;
-          console.log('came')
           navigate('ViewNotificationPage') 
       }
 

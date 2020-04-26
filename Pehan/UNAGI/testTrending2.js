@@ -18,7 +18,6 @@ class testTrending extends Component {
         this.state={
            vegetableInfo:VegetableInfo.getName(),
         };
-        //const {navigation} = this.props;
       }
 
       

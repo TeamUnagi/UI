@@ -5,7 +5,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import{ View, Text, SafeAreaView, StyleSheet, ImageBackground, TouchableOpacity, } from 'react-native';
 import vegBg from './images/background.jpg';
-import ViewNotificationPage from './ViewNotificationPage';
 import TestTrending from './testTrending';
 import TestTrending2 from './testTrending2'
 
@@ -15,10 +14,11 @@ import ExporterSignIn from './ExportSignIn';
 import FarmerSignIn from './FarmerSignIn';
 import LoginPage from './UserLogIn';
 import Map from './Map';
-import ContractsPage from './ContractsPage'
+import ContractsPage from './Contracts1'
 import ConditionPg from './ConditionPg'
 import Notifications1 from './Notifications1'
 import ViewNotificationPage from './ViewNotificationPage';
+import ViewContractPage from './ViewContractPage';
 
 
 
@@ -151,11 +151,13 @@ const App = () => {
           <Stack.Screen name="UserLoginPage" component={LoginPage} options={{ headerShown: false }}/>
           <Stack.Screen name="MapPage" component={Map} options={{ headerShown: false }}/>
           <Stack.Screen name="ViewNotificationPage" component={ViewNotificationPage} options={{ headerShown: false }}/>
+          <Stack.Screen name="ViewContractPage" component={ViewContractPage} options={{ headerShown: false }}/>
+
           <Stack.Screen name="ScreenMove" component={TrendingTabs} options={{ headerShown: false }}/>
           <Stack.Screen name="FarmerHomePage" component={FarmerTabs} options={{ headerShown: false }}/>
           <Stack.Screen name="FarmerProfilePage" component={FarmerProfilePage} options={{ headerShown: false }}/>
           <Stack.Screen name="CreateContractPage" component={ContractSendPage} options={{ headerShown: false }}/>
-
+          
 
         </Stack.Navigator>
     </NavigationContainer>

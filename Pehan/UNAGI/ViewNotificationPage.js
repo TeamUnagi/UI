@@ -22,7 +22,6 @@ class ViewNotificationPage extends Component {
         const URL="http://10.0.2.2:4000/notificationBack"
         const info = async () => {
             try {
-               console.log('booooooooooooooooooooommmmmmmmm') 
                console.log(NotificationId.getId()) 
                return await axios.post(URL,{Contractid:NotificationId.getId()})   
               } catch (error) {
@@ -31,7 +30,6 @@ class ViewNotificationPage extends Component {
             }
             const setContractInfo = async () => {
                 const confirm = await info();
-                console.log('boommm')
                console.log(confirm.data)
                 this.setState({contractInfo:confirm.data});
                 console.log(this.state.contractInfo[0].Vegetable)

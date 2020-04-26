@@ -8,19 +8,21 @@ class ContractsPage extends React.Component {
     static propTypes = {
         FinalName: PropTypes.string.isRequired,
         FinalVegetable:PropTypes.string.isRequired,
-        Id:PropTypes.number.isRequired
+        Id:PropTypes.number.isRequired,
+        Navigation:PropTypes.string.isRequired,
     };  
     set(i)
       {
-          ContractId.setId(this.props.Id)
-          console.log(ContractId.getId())
+          ContractId.setId(i)
+          const { navigate } = this.props.Navigation;
+          navigate('ViewContractPage') 
       }
 
-    render() {
+    render(navigation) {
         return (
             
         <View  style={styles.container}>
-        <TouchableOpacity style = {styles.Item} onPress={()=>{this.set()}}>
+        <TouchableOpacity style = {styles.Item} onPress={this.set.bind(this,this.props.Id)}>
                         <Text style = {styles.nameInfo}>Contract From {this.props.FinalName}</Text>
                         <View style={styles.infoVal}>
         <Text style={styles.info}>Tap to view you contract for {this.props.FinalVegetable}</Text>
