@@ -196,6 +196,7 @@ const styles = StyleSheet.create({
     color:'#E59866',
     textAlign:"center",
     fontFamily: "Avenir",
+    marginTop: 20,
     marginBottom: 10,
     fontSize: 16 
   },
