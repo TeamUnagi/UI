@@ -13,9 +13,13 @@ class ContractsPage extends React.Component {
     };  
     set(i)
       {
+<<<<<<< HEAD
           ContractId.setId(i)
           const { navigate } = this.props.Navigation;
           navigate('ViewContractPage') 
+=======
+          ContractId.setId(this.props.Id)
+>>>>>>> df1b7fe476997374729bb267708b0943ec39152d
       }
 
     render(navigation) {

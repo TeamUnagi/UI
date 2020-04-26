@@ -17,8 +17,11 @@ import Map from './Map';
 import ContractsPage from './Contracts1'
 import ConditionPg from './ConditionPg'
 import Notifications1 from './Notifications1'
+<<<<<<< HEAD
 import ViewNotificationPage from './ViewNotificationPage';
 import ViewContractPage from './ViewContractPage';
+=======
+>>>>>>> df1b7fe476997374729bb267708b0943ec39152d
 
 
 
@@ -207,7 +210,7 @@ const styles = StyleSheet.create({
   loginText: {
     color:'#E59866',
     textAlign:"center",
-    marginTop: 40,
+    marginTop: 20,
     fontFamily: "Avenir",
     marginBottom: 10,
     fontSize: 16 

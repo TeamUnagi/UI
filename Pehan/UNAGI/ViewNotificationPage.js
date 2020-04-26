@@ -30,11 +30,21 @@ class ViewNotificationPage extends Component {
             }
             const setContractInfo = async () => {
                 const confirm = await info();
+<<<<<<< HEAD
                console.log(confirm.data)
+=======
+>>>>>>> df1b7fe476997374729bb267708b0943ec39152d
                 this.setState({contractInfo:confirm.data});
-                console.log(this.state.contractInfo[0].Vegetable)
              }
              setContractInfo();
+      }
+      accept(res)
+      {
+        const URL="http://10.0.2.2:4000/Accept"
+        axios.post(URL,{Contractid:NotificationId.getId(),Res:res})
+        alert('Done')
+        const {navigation} = this.props;
+              navigation.navigate('FarmerHomePage')
       }
     render() {  
         return (
@@ -58,11 +68,11 @@ class ViewNotificationPage extends Component {
 
                         <View style = {{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
 
-                            <TouchableOpacity style={styles.acceptButton} onPress = {() => {}}>
+                            <TouchableOpacity style={styles.acceptButton} onPress = {() => {this.accept("Yes")}}>
                                 <Text style = {styles.buttonText}>Accept</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={styles.rejectButton} onPress = {() => {}}>
+                            <TouchableOpacity style={styles.rejectButton} onPress = {() => {this.accept("No")}}>
                                 <Text style = {styles.buttonText}>Reject</Text>
                             </TouchableOpacity>
                         </View>

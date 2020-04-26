@@ -15,7 +15,6 @@ class Condition extends Component {
     };  
     submit() {
         VegetableChosen.setName(this.props.VegName);
-        console.log(VegetableChosen.getName());   
     }
     render() {
         return (
