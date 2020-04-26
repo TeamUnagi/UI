@@ -18,6 +18,7 @@ import Map from './Map';
 import ContractsPage from './ContractsPage'
 import ConditionPg from './ConditionPg'
 import Notifications1 from './Notifications1'
+import ViewNotificationPage from './ViewNotificationPage';
 
 
 
@@ -104,7 +105,6 @@ function TrendingTabs() {
         }>
         <Tab.Screen name="Trends" component={TestTrending} />
         <Tab.Screen name="Trends 2" component={TestTrending2}/>
-        <Tab.Screen name="Settings" component={SecondScreen} />
 
       </Tab.Navigator>
   );
@@ -152,10 +152,12 @@ const App = () => {
           <Stack.Screen name="FarmerSignUpPage" component={FarmerSignIn} options={{ headerShown: false }}/>
           <Stack.Screen name="UserLoginPage" component={LoginPage} options={{ headerShown: false }}/>
           <Stack.Screen name="MapPage" component={Map} options={{ headerShown: false }}/>
+          <Stack.Screen name="ViewNotificationPage" component={ViewNotificationPage} options={{ headerShown: false }}/>
           <Stack.Screen name="ScreenMove" component={TrendingTabs} options={{ headerShown: false }}/>
           <Stack.Screen name="FarmerHomePage" component={FarmerTabs} options={{ headerShown: false }}/>
           <Stack.Screen name="FarmerProfilePage" component={FarmerProfilePage} options={{ headerShown: false }}/>
           <Stack.Screen name="CreateContractPage" component={ContractSendPage} options={{ headerShown: false }}/>
+
 
         </Stack.Navigator>
     </NavigationContainer>

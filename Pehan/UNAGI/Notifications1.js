@@ -33,7 +33,7 @@ class Notifications1 extends Component {
              setTable();
       }
     
-    render() {
+    render(navigation) {
         var returnV=[];
         if(this.state.notifications.Id==0)
         {
@@ -48,7 +48,7 @@ class Notifications1 extends Component {
         {
             returnV.push(
                 <View key={i}>
-                    <Notification FinalName={this.state.notifications[i].Name} NotificNumber = {i} Id={this.state.notifications[i].Id} />
+                    <Notification FinalName={this.state.notifications[i].Name} NotificNumber = {i} Id={this.state.notifications[i].Id } Navigation = {this.props.navigation} />
                 </View>
             )
         }}
