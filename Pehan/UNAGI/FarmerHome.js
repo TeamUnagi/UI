@@ -47,7 +47,7 @@ export default function App() {
 
           indicatorStyle: {
             backgroundColor: '#E59866', width:30, marginBottom:10, marginHorizontal:50
-        }
+          }
                     
         }
         

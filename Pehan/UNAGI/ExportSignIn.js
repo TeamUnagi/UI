@@ -30,27 +30,27 @@ submit=() => {
     alert("Please enter your Username")
     this.setState({success:"notsuccess"})
   }
-  if(Object.keys(this.state.Fullname).length==0){
+  if (Object.keys(this.state.Fullname).length == 0) {
     alert("Please enter your Fullname")
     this.setState({success:"notsuccess"})
   }
-  if(Object.keys(this.state.Email).length==0){
+  if (Object.keys(this.state.Email).length==0) {
     alert("Please enter your Email")
     this.setState({success:"notsuccess"})
   }
-  if(Object.keys(this.state.Company).length==0){
+  if (Object.keys(this.state.Company).length==0) {
     alert("Please enter your Company")
     this.setState({success:"notsuccess"})
   }
-  if(Object.keys(this.state.Password).length==0){
+  if (Object.keys(this.state.Password).length==0) {
     alert("Please enter your Password")
     this.setState({success:"notsuccess"})
   }
-  if(Object.keys(this.state.Number).length==0){
+  if (Object.keys(this.state.Number).length==0) {
     alert("Please enter your Number")
     this.setState({success:"notsuccess"})
   }
-  if(Object.keys(this.state.success).length==0){
+  if (Object.keys(this.state.success).length==0){
     const URL="http://10.0.2.2:4000/exportersigninuserinfo"
     const exporterconfirm = async () => {
       try {
@@ -60,17 +60,18 @@ submit=() => {
         }
       }
       const getexporterconfirm = async () => {
-      const confirm = await exporterconfirm()
-    
-       if (confirm.data.message=="success") {
-          alert("Successfully added")
-         }
-      else if(confirm.data.message=="user"){
-        alert("This Username is already in used")
+        const confirm = await exporterconfirm()
+      
+        if (confirm.data.message == "success") {
+            alert("Successfully added")
+
+        } else if (confirm.data.message == "user") {
+          alert("This Username is already in used")
+
+        } else {
+          alert("There is already a user with this email")
+        }
       }
-      else
-      {alert("There is already a user with this email")}
-       }
       getexporterconfirm();
   }
 }
@@ -146,7 +147,7 @@ submit=() => {
             <TouchableOpacity onPress = {() => {
                 const {navigation} = this.props;
                 navigation.navigate('UserLoginPage')
-              }}>
+            }}>
               <Text  style={styles.loginText}> Have an account? Login </Text>
             </TouchableOpacity>
 

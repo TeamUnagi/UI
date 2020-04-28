@@ -141,20 +141,6 @@ class Map extends Component {
   }
 }
 
-/*const Stack = createStackNavigator();
-
-const Appster = () => {
-  return (
-    <NavigationContainer>
-        <Stack.Navigator>
-
-          <Stack.Screen name="FarmerProfilePage" component={FarmerProfilePage} options={{ headerShown: false }}/>
-
-        </Stack.Navigator>
-    </NavigationContainer>
-  );
-} */
-
 const styles = StyleSheet.create({
 
   container: {
