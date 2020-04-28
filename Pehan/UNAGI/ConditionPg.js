@@ -48,7 +48,7 @@ class ConditionPg extends Component {
         {
             returnedVegetables.push(
                 <View key={i}>
-                    <Condition VegName={this.state.vegetables[i].Vegetable} CondNumber = {i} />
+                    <Condition VegName={this.state.vegetables[i].Vegetable} CondNumber = {i} Navigation = {this.props.navigation}/>
                 </View>
             )
         }}
