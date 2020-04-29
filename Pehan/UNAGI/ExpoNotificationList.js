@@ -19,7 +19,7 @@ class ExpoNotificationList extends Component {
         const URL="" /* url not pressent (eg:http://10.0.2.2:4000/noticationFront) cause i don't know */
         const table = async () => {
             try {
-               return await axios.post(URL,{FarmerId:UserInfo.getId()})   
+               return await axios.post(URL,{ExpoterId:UserInfo.getId()})   
               } catch (error) {
                 console.log(error)
               }
