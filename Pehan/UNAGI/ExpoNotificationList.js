@@ -16,10 +16,11 @@ class ExpoNotificationList extends Component {
       }
 
       change(){
-        const URL="" /* url not pressent (eg:http://10.0.2.2:4000/noticationFront) cause i don't know */
+        const URL="http://10.0.2.2:4000/AcceptedContracts"
         const table = async () => {
             try {
-               return await axios.post(URL,{ExpoterId:UserInfo.getId()})   
+               return await axios.post(URL,{ExpoterId:UserInfo.getId()})  
+
               } catch (error) {
                 console.log(error)
               }
@@ -32,37 +33,25 @@ class ExpoNotificationList extends Component {
       }
     
     render(navigation) {
-        var returnEN=[];
-        if(this.state.exponotifications.Id==0)
-        {
-            returnEN.push(
-            <View style={{flex: 1, alignItems: 'center',justifyContent: 'center',marginVertical:300}}>
-                <Text style = {styles.nameInfo}>No notifications right now</Text>
-            </View>
-            )
-        }
-        else{
+        var notification=[];
+        
         for(var i=0;i<this.state.exponotifications.length;i++)
         {
-            returnEN.push(
+            console.log(this.state.exponotifications[i].Name)
+            notification.push(
                 <View key={i}>
-                    <ExpoNotification FinalName={this.state.exponotifications[i].Name} NotificNumber = {i} Id={this.state.exponotifications[i].Id } Navigation = {this.props.navigation} />
+                    <ExpoNotification FinalName={this.state.exponotifications[i].Name} NotificNumber = {i} Id={this.state.exponotifications[i].Id } Navigation = {this.props.navigation}/>
                 </View>
             )
-        }}
+        }
         return (
-            <View>
-                <View style = {styles.headContainer}>
-                    <Text style = {styles.headText}> Notifications </Text>     
+            <View style={styles.container}>
+            <ScrollView> 
+                <View style = {styles.listContainer}> 
+                    {notification}
                 </View>
-                <View style={styles.container}>
-                    <ScrollView> 
-                        <View style = {styles.listContainer}> 
-                            {returnEN}
-                        </View>
-                    </ScrollView>
-                </View>
-            </View>
+            </ScrollView>
+        </View>
         )
     }
 }

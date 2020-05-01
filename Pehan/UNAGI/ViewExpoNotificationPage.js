@@ -7,23 +7,27 @@ import{
     TouchableOpacity
 } from 'react-native';
 import axios from 'axios';
-import ExpoNotificationID from './ExpoNotificationID'
+import ExpoNotificationID from './NotificationId'
+import UserInfo from './UserInfo';
+import ExpoNotificationId from './ExpoNotificationID';
+
+
 
 class ViewExpoNotificationPage extends Component {
     constructor(props){
         super(props);
         this.change();
         this.state={
-            contractInfo:[{Vegetable:"Carrot",Weight:400,Comment:"good",EndDate:"02/02/2020",Number:"9477706314",Name:"Yeshan Santhush"}]
+            contractInfo:[{Vegetable:"Carrot",Weight:400,Comment:"good",EndDate:"02/02/2020",Name:"Yeshan Santhush"}]
             };
       }
 
     change(){
-        const URL="" /*no url */
+        const URL="http://10.0.2.2:4000/AcceptedContractsDescriptions" /*no url */
         const info = async () => {
             try {
-               console.log(ExpoNotificationID.getId()) 
-               return await axios.post(URL,{Contractid:ExpoNotificationID.getId()})   
+               console.log(ExpoNotificationId.getId()) 
+               return await axios.post(URL,{ContractId:ExpoNotificationId.getId()})   
               } catch (error) {
                 console.log(error)
               }
@@ -57,9 +61,6 @@ class ViewExpoNotificationPage extends Component {
                             <Text style = {styles.commentText}>{this.state.contractInfo[0].Comment}</Text>
                         </View>
 
-                        <View style = {styles.aContainer}>
-                            <Text style = {styles.aText}>Accept</Text>
-                        </View>
 
                     </View>
 
