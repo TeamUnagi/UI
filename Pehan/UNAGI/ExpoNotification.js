@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { View , Text, StyleSheet, TouchableOpacity } from 'react-native';
-import NotificationId from './NotificationId';
+import ExpoNotificationID from './ExpoNotificationID';
 
-class Notification extends React.Component {
+class ExpoNotification extends React.Component {
     static propTypes = {
         FinalName: PropTypes.string.isRequired,
         NotificNumber: PropTypes.number.isRequired,
@@ -13,10 +13,10 @@ class Notification extends React.Component {
     };  
     set(i)
       {
-          NotificationId.setId(i)
-          console.log(NotificationId.getId())
+        ExpoNotificationID.setId(i)
+          console.log(ExpoNotificationID.getId())
           const { navigate } = this.props.Navigation;
-          navigate('ViewNotificationPage') 
+          navigate('ViewExpoNotificationPage') /* i did not do ViewExpoNotificationPage*/
       }
 
     render() {
@@ -24,7 +24,7 @@ class Notification extends React.Component {
             
         <View  style={styles.container}>
         <TouchableOpacity style = {styles.Item} onPress={this.set.bind(this,this.props.Id)}>
-                        <Text style = {styles.nameInfo}>New Contract From {this.props.FinalName}</Text>
+                        <Text style = {styles.nameInfo}>Contract Accepted From {this.props.FinalName}</Text>
                         <View style={styles.infoVal}>
                             <Text style={styles.info}>Tap to view!</Text>
                         </View>
@@ -80,4 +80,4 @@ listContainer:{
    
 })
 
-export default Notification;
+export default ExpoNotification;

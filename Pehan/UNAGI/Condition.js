@@ -12,9 +12,12 @@ class Condition extends Component {
     static propTypes = {
         VegName: PropTypes.string.isRequired,
         CondNumber: PropTypes.number.isRequired,
+        Navigation:PropTypes.string.isRequired,
     };  
     submit() {
         VegetableChosen.setName(this.props.VegName);
+        const { navigate } = this.props.Navigation;
+          navigate('ViewConditionPage') 
     }
     render() {
         return (
@@ -67,7 +70,7 @@ Ninfo:{
 
 Item:{
     shadowOpacity:0.5,
-    backgroundColor: '#d2691e',
+    backgroundColor: '#E59866',
     borderRadius: 15,
     height:100,
     padding:20,

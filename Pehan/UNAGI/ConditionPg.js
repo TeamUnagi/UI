@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-
-import { View,
-         Text,
-        StyleSheet,
-        ScrollView  } from 'react-native';
+import { 
+    View,
+    Text,
+    StyleSheet,
+    ScrollView  
+} from 'react-native';
 import Condition from './Condition';
 import UserInfo from './UserInfo';
 import axios from 'axios';
@@ -47,7 +48,7 @@ class ConditionPg extends Component {
         {
             returnedVegetables.push(
                 <View key={i}>
-                    <Condition VegName={this.state.vegetables[i].Vegetable} CondNumber = {i} />
+                    <Condition VegName={this.state.vegetables[i].Vegetable} CondNumber = {i} Navigation = {this.props.navigation}/>
                 </View>
             )
         }}
@@ -101,7 +102,7 @@ Ninfo:{
 
 Item:{
     shadowOpacity:0.5,
-    backgroundColor: '#d2691e',
+    backgroundColor: '#E59866',
     borderRadius: 15,
     height:100,
     padding:20,

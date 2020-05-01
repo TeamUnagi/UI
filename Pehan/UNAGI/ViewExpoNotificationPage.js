@@ -7,9 +7,9 @@ import{
     TouchableOpacity
 } from 'react-native';
 import axios from 'axios';
-import NotificationId from './NotificationId'
+import ExpoNotificationID from './ExpoNotificationID'
 
-class ViewNotificationPage extends Component {
+class ViewExpoNotificationPage extends Component {
     constructor(props){
         super(props);
         this.change();
@@ -19,11 +19,11 @@ class ViewNotificationPage extends Component {
       }
 
     change(){
-        const URL="http://10.0.2.2:4000/notificationBack"
+        const URL="" /*no url */
         const info = async () => {
             try {
-               console.log(NotificationId.getId()) 
-               return await axios.post(URL,{Contractid:NotificationId.getId()})   
+               console.log(ExpoNotificationID.getId()) 
+               return await axios.post(URL,{Contractid:ExpoNotificationID.getId()})   
               } catch (error) {
                 console.log(error)
               }
@@ -36,14 +36,7 @@ class ViewNotificationPage extends Component {
              }
              setContractInfo();
       }
-      accept(res)
-      {
-        const URL="http://10.0.2.2:4000/Accept"
-        axios.post(URL,{Contractid:NotificationId.getId(),Res:res})
-        alert('Done')
-        const {navigation} = this.props;
-              navigation.navigate('FarmerHomePage')
-      }
+      
     render() {  
         return (
             <View>
@@ -64,15 +57,8 @@ class ViewNotificationPage extends Component {
                             <Text style = {styles.commentText}>{this.state.contractInfo[0].Comment}</Text>
                         </View>
 
-                        <View style = {{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-
-                            <TouchableOpacity style={styles.acceptButton} onPress = {() => {this.accept("Yes")}}>
-                                <Text style = {styles.buttonText}>Accept</Text>
-                            </TouchableOpacity>
-
-                            <TouchableOpacity style={styles.rejectButton} onPress = {() => {this.accept("No")}}>
-                                <Text style = {styles.buttonText}>Reject</Text>
-                            </TouchableOpacity>
+                        <View style = {styles.aContainer}>
+                            <Text style = {styles.aText}>Accept</Text>
                         </View>
 
                     </View>
@@ -131,26 +117,22 @@ const styles = StyleSheet.create({
         margin: 10,
     },
 
-    acceptButton: {
-        marginRight: 5,
-        borderRadius: 7,
-        width: '30%',
-        backgroundColor: "#000000",
-        paddingVertical: 10
+    aText: {
+        color: '#008000',
+        fontSize: 20,
+        fontFamily: "Futura",
+        textAlign: 'center'
+        
     },
 
-    rejectButton: {
-        marginLeft: 5,
-        borderRadius: 7,
-        width: '30%',
-        backgroundColor: "#000000",
-        paddingVertical: 10
-    },
-
-    buttonText: {
-        textAlign: 'center',
-        color: '#FFFFFF'
+    aContainer: {
+        backgroundColor: '#ADFF2F', 
+        width: 100, 
+        alignSelf: "center",
+        margin: 20, 
+        paddingTop:15,
+        paddingBottom: 15,
     }
 }); 
 
-export default ViewNotificationPage;
+export default ViewExpoNotificationPage;

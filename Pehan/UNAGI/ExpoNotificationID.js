@@ -1,5 +1,5 @@
-var ContractId = (() => {
-    var Id="175"
+var ExpoNotificationID = (() => {
+    var Id=""
     var getId = function() {
       return Id;    
     };
@@ -14,4 +14,4 @@ var ContractId = (() => {
     }
   
   })();
-  export default ContractId;
+  export default ExpoNotificationID;

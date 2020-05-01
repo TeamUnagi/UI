@@ -35,12 +35,12 @@ class Contracts1 extends Component {
              setTable();
       }
     
-    render() {
+    render(navigation) {
         var returnV=[];
         if(this.state.contracts.contractId==0)
         {
             returnV.push(
-            <View style={{flex: 1, alignItems: 'center',justifyContent: 'center',marginVertical:300,marginRight:20}}>
+            <View style={{flex: 1, alignItems: 'center',justifyContent: 'center',marginVertical: 300, marginRight: 20}}>
                 <Text style = {styles.nameInfo}>No contracts to display</Text>
             </View>
             )
@@ -50,7 +50,7 @@ class Contracts1 extends Component {
         {
             returnV.push(
                 <View key={i}>
-                    <ContractsPage FinalName={this.state.contracts[i].Name} FinalVegetable={this.state.contracts[i].Vegetables} Id={this.state.contracts[i].contractId} />
+                    <ContractsPage FinalName={this.state.contracts[i].Name} FinalVegetable={this.state.contracts[i].Vegetables} Id={this.state.contracts[i].contractId} Navigation={this.props.navigation}/>
                 </View>
             )
         }}
@@ -69,48 +69,48 @@ class Contracts1 extends Component {
 
 const styles = StyleSheet.create({
 
-container: {
-        backgroundColor: 'white',
-        flex: 1,
+    container: {
+            backgroundColor: 'white',
+            flex: 1,
+            
+    },
+    infoVal:{
         
-},
-infoVal:{
-    
-    flexDirection: 'row',
-    paddingTop:1,
-    paddingLeft: 20
-},
+        flexDirection: 'row',
+        paddingTop:1,
+        paddingLeft: 20
+    },
 
-nameInfo: {
-    position: 'relative',
-    bottom:10,
-    color: 'black',
-    fontSize: 16,
-    paddingLeft: 20,
-    paddingTop:7
-    
-},
+    nameInfo: {
+        position: 'relative',
+        bottom:10,
+        color: 'black',
+        fontSize: 16,
+        paddingLeft: 20,
+        paddingTop:7
+        
+    },
 
-Ninfo:{
-    position: 'relative',
-    left:0,
-    fontSize: 14,
-    textAlign: 'left',
-    flexWrap: 'wrap',
-},
+    Ninfo:{
+        position: 'relative',
+        left:0,
+        fontSize: 14,
+        textAlign: 'left',
+        flexWrap: 'wrap',
+    },
 
-Item:{
-    shadowOpacity:0.5,
-    backgroundColor: '#d2691e',
-    borderRadius: 15,
-    height:100,
-    padding:20,
-    marginTop:30,
-    marginHorizontal:40
-},
-listContainer:{
-    shadowOpacity: 0.9,      
-}
+    Item:{
+        shadowOpacity:0.5,
+        backgroundColor: '#E59866',
+        borderRadius: 15,
+        height:100,
+        padding:20,
+        marginTop:30,
+        marginHorizontal:40
+    },
+    listContainer:{
+        shadowOpacity: 0.9,      
+    }
 })
 
 export default Contracts1;
