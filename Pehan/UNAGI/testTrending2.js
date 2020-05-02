@@ -33,7 +33,6 @@ class testTrending extends Component {
             const getVegetableData = async () => {
                 const confirm = await trends();
                 this.setState({vegetableInfo:confirm.data});
-                console.log(this.state.vegetableInfo.length)
              }
     
              getVegetableData();

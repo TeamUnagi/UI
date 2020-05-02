@@ -28,7 +28,7 @@ class testTrending extends Component {
         const URL="http://10.0.2.2:4000/VegetableImports"
         const trends = async () => {
             try {
-               return await axios.get(URL)   
+               return await axios.post(URL)   
               } catch (error) {
                 console.log(error)
               }
@@ -36,7 +36,6 @@ class testTrending extends Component {
             const getVegetableData = async () => {
                 const confirm = await trends();
                 this.setState({vegetableInfo:confirm.data});
-                console.log(this.state.vegetableInfo.length)
              }
     
              getVegetableData();

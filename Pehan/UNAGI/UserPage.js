@@ -7,6 +7,7 @@ import{ View, Text, SafeAreaView, StyleSheet, ImageBackground, TouchableOpacity,
 import vegBg from './images/background.jpg';
 import TestTrending from './testTrending';
 import TestTrending2 from './testTrending2'
+import Notifications2 from './ExpoNotificationList'
 
 import ContractSendPage from './ContractSendPage'
 import FarmerProfilePage from './FarmerProfDisplay'
@@ -18,6 +19,7 @@ import ContractsPage from './Contracts1'
 import ConditionPg from './ConditionPg'
 import Notifications1 from './Notifications1'
 
+import ViewExpoNotificationPage from './ViewExpoNotificationPage';
 import ViewNotificationPage from './ViewNotificationPage';
 import ViewContractPage from './ViewContractPage';
 import ViewConditionPage from './ViewConditionPage';
@@ -106,7 +108,8 @@ function TrendingTabs() {
         
         }>
         <Tab.Screen name="2021" component={TestTrending} />
-        <Tab.Screen name="2020" component={TestTrending2}/>      
+        <Tab.Screen name="2020" component={TestTrending2}/>     
+        <Tab.Screen name="Notifications" component={Notifications2} /> 
         </Tab.Navigator>
   );
 }
@@ -156,6 +159,7 @@ const App = () => {
           <Stack.Screen name="ViewNotificationPage" component={ViewNotificationPage} options={{ headerShown: false }}/>
           <Stack.Screen name="ViewContractPage" component={ViewContractPage} options={{ headerShown: false }}/>
           <Stack.Screen name="ViewConditionPage" component={ViewConditionPage} options={{ headerShown: false }}/>
+          <Stack.Screen name="ViewExpoNotificationPage" component={ViewExpoNotificationPage} options={{ headerShown: false }}/>
 
           <Stack.Screen name="ScreenMove" component={TrendingTabs} options={{ headerShown: false }}/>
           <Stack.Screen name="FarmerHomePage" component={FarmerTabs} options={{ headerShown: false }}/>
