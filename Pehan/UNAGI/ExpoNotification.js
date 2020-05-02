@@ -2,21 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { View , Text, StyleSheet, TouchableOpacity } from 'react-native';
-import ExpoNotificationID from './ExpoNotificationID';
+import ExpoNotificationId from './ExpoNotificationID';
 
 class ExpoNotification extends React.Component {
     static propTypes = {
         FinalName: PropTypes.string.isRequired,
         NotificNumber: PropTypes.number.isRequired,
         Id:PropTypes.number.isRequired,
-        Navigation:PropTypes.string.isRequired,
+        Navigation:PropTypes.string.isRequired
+
+       
     };  
     set(i)
       {
-        ExpoNotificationID.setId(i)
-          console.log(ExpoNotificationID.getId())
-          const { navigate } = this.props.Navigation;
-          navigate('ViewExpoNotificationPage') /* i did not do ViewExpoNotificationPage*/
+        ExpoNotificationId.setId(i)
+        console.log(ExpoNotificationId.getId())
+        const { navigate } = this.props.Navigation;
+        navigate('ViewExpoNotificationPage')
+         
       }
 
     render() {
@@ -24,7 +27,7 @@ class ExpoNotification extends React.Component {
             
         <View  style={styles.container}>
         <TouchableOpacity style = {styles.Item} onPress={this.set.bind(this,this.props.Id)}>
-                        <Text style = {styles.nameInfo}>Contract Accepted From {this.props.FinalName}</Text>
+                        <Text style = {styles.nameInfo}>Contract Accepted {this.props.FinalName}</Text>
                         <View style={styles.infoVal}>
                             <Text style={styles.info}>Tap to view!</Text>
                         </View>
