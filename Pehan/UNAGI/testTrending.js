@@ -19,11 +19,6 @@ class testTrending extends Component {
            vegetableInfo:VegetableInfo.getName(),
         };
       }
-
-      
-
-
-
       componentDidMount(){    
         const URL="http://10.0.2.2:4000/VegetableImports"
         const trends = async () => {
@@ -136,7 +131,7 @@ const styles = StyleSheet.create({
     
       headerLayoutStyle: {
         position:'relative',  
-        backgroundColor: 'orange', 
+        backgroundColor: '#d2691e', 
         width, 
         height: 70, 
         justifyContent: 'center', 

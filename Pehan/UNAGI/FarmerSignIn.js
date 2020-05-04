@@ -11,7 +11,6 @@ import{ View,
       } from 'react-native';
       
 import vegBg from './images/background.jpg';
-import FarmerChoosingLoc from './FarmerChoosingLoc';
 class FarmerSignIn extends Component {
   constructor(props){
     super(props)
@@ -21,6 +20,8 @@ class FarmerSignIn extends Component {
         Email:'',
         Password:'',
         Location:'',
+        Number:'',
+        Description:'',
         success:''
     };
   }
@@ -45,6 +46,14 @@ submit=() => {
     alert("Please enter your Password")
     this.setState({success:"notsuccess"})
   }
+  if(Object.keys(this.state.Description).length==0){
+    alert("Please enter your Description")
+    this.setState({success:"notsuccess"})
+  }
+  if(Object.keys(this.state.Number).length==0){
+    alert("Please enter your Password")
+    this.setState({success:"notsuccess"})
+  }
   if(Object.keys(this.state.success).length==0){
     const URL="http://10.0.2.2:4000/farmersigninuserinfo"
     const farmerconfirm = async () => {
@@ -59,8 +68,6 @@ submit=() => {
     
       if (confirm.data.message=="success") {
         alert("Successfully added")
-        FarmerChoosingLoc.setLoc(this.state.Location)
-        FarmerChoosingLoc.setName(this.state.Username)
        }
     else if(confirm.data.message=="user"){
       alert("This Username is already in used")
@@ -96,7 +103,18 @@ submit=() => {
                 placeholderTextColor={'#E59866'}
                 onChangeText={text=>{this.setState({Fullname:text});this.setState({success:''})}}/>
             </View>
-
+            <View>
+                <TextInput style= {styles.inputText} 
+                placeholder={"Description"}
+                placeholderTextColor={'#E59866'}
+                onChangeText={text=>{this.setState({Description:text});this.setState({success:''})}}/>
+            </View>
+            <View>
+                <TextInput style= {styles.inputText} 
+                placeholder={"Number"}
+                placeholderTextColor={'#E59866'}
+                onChangeText={text=>{this.setState({Number:text});this.setState({success:''})}}/>
+            </View>
             <View>
                 <TextInput style= {styles.inputText}
                 placeholder={"Password"}

@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
 
     Vegetable:{
         shadowOpacity:0.5,
-        backgroundColor: 'orange',
+        backgroundColor: '#d2691e',
         borderRadius: 10,
         height:100,
         padding:10,

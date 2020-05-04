@@ -92,16 +92,14 @@ function TrendingTabs() {
           activeBackgroundColor:'#E59866',
 
           labelStyle: {
-            fontSize: 23,
-            
-            
+            fontSize:18,
           },
           
           style: { backgroundColor: 'black',borderBottomLeftRadius: 15,
           borderBottomRightRadius: 15, paddingTop:25, paddingBottom:1,  },
 
           indicatorStyle: {
-            backgroundColor: '#E59866', width:30, marginBottom:10, marginHorizontal:92
+            backgroundColor: '#E59866', width:30, marginBottom:10, marginHorizontal:55
         }
                     
         }
@@ -109,7 +107,7 @@ function TrendingTabs() {
         }>
         <Tab.Screen name="2021" component={TestTrending} />
         <Tab.Screen name="2020" component={TestTrending2}/>     
-        <Tab.Screen name="Notifications" component={Notifications2} /> 
+        <Tab.Screen name="Contracts" component={Notifications2} /> 
         </Tab.Navigator>
   );
 }

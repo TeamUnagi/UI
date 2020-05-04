@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     
       headerLayoutStyle: {
         position:'relative',  
-        backgroundColor: 'orange', 
+        backgroundColor: '#d2691e', 
         width, 
         height: 70, 
         justifyContent: 'center', 
