@@ -10,6 +10,7 @@ import {
   Modal,
   Text,
   FlatList,
+  TouchableOpacity
 } from 'react-native';  
 import FarmerChosen from './FarmerChosen'
 
@@ -72,9 +73,9 @@ class Map extends Component {
   }
     return(  
       <View style={styles.container}>
-  
+
         <MapView
-          provider = {PROVIDER_GOOGLE} // remove if not using Google Maps
+          provider = {PROVIDER_GOOGLE}
           style = {styles.map}
 
           initialRegion = {{
@@ -84,20 +85,6 @@ class Map extends Component {
             longitudeDelta: 3.2,
           }}
         >
-
-          {/* Uncomment this whole thing */}
-          {/* {mapMarkers.map((marker, index) => (
-
-          <MapView.Marker
-          key={index}
-          coordinate={marker}
-
-          onPress = {() => {
-            console.log(marker.location)
-            this.changeFarmer(marker.location);
-            this.setState({show: true})
-          }}/>
-          ))} */}
 
           {mapMarkers.map((marker, index) => (
 
@@ -122,8 +109,9 @@ class Map extends Component {
               <FlatList
 
                 data = {this.state.farmers}
-                renderItem = {({item}) => (
-                  <Text onPress = {() => {
+                renderItem = {({item}) => 
+                  <Text style = {styles.tableViewItem} 
+                  onPress = {() => {
                     FarmerChosen.setId(item.ID);
                     FarmerChosen.setName(item.Name);
 
@@ -132,8 +120,15 @@ class Map extends Component {
                     navigation.navigate('FarmerProfilePage')
 
                   }}>{item.Name}</Text>
-                )}
+                }
               />
+
+                  <TouchableOpacity style={styles.acceptButton} onPress = {() => {
+                    this.setState({show: false})}}>
+
+                    <Text style = {styles.buttonText}>Cancel</Text>
+                  </TouchableOpacity>
+
             </View>
           </View>
         </Modal>
@@ -166,16 +161,19 @@ const styles = StyleSheet.create({
   },
 
   popup: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E59866',
     flex: 1,
     marginVertical: 100,
     marginHorizontal: 40,
-    paddingVertical: 50,
+    paddingTop: 40,
+    paddingBottom: 30,
     paddingHorizontal: 15,
     borderRadius: 30,
   },
 
-  item: {
+  tableViewItem: {
+    color: '#000000',
+    borderBottomWidth: 2,
     borderBottomColor: '#707070',
     textAlignVertical: "center",
     paddingLeft: 5,
@@ -184,6 +182,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     height: 40,
   },
+
   headName:{
     paddingTop:40,
     marginLeft:130,
@@ -191,7 +190,21 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontFamily: "Futura",
     marginTop: 10
-}
+  },
+
+  acceptButton: {
+    marginTop: 5,
+    alignSelf: 'flex-end',
+    borderRadius: 7,
+    width: '30%',
+    backgroundColor: "#000000",
+    paddingVertical: 10
+  },
+
+  buttonText: {
+    textAlign: 'center',
+    color: '#FFFFFF'
+  }
 
 }); 
 

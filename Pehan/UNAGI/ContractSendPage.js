@@ -113,36 +113,39 @@ class ContractSendPage extends Component{
 const styles = StyleSheet.create({
 
     container: {
-      borderBottomLeftRadius: 15,
-      borderBottomRightRadius: 15,
-      alignItems: 'center',
-      backgroundColor: 'black',
       
+      backgroundColor: '#000000',
+      width: '100%',
+      height: '15%',
+      borderBottomLeftRadius: 20,
+      borderBottomRightRadius: 20,
+      alignItems: 'center',
+      justifyContent: 'center',
     },
   
     headText: {
-      paddingTop:10,
-      paddingBottom: 10,
+      
+      paddingTop:40,
       color: '#E59866',
       fontSize: 25,
       fontFamily: "Futura",
-      marginTop: 25,
+      marginTop: 10
     },
   
     bgContainer: {
     
-      paddingTop:20,
-      paddingBottom: 20,
-      backgroundColor: '#d2691e',
-      width: null,
-      height: 600,
-      justifyContent: 'center',
+      width:330,
+      height: 540,
       alignItems: 'center',
-      borderRadius: 25,
-      margin:20
+      alignSelf: 'center',
+      marginTop: 10,
+      backgroundColor: '#E59866',
+      borderRadius:20,
+      paddingVertical: 20,
     },
   
-    inputText:{
+    inputText: {
+
       marginBottom: 20,
       borderBottomWidth: 1,
       borderBottomColor: 'black',
@@ -155,7 +158,7 @@ const styles = StyleSheet.create({
       width: 300
     },
   
-    btnSignIn:{
+    btnSignIn: {
       
       alignSelf: 'flex-end',
       height:35,
@@ -163,17 +166,19 @@ const styles = StyleSheet.create({
       backgroundColor: '#000000',
       justifyContent: 'center',
       width: 130,
-      marginTop: 100
+      marginTop: 15,
     },
   
-    btnText:{
+    btnText: {
+
       color: '#E59866',
       fontSize: 15,
       fontFamily: "Futura",
       textAlign: 'center'
     },
     
-    comment:{
+    comment: {
+
       borderWidth:1 , 
       borderColor:'black', 
       textAlignVertical: 'top', 
