@@ -97,7 +97,7 @@ Ninfo:{
 
 Item:{
     shadowOpacity:0.5,
-    backgroundColor: '#d2691e',
+    backgroundColor: '#E59866',
     borderRadius: 15,
     height:100,
     padding:20,
